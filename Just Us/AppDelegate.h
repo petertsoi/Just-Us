@@ -1,5 +1,5 @@
 //
-//  Just_UsAppDelegate.h
+//  AppDelegate.h
 //  Just Us
 //
 //  Created by Peter Tsoi on 9/23/11.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface Just_UsAppDelegate : NSObject <UIApplicationDelegate, UITabBarControllerDelegate>
+@interface AppDelegate : NSObject <UIApplicationDelegate, UITabBarControllerDelegate>
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 

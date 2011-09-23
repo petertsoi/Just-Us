@@ -1,14 +1,14 @@
 //
-//  Just_UsAppDelegate.m
+//  AppDelegate.m
 //  Just Us
 //
 //  Created by Peter Tsoi on 9/23/11.
 //  Copyright 2011 Pixar Animation Studios. All rights reserved.
 //
 
-#import "Just_UsAppDelegate.h"
+#import "AppDelegate.h"
 
-@implementation Just_UsAppDelegate
+@implementation AppDelegate
 
 @synthesize window = _window;
 @synthesize tabBarController = _tabBarController;

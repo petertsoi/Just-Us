@@ -12,7 +12,7 @@
 		0A4090D0142D2D370089C16B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A4090CF142D2D370089C16B /* CoreGraphics.framework */; };
 		0A4090D6142D2D370089C16B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0A4090D4142D2D370089C16B /* InfoPlist.strings */; };
 		0A4090D8142D2D370089C16B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A4090D7142D2D370089C16B /* main.m */; };
-		0A4090DC142D2D370089C16B /* Just_UsAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A4090DB142D2D370089C16B /* Just_UsAppDelegate.m */; };
+		0A4090DC142D2D370089C16B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A4090DB142D2D370089C16B /* AppDelegate.m */; };
 		0A4090DF142D2D380089C16B /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A4090DD142D2D370089C16B /* MainWindow.xib */; };
 		0A4090E2142D2D380089C16B /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A4090E1142D2D380089C16B /* FirstViewController.m */; };
 		0A4090E5142D2D380089C16B /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A4090E4142D2D380089C16B /* SecondViewController.m */; };
@@ -42,22 +42,22 @@
 		0A4090CB142D2D370089C16B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		0A4090CD142D2D370089C16B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		0A4090CF142D2D370089C16B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		0A4090D3142D2D370089C16B /* Just Us-Info.plist */ = {isa = PBXFileReference; path = "Just Us-Info.plist"; sourceTree = "<group>"; };
+		0A4090D3142D2D370089C16B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0A4090D5142D2D370089C16B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0A4090D7142D2D370089C16B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		0A4090D9142D2D370089C16B /* Just Us-Prefix.pch */ = {isa = PBXFileReference; path = "Just Us-Prefix.pch"; sourceTree = "<group>"; };
-		0A4090DA142D2D370089C16B /* Just_UsAppDelegate.h */ = {isa = PBXFileReference; path = Just_UsAppDelegate.h; sourceTree = "<group>"; };
-		0A4090DB142D2D370089C16B /* Just_UsAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Just_UsAppDelegate.m; sourceTree = "<group>"; };
+		0A4090D9142D2D370089C16B /* Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
+		0A4090DA142D2D370089C16B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		0A4090DB142D2D370089C16B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		0A4090DE142D2D380089C16B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
-		0A4090E0142D2D380089C16B /* FirstViewController.h */ = {isa = PBXFileReference; path = FirstViewController.h; sourceTree = "<group>"; };
+		0A4090E0142D2D380089C16B /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
 		0A4090E1142D2D380089C16B /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
-		0A4090E3142D2D380089C16B /* SecondViewController.h */ = {isa = PBXFileReference; path = SecondViewController.h; sourceTree = "<group>"; };
+		0A4090E3142D2D380089C16B /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
 		0A4090E4142D2D380089C16B /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		0A4090E7142D2D380089C16B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/FirstView.xib; sourceTree = "<group>"; };
 		0A4090EA142D2D380089C16B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SecondView.xib; sourceTree = "<group>"; };
 		0A4090F1142D2D380089C16B /* Just UsTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Just UsTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A4090F2142D2D380089C16B /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		0A4090FB142D2D380089C16B /* Just UsTests-Info.plist */ = {isa = PBXFileReference; path = "Just UsTests-Info.plist"; sourceTree = "<group>"; };
+		0A4090FB142D2D380089C16B /* Just UsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Just UsTests-Info.plist"; sourceTree = "<group>"; };
 		0A4090FD142D2D380089C16B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0A4090FF142D2D380089C16B /* Just_UsTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Just_UsTests.h; sourceTree = "<group>"; };
 		0A409101142D2D380089C16B /* Just_UsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Just_UsTests.m; sourceTree = "<group>"; };
@@ -121,15 +121,13 @@
 		0A4090D1142D2D370089C16B /* Just Us */ = {
 			isa = PBXGroup;
 			children = (
-				0A4090DA142D2D370089C16B /* Just_UsAppDelegate.h */,
-				0A4090DB142D2D370089C16B /* Just_UsAppDelegate.m */,
-				0A4090DD142D2D370089C16B /* MainWindow.xib */,
+				0A4090DA142D2D370089C16B /* AppDelegate.h */,
+				0A4090DB142D2D370089C16B /* AppDelegate.m */,
 				0A4090E0142D2D380089C16B /* FirstViewController.h */,
 				0A4090E1142D2D380089C16B /* FirstViewController.m */,
 				0A4090E3142D2D380089C16B /* SecondViewController.h */,
 				0A4090E4142D2D380089C16B /* SecondViewController.m */,
-				0A4090E6142D2D380089C16B /* FirstView.xib */,
-				0A4090E9142D2D380089C16B /* SecondView.xib */,
+				0A79D43A142D30150037A1A9 /* Resources */,
 				0A4090D2142D2D370089C16B /* Supporting Files */,
 			);
 			path = "Just Us";
@@ -138,10 +136,10 @@
 		0A4090D2142D2D370089C16B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				0A4090D3142D2D370089C16B /* Just Us-Info.plist */,
+				0A4090D3142D2D370089C16B /* Info.plist */,
 				0A4090D4142D2D370089C16B /* InfoPlist.strings */,
 				0A4090D7142D2D370089C16B /* main.m */,
-				0A4090D9142D2D370089C16B /* Just Us-Prefix.pch */,
+				0A4090D9142D2D370089C16B /* Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -163,6 +161,16 @@
 				0A4090FC142D2D380089C16B /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0A79D43A142D30150037A1A9 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0A4090DD142D2D370089C16B /* MainWindow.xib */,
+				0A4090E6142D2D380089C16B /* FirstView.xib */,
+				0A4090E9142D2D380089C16B /* SecondView.xib */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -275,7 +283,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A4090D8142D2D370089C16B /* main.m in Sources */,
-				0A4090DC142D2D370089C16B /* Just_UsAppDelegate.m in Sources */,
+				0A4090DC142D2D370089C16B /* AppDelegate.m in Sources */,
 				0A4090E2142D2D380089C16B /* FirstViewController.m in Sources */,
 				0A4090E5142D2D380089C16B /* SecondViewController.m in Sources */,
 			);
@@ -362,6 +370,7 @@
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				SDKROOT = iphoneos;
 			};
@@ -379,6 +388,7 @@
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
@@ -390,8 +400,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Just Us/Just Us-Prefix.pch";
-				INFOPLIST_FILE = "Just Us/Just Us-Info.plist";
+				GCC_PREFIX_HEADER = "Just Us/Prefix.pch";
+				INFOPLIST_FILE = "Just Us/Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -401,8 +411,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Just Us/Just Us-Prefix.pch";
-				INFOPLIST_FILE = "Just Us/Just Us-Info.plist";
+				GCC_PREFIX_HEADER = "Just Us/Prefix.pch";
+				INFOPLIST_FILE = "Just Us/Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -417,7 +427,7 @@
 					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Just Us/Just Us-Prefix.pch";
+				GCC_PREFIX_HEADER = "Just Us/Prefix.pch";
 				INFOPLIST_FILE = "Just UsTests/Just UsTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
@@ -434,7 +444,7 @@
 					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Just Us/Just Us-Prefix.pch";
+				GCC_PREFIX_HEADER = "Just Us/Prefix.pch";
 				INFOPLIST_FILE = "Just UsTests/Just UsTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
@@ -461,6 +471,7 @@
 				0A409107142D2D380089C16B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0A409108142D2D380089C16B /* Build configuration list for PBXNativeTarget "Just UsTests" */ = {
 			isa = XCConfigurationList;
@@ -469,6 +480,7 @@
 				0A40910A142D2D380089C16B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
