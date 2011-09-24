@@ -10,11 +10,13 @@
 
 @implementation USPhotoAlbumScroll
 
-- (id)init
+- (id)initWithCoder:(NSCoder *)aDecoder
 {
-    self = [super init];
+    self = [super initWithCoder:aDecoder];
     if (self) {
-        // Initialization code here.
+        NSString* documentsPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+        mPhotoArray = [[NSArray alloc] initWithArray:[[[NSFileManager defaultManager] contentsOfDirectoryAtPath:documentsPath error:NULL] sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)]];
+        //NSLog(@"Total %i; first: %@", [mPhotoArray count], [mPhotoArray objectAtIndex:0] );
     }
     
     return self;

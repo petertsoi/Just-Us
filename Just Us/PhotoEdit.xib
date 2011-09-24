@@ -50,7 +50,6 @@
 						<string key="NSFrame">{{39, 207}, {246, 194}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:541</string>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -337,6 +336,14 @@
 					</object>
 					<int key="connectionID">25</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">mTitleBox</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="446758525"/>
+					</object>
+					<int key="connectionID">26</int>
+				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<object class="NSArray" key="orderedObjects">
@@ -471,7 +478,7 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">25</int>
+			<int key="maxID">26</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -483,18 +490,24 @@
 						<bool key="EncodedWithXMLCoder">YES</bool>
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>mAlbumScroll</string>
 							<string>mFacebookButton</string>
 							<string>mLatestImageView</string>
 							<string>mLocationBox</string>
 							<string>mPublicButton</string>
+							<string>mSelectedPhotoView</string>
 							<string>mTimeBox</string>
+							<string>mTitleBox</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>UIScrollView</string>
 							<string>UIButton</string>
 							<string>UIImageView</string>
 							<string>UITextField</string>
 							<string>UIButton</string>
+							<string>UIView</string>
+							<string>UITextField</string>
 							<string>UITextField</string>
 						</object>
 					</object>
@@ -502,14 +515,21 @@
 						<bool key="EncodedWithXMLCoder">YES</bool>
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>mAlbumScroll</string>
 							<string>mFacebookButton</string>
 							<string>mLatestImageView</string>
 							<string>mLocationBox</string>
 							<string>mPublicButton</string>
+							<string>mSelectedPhotoView</string>
 							<string>mTimeBox</string>
+							<string>mTitleBox</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<object class="IBToOneOutletInfo">
+								<string key="name">mAlbumScroll</string>
+								<string key="candidateClassName">UIScrollView</string>
+							</object>
 							<object class="IBToOneOutletInfo">
 								<string key="name">mFacebookButton</string>
 								<string key="candidateClassName">UIButton</string>
@@ -527,7 +547,15 @@
 								<string key="candidateClassName">UIButton</string>
 							</object>
 							<object class="IBToOneOutletInfo">
+								<string key="name">mSelectedPhotoView</string>
+								<string key="candidateClassName">UIView</string>
+							</object>
+							<object class="IBToOneOutletInfo">
 								<string key="name">mTimeBox</string>
+								<string key="candidateClassName">UITextField</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">mTitleBox</string>
 								<string key="candidateClassName">UITextField</string>
 							</object>
 						</object>

@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface USPhotoAlbumScroll : UIScrollView
+@interface USPhotoAlbumScroll : UIScrollView {
+    NSArray * mPhotoArray;
+}
 
 @end

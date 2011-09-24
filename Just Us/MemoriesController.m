@@ -9,6 +9,8 @@
 #import "MemoriesController.h"
 #import "AppDelegate.h"
 #import "USTabBarController.h"
+#import "ASIHTTPRequest.h"
+#import "ASIFormDataRequest.h"
 
 @implementation MemoriesController
 
@@ -32,6 +34,83 @@
     }
     
 }
+
+- (void) donePhotoEditing{
+    NSString* documentsPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+    NSString* oldPath = [documentsPath stringByAppendingPathComponent:@"Latest.jpg"];
+    NSString* newPath = [documentsPath stringByAppendingPathComponent:@"Uploading.jpg"];
+    [[NSFileManager defaultManager] moveItemAtPath:oldPath toPath:newPath error:NULL];
+    
+    NSArray* nibViews = [[NSBundle mainBundle] loadNibNamed:@"Memories"
+                                                      owner:self
+                                                    options:nil];
+    UIView * myView = [ nibViews objectAtIndex: 0];
+    self.view = myView;
+    
+    self.navigationItem.rightBarButtonItem = nil;
+    self.navigationItem.leftBarButtonItem = nil;
+    
+    // Do upload stuff here.
+    NSURL *url = [NSURL URLWithString:@"http://192.168.2.1:8080/photo"];
+    
+    
+    
+    ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:url];
+    [request setDelegate:self];
+    [request setRequestMethod:@"POST"];
+    
+    [request setPostValue:@"fbid" forKey:@"101010101"];
+    [request setPostValue:@"lat" forKey:[NSString stringWithFormat:@"%f", mLastLocation.latitude]];
+    [request setPostValue:@"long" forKey:[NSString stringWithFormat:@"%f", mLastLocation.longitude]];
+    [request setPostValue:@"time" forKey:[mTimeBox text]];
+    [request setPostValue:@"caption" forKey:[mTitleBox text]];
+    
+    [request startAsynchronous];
+    
+    
+    // Upload a file on disk
+    //[request setFile:@"/Users/ben/Desktop/ben.jpg" withFileName:@"myphoto.jpg" andContentType:@"image/jpeg"
+    //          forKey:@"photo"];
+    /*
+    // Upload an NSData instance
+    [request setData:imageData withFileName:@"myphoto.jpg" andContentType:@"image/jpeg" forKey:@"photo"];
+    [request addPostValue:@"Ben" forKey:@"names"];
+    [request addPostValue:@"George" forKey:@"names"];
+    [request addFile:@"/Users/ben/Desktop/ben.jpg" forKey:@"photos"];
+    [request addData:imageData withFileName:@"george.jpg" andContentType:@"image/jpeg" forKey:@"photos"];
+     */
+}
+
+- (void)requestFinished:(ASIHTTPRequest *)request
+{
+    NSString *response = [request responseString];
+    if (![response isEqualToString:@"OK"]){
+        NSLog(@"Uploading as %@", response);
+        NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://192.168.2.1:8080/photo/%@.jpg", response]];
+        NSString* documentsPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+        NSString* oldPath = [documentsPath stringByAppendingPathComponent:@"Uploading.jpg"];
+        NSString* newPath = [documentsPath stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.jpg", response]];
+        [[NSFileManager defaultManager] moveItemAtPath:oldPath toPath:newPath error:NULL];
+        
+        ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:url];
+        [request setDelegate:self];
+        [request setRequestMethod:@"POST"];
+        
+        [request setFile:newPath forKey:@"photo"];
+        
+        [request startAsynchronous];
+    } else {
+        NSLog(@"Uploaded photo");
+    }
+    
+    
+}
+
+- (void)requestWentWrong:(ASIHTTPRequest *)request
+{
+    NSError *error = [request error];
+}
+
 
 - (void) cancelPhotoDetailEdit {
     NSString* documentsPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
@@ -103,7 +182,7 @@
     
     UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] initWithTitle:@"Done" style:UIBarButtonItemStyleDone
                                                                   target:self 
-                                                                  action:nil];    
+                                                                  action:@selector(donePhotoEditing)];  
     self.navigationItem.rightBarButtonItem = doneButton;
     
     UIBarButtonItem *discardButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemTrash
@@ -144,8 +223,8 @@
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation{
     // Configure the new event with information from the location
-    CLLocationCoordinate2D coordinate = [newLocation coordinate];
-    NSString * latLongString = [NSString stringWithFormat:@"%f, %f", coordinate.latitude, coordinate.longitude];
+    mLastLocation = [newLocation coordinate];
+    NSString * latLongString = [NSString stringWithFormat:@"%f, %f", mLastLocation.latitude, mLastLocation.longitude];
     [mLocationBox setText:latLongString];
 }
 

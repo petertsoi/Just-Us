@@ -13,6 +13,7 @@
     IBOutlet UIImageView * mLatestImageView;
     IBOutlet UITextField * mLocationBox;
     IBOutlet UITextField * mTimeBox;
+    IBOutlet UITextField * mTitleBox;
     
     IBOutlet UIButton * mFacebookButton;
     IBOutlet UIButton * mPublicButton;
@@ -23,6 +24,8 @@
     BOOL mFacebookOn;
     BOOL mPublicOn;
     CLLocationManager *locationManager;
+    
+    CLLocationCoordinate2D mLastLocation;
 }
 
 @property (nonatomic, retain) CLLocationManager *locationManager;
