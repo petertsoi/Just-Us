@@ -21,7 +21,10 @@
 }
 
 - (void) switchToCamera {
-    mLastState = self.selectedIndex;
+    if (self.selectedIndex == 1)
+        mLastState = 0;
+    else
+        mLastState = self.selectedIndex;
     self.selectedIndex = 1;
     [self.selectedViewController viewDidAppear:YES];
     

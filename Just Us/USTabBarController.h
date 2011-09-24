@@ -16,6 +16,7 @@
 -(void) addCenterButtonWithImage:(UIImage*)buttonImage highlightImage:(UIImage*)highlightImage;
 
 - (unsigned int) getLastState;
+- (void) switchToCamera ;
 
 
 @end

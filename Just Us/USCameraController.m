@@ -35,6 +35,20 @@
 }
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    [[appDelegate tabBarController] setSelectedIndex:0]; 
+    
+    // Save the image
+    UIImage * capturedImage = [info objectForKey:@"UIImagePickerControllerOriginalImage"];
+    NSData * imageData = UIImageJPEGRepresentation(capturedImage, 0.75);
+    
+    NSString* imageName = @"Latest.jpg";
+    NSArray* paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString* documentsDirectory = [paths objectAtIndex:0];
+    NSString* fullPathToFile = [documentsDirectory stringByAppendingPathComponent:imageName];
+    
+    [imageData writeToFile:fullPathToFile atomically:NO];
+    
 	[picker dismissModalViewControllerAnimated:YES];
 	/*imageView.image = */
     //[info objectForKey:@"UIImagePickerControllerOriginalImage"];
@@ -51,5 +65,9 @@
 - (UIImagePickerController *) photoPicker{
     return mPicker;
     
+}
+
+- (void) dealloc {
+    [mPicker release];
 }
 @end
