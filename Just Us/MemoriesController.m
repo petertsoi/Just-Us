@@ -6,9 +6,9 @@
 //  Copyright 2011 Pixar Animation Studios. All rights reserved.
 //
 
-#import "FirstViewController.h"
+#import "MemoriesController.h"
 
-@implementation FirstViewController
+@implementation MemoriesController
 
 /*
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.

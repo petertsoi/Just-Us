@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A30208C142D752900E0D769 /* camera_button_take.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A30208A142D752900E0D769 /* camera_button_take.png */; };
+		0A30208D142D752900E0D769 /* camera_button_take@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A30208B142D752900E0D769 /* camera_button_take@2x.png */; };
 		0A4090CC142D2D370089C16B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A4090CB142D2D370089C16B /* UIKit.framework */; };
 		0A4090CE142D2D370089C16B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A4090CD142D2D370089C16B /* Foundation.framework */; };
 		0A4090D0142D2D370089C16B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A4090CF142D2D370089C16B /* CoreGraphics.framework */; };
@@ -14,10 +16,10 @@
 		0A4090D8142D2D370089C16B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A4090D7142D2D370089C16B /* main.m */; };
 		0A4090DC142D2D370089C16B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A4090DB142D2D370089C16B /* AppDelegate.m */; };
 		0A4090DF142D2D380089C16B /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A4090DD142D2D370089C16B /* MainWindow.xib */; };
-		0A4090E2142D2D380089C16B /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A4090E1142D2D380089C16B /* FirstViewController.m */; };
+		0A4090E2142D2D380089C16B /* MemoriesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A4090E1142D2D380089C16B /* MemoriesController.m */; };
 		0A4090E5142D2D380089C16B /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A4090E4142D2D380089C16B /* SecondViewController.m */; };
-		0A4090E8142D2D380089C16B /* FirstView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A4090E6142D2D380089C16B /* FirstView.xib */; };
-		0A4090EB142D2D380089C16B /* SecondView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A4090E9142D2D380089C16B /* SecondView.xib */; };
+		0A4090E8142D2D380089C16B /* Memories.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A4090E6142D2D380089C16B /* Memories.xib */; };
+		0A4090EB142D2D380089C16B /* Search.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A4090E9142D2D380089C16B /* Search.xib */; };
 		0A4090F3142D2D380089C16B /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A4090F2142D2D380089C16B /* SenTestingKit.framework */; };
 		0A4090F4142D2D380089C16B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A4090CB142D2D370089C16B /* UIKit.framework */; };
 		0A4090F5142D2D380089C16B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A4090CD142D2D370089C16B /* Foundation.framework */; };
@@ -38,6 +40,7 @@
 		0A5E831A142D32D000E418E9 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A5E8315142D328300E418E9 /* CFNetwork.framework */; };
 		0A5E831B142D32D000E418E9 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A5E8313142D327C00E418E9 /* MobileCoreServices.framework */; };
 		0A5E831E142D32F700E418E9 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A5E831C142D32EC00E418E9 /* libz.dylib */; };
+		0A6D37C6142D69F100165496 /* USTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A6D37C5142D69F100165496 /* USTabBarController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +54,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0A30208A142D752900E0D769 /* camera_button_take.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = camera_button_take.png; path = Resources/camera_button_take.png; sourceTree = "<group>"; };
+		0A30208B142D752900E0D769 /* camera_button_take@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "camera_button_take@2x.png"; path = "Resources/camera_button_take@2x.png"; sourceTree = "<group>"; };
 		0A4090C7142D2D370089C16B /* Just Us.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Just Us.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A4090CB142D2D370089C16B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		0A4090CD142D2D370089C16B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -62,12 +67,12 @@
 		0A4090DA142D2D370089C16B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0A4090DB142D2D370089C16B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		0A4090DE142D2D380089C16B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
-		0A4090E0142D2D380089C16B /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		0A4090E1142D2D380089C16B /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
-		0A4090E3142D2D380089C16B /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		0A4090E0142D2D380089C16B /* MemoriesController.h */ = {isa = PBXFileReference; path = MemoriesController.h; sourceTree = "<group>"; };
+		0A4090E1142D2D380089C16B /* MemoriesController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MemoriesController.m; sourceTree = "<group>"; };
+		0A4090E3142D2D380089C16B /* SearchController.h */ = {isa = PBXFileReference; path = SearchController.h; sourceTree = "<group>"; };
 		0A4090E4142D2D380089C16B /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
-		0A4090E7142D2D380089C16B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/FirstView.xib; sourceTree = "<group>"; };
-		0A4090EA142D2D380089C16B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SecondView.xib; sourceTree = "<group>"; };
+		0A4090E7142D2D380089C16B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/Memories.xib; sourceTree = "<group>"; };
+		0A4090EA142D2D380089C16B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/Search.xib; sourceTree = "<group>"; };
 		0A4090F1142D2D380089C16B /* Just UsTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Just UsTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A4090F2142D2D380089C16B /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		0A4090FB142D2D380089C16B /* Just UsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Just UsTests-Info.plist"; sourceTree = "<group>"; };
@@ -100,6 +105,8 @@
 		0A5E8315142D328300E418E9 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		0A5E8317142D32B900E418E9 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		0A5E831C142D32EC00E418E9 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		0A6D37C4142D69F100165496 /* USTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USTabBarController.h; sourceTree = "<group>"; };
+		0A6D37C5142D69F100165496 /* USTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USTabBarController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,11 +175,14 @@
 		0A4090D1142D2D370089C16B /* Just Us */ = {
 			isa = PBXGroup;
 			children = (
+				0A6D37C3142D69BA00165496 /* Model */,
+				0A6D37C2142D69B400165496 /* Controller */,
+				0A6D37B8142D659C00165496 /* View */,
 				0A4090DA142D2D370089C16B /* AppDelegate.h */,
 				0A4090DB142D2D370089C16B /* AppDelegate.m */,
-				0A4090E0142D2D380089C16B /* FirstViewController.h */,
-				0A4090E1142D2D380089C16B /* FirstViewController.m */,
-				0A4090E3142D2D380089C16B /* SecondViewController.h */,
+				0A4090E0142D2D380089C16B /* MemoriesController.h */,
+				0A4090E1142D2D380089C16B /* MemoriesController.m */,
+				0A4090E3142D2D380089C16B /* SearchController.h */,
 				0A4090E4142D2D380089C16B /* SecondViewController.m */,
 				0A5E82F2142D323A00E418E9 /* ASIHTTPRequest */,
 				0A79D43A142D30150037A1A9 /* Resources */,
@@ -240,12 +250,53 @@
 			name = ASIHTTPRequest;
 			sourceTree = "<group>";
 		};
-		0A79D43A142D30150037A1A9 /* Resources */ = {
+		0A6D37B8142D659C00165496 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		0A6D37C2142D69B400165496 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0A6D37C4142D69F100165496 /* USTabBarController.h */,
+				0A6D37C5142D69F100165496 /* USTabBarController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		0A6D37C3142D69BA00165496 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		0A6D37C7142D6A3400165496 /* xib */ = {
 			isa = PBXGroup;
 			children = (
 				0A4090DD142D2D370089C16B /* MainWindow.xib */,
-				0A4090E6142D2D380089C16B /* FirstView.xib */,
-				0A4090E9142D2D380089C16B /* SecondView.xib */,
+				0A4090E6142D2D380089C16B /* Memories.xib */,
+				0A4090E9142D2D380089C16B /* Search.xib */,
+			);
+			name = xib;
+			sourceTree = "<group>";
+		};
+		0A6D37C8142D6A4400165496 /* png */ = {
+			isa = PBXGroup;
+			children = (
+				0A30208A142D752900E0D769 /* camera_button_take.png */,
+				0A30208B142D752900E0D769 /* camera_button_take@2x.png */,
+			);
+			name = png;
+			sourceTree = "<group>";
+		};
+		0A79D43A142D30150037A1A9 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0A6D37C8142D6A4400165496 /* png */,
+				0A6D37C7142D6A3400165496 /* xib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -322,8 +373,10 @@
 			files = (
 				0A4090D6142D2D370089C16B /* InfoPlist.strings in Resources */,
 				0A4090DF142D2D380089C16B /* MainWindow.xib in Resources */,
-				0A4090E8142D2D380089C16B /* FirstView.xib in Resources */,
-				0A4090EB142D2D380089C16B /* SecondView.xib in Resources */,
+				0A4090E8142D2D380089C16B /* Memories.xib in Resources */,
+				0A4090EB142D2D380089C16B /* Search.xib in Resources */,
+				0A30208C142D752900E0D769 /* camera_button_take.png in Resources */,
+				0A30208D142D752900E0D769 /* camera_button_take@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -361,7 +414,7 @@
 			files = (
 				0A4090D8142D2D370089C16B /* main.m in Sources */,
 				0A4090DC142D2D370089C16B /* AppDelegate.m in Sources */,
-				0A4090E2142D2D380089C16B /* FirstViewController.m in Sources */,
+				0A4090E2142D2D380089C16B /* MemoriesController.m in Sources */,
 				0A4090E5142D2D380089C16B /* SecondViewController.m in Sources */,
 				0A5E830A142D324C00E418E9 /* ASIAuthenticationDialog.m in Sources */,
 				0A5E830B142D324C00E418E9 /* ASIDataCompressor.m in Sources */,
@@ -372,6 +425,7 @@
 				0A5E8310142D324C00E418E9 /* ASIInputStream.m in Sources */,
 				0A5E8311142D324C00E418E9 /* ASINetworkQueue.m in Sources */,
 				0A5E8312142D324C00E418E9 /* Reachability.m in Sources */,
+				0A6D37C6142D69F100165496 /* USTabBarController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -410,20 +464,20 @@
 			name = MainWindow.xib;
 			sourceTree = "<group>";
 		};
-		0A4090E6142D2D380089C16B /* FirstView.xib */ = {
+		0A4090E6142D2D380089C16B /* Memories.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				0A4090E7142D2D380089C16B /* en */,
 			);
-			name = FirstView.xib;
+			name = Memories.xib;
 			sourceTree = "<group>";
 		};
-		0A4090E9142D2D380089C16B /* SecondView.xib */ = {
+		0A4090E9142D2D380089C16B /* Search.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				0A4090EA142D2D380089C16B /* en */,
 			);
-			name = SecondView.xib;
+			name = Search.xib;
 			sourceTree = "<group>";
 		};
 		0A4090FC142D2D380089C16B /* InfoPlist.strings */ = {

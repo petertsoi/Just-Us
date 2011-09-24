@@ -6,9 +6,9 @@
 //  Copyright 2011 Pixar Animation Studios. All rights reserved.
 //
 
-#import "SecondViewController.h"
+#import "SearchController.h"
 
-@implementation SecondViewController
+@implementation SearchController
 
 /*
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
