@@ -21,6 +21,7 @@
 }
 
 - (void) switchToCamera {
+    mLastState = self.selectedIndex;
     self.selectedIndex = 1;
     [self.selectedViewController viewDidAppear:YES];
     
@@ -48,6 +49,10 @@
     [self.view addSubview:button];
     
     [button addTarget:self action:@selector(switchToCamera) forControlEvents:UIControlEventTouchUpInside];
+}
+
+- (unsigned int) getLastState{
+    return mLastState;
 }
 
 @end

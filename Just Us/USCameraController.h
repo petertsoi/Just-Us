@@ -14,6 +14,5 @@
 }
 
 - (UIImagePickerController *) photoPicker;
-- (void)viewWillAppearFrom:(unsigned int) previousState;
 
 @end

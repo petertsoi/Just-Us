@@ -8,6 +8,7 @@
 
 #import "USCameraController.h"
 #import "AppDelegate.h"
+#import "USTabBarController.h"
 
 @implementation USCameraController
 
@@ -24,10 +25,13 @@
     return self;
 }
 
-- (void)viewWillAppearFrom:(unsigned int) previousState{
+- (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:YES];
     [self presentModalViewController:mPicker animated:YES];
-    mLastState = previousState;
+    
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    mLastState = [(USTabBarController *)[appDelegate tabBarController] getLastState];
+    
 }
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
