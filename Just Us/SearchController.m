@@ -1,5 +1,5 @@
 //
-//  SecondViewController.m
+//  SearchController.m
 //  Just Us
 //
 //  Created by Peter Tsoi on 9/23/11.
@@ -17,6 +17,9 @@
     [super viewDidLoad];
 }
 */
+- (IBAction) pushSearchView:(id)sender {
+    [self.navigationController pushViewController:[[UIViewController alloc] init] animated:YES];
+}
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {

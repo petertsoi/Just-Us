@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A2DC122142D80A7007E5584 /* camera_button_take_active.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A2DC120142D80A7007E5584 /* camera_button_take_active.png */; };
+		0A2DC123142D80A7007E5584 /* camera_button_take_active@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A2DC121142D80A7007E5584 /* camera_button_take_active@2x.png */; };
+		0A2DC12F142D896B007E5584 /* USPhotoScroll.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A2DC12E142D896B007E5584 /* USPhotoScroll.m */; };
+		0A2DC134142D90C4007E5584 /* Memories.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A2DC130142D90C4007E5584 /* Memories.xib */; };
+		0A2DC135142D90C4007E5584 /* Search.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A2DC132142D90C4007E5584 /* Search.xib */; };
 		0A30208C142D752900E0D769 /* camera_button_take.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A30208A142D752900E0D769 /* camera_button_take.png */; };
 		0A30208D142D752900E0D769 /* camera_button_take@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A30208B142D752900E0D769 /* camera_button_take@2x.png */; };
 		0A4090CC142D2D370089C16B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A4090CB142D2D370089C16B /* UIKit.framework */; };
@@ -17,9 +22,7 @@
 		0A4090DC142D2D370089C16B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A4090DB142D2D370089C16B /* AppDelegate.m */; };
 		0A4090DF142D2D380089C16B /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A4090DD142D2D370089C16B /* MainWindow.xib */; };
 		0A4090E2142D2D380089C16B /* MemoriesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A4090E1142D2D380089C16B /* MemoriesController.m */; };
-		0A4090E5142D2D380089C16B /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A4090E4142D2D380089C16B /* SecondViewController.m */; };
-		0A4090E8142D2D380089C16B /* Memories.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A4090E6142D2D380089C16B /* Memories.xib */; };
-		0A4090EB142D2D380089C16B /* Search.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A4090E9142D2D380089C16B /* Search.xib */; };
+		0A4090E5142D2D380089C16B /* SearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A4090E4142D2D380089C16B /* SearchController.m */; };
 		0A4090F3142D2D380089C16B /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A4090F2142D2D380089C16B /* SenTestingKit.framework */; };
 		0A4090F4142D2D380089C16B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A4090CB142D2D370089C16B /* UIKit.framework */; };
 		0A4090F5142D2D380089C16B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A4090CD142D2D370089C16B /* Foundation.framework */; };
@@ -27,6 +30,7 @@
 		0A4090FE142D2D380089C16B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0A4090FC142D2D380089C16B /* InfoPlist.strings */; };
 		0A409100142D2D380089C16B /* Just_UsTests.h in Resources */ = {isa = PBXBuildFile; fileRef = 0A4090FF142D2D380089C16B /* Just_UsTests.h */; };
 		0A409102142D2D380089C16B /* Just_UsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A409101142D2D380089C16B /* Just_UsTests.m */; };
+		0A5DF414142D9F4800FEDA90 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A5DF411142D9F3900FEDA90 /* QuartzCore.framework */; };
 		0A5E830A142D324C00E418E9 /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A5E82F5142D324C00E418E9 /* ASIAuthenticationDialog.m */; };
 		0A5E830B142D324C00E418E9 /* ASIDataCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A5E82F8142D324C00E418E9 /* ASIDataCompressor.m */; };
 		0A5E830C142D324C00E418E9 /* ASIDataDecompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A5E82FA142D324C00E418E9 /* ASIDataDecompressor.m */; };
@@ -41,6 +45,9 @@
 		0A5E831B142D32D000E418E9 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A5E8313142D327C00E418E9 /* MobileCoreServices.framework */; };
 		0A5E831E142D32F700E418E9 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A5E831C142D32EC00E418E9 /* libz.dylib */; };
 		0A6D37C6142D69F100165496 /* USTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A6D37C5142D69F100165496 /* USTabBarController.m */; };
+		0A860266142DA72B007BDD33 /* USCameraController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A860265142DA72B007BDD33 /* USCameraController.m */; };
+		0AE7FB78142D79B4008D4C3A /* USPhotoSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AE7FB77142D79B4008D4C3A /* USPhotoSet.m */; };
+		0AE7FB7C142D7A38008D4C3A /* USPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AE7FB7B142D7A38008D4C3A /* USPhoto.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +61,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0A2DC120142D80A7007E5584 /* camera_button_take_active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = camera_button_take_active.png; path = Resources/camera_button_take_active.png; sourceTree = "<group>"; };
+		0A2DC121142D80A7007E5584 /* camera_button_take_active@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "camera_button_take_active@2x.png"; path = "Resources/camera_button_take_active@2x.png"; sourceTree = "<group>"; };
+		0A2DC12D142D896B007E5584 /* USPhotoScroll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USPhotoScroll.h; sourceTree = "<group>"; };
+		0A2DC12E142D896B007E5584 /* USPhotoScroll.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USPhotoScroll.m; sourceTree = "<group>"; };
+		0A2DC131142D90C4007E5584 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/Memories.xib; sourceTree = "<group>"; };
+		0A2DC133142D90C4007E5584 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/Search.xib; sourceTree = "<group>"; };
 		0A30208A142D752900E0D769 /* camera_button_take.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = camera_button_take.png; path = Resources/camera_button_take.png; sourceTree = "<group>"; };
 		0A30208B142D752900E0D769 /* camera_button_take@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "camera_button_take@2x.png"; path = "Resources/camera_button_take@2x.png"; sourceTree = "<group>"; };
 		0A4090C7142D2D370089C16B /* Just Us.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Just Us.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -67,18 +80,17 @@
 		0A4090DA142D2D370089C16B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0A4090DB142D2D370089C16B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		0A4090DE142D2D380089C16B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
-		0A4090E0142D2D380089C16B /* MemoriesController.h */ = {isa = PBXFileReference; path = MemoriesController.h; sourceTree = "<group>"; };
+		0A4090E0142D2D380089C16B /* MemoriesController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MemoriesController.h; sourceTree = "<group>"; };
 		0A4090E1142D2D380089C16B /* MemoriesController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MemoriesController.m; sourceTree = "<group>"; };
-		0A4090E3142D2D380089C16B /* SearchController.h */ = {isa = PBXFileReference; path = SearchController.h; sourceTree = "<group>"; };
-		0A4090E4142D2D380089C16B /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
-		0A4090E7142D2D380089C16B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/Memories.xib; sourceTree = "<group>"; };
-		0A4090EA142D2D380089C16B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/Search.xib; sourceTree = "<group>"; };
+		0A4090E3142D2D380089C16B /* SearchController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchController.h; sourceTree = "<group>"; };
+		0A4090E4142D2D380089C16B /* SearchController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchController.m; sourceTree = "<group>"; };
 		0A4090F1142D2D380089C16B /* Just UsTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Just UsTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A4090F2142D2D380089C16B /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		0A4090FB142D2D380089C16B /* Just UsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Just UsTests-Info.plist"; sourceTree = "<group>"; };
 		0A4090FD142D2D380089C16B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0A4090FF142D2D380089C16B /* Just_UsTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Just_UsTests.h; sourceTree = "<group>"; };
 		0A409101142D2D380089C16B /* Just_UsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Just_UsTests.m; sourceTree = "<group>"; };
+		0A5DF411142D9F3900FEDA90 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		0A5E82F4142D324C00E418E9 /* ASIAuthenticationDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASIAuthenticationDialog.h; path = ASIHTTPRequest/ASIAuthenticationDialog.h; sourceTree = "<group>"; };
 		0A5E82F5142D324C00E418E9 /* ASIAuthenticationDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ASIAuthenticationDialog.m; path = ASIHTTPRequest/ASIAuthenticationDialog.m; sourceTree = "<group>"; };
 		0A5E82F6142D324C00E418E9 /* ASICacheDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASICacheDelegate.h; path = ASIHTTPRequest/ASICacheDelegate.h; sourceTree = "<group>"; };
@@ -107,6 +119,12 @@
 		0A5E831C142D32EC00E418E9 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		0A6D37C4142D69F100165496 /* USTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USTabBarController.h; sourceTree = "<group>"; };
 		0A6D37C5142D69F100165496 /* USTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USTabBarController.m; sourceTree = "<group>"; };
+		0A860264142DA72B007BDD33 /* USCameraController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USCameraController.h; sourceTree = "<group>"; };
+		0A860265142DA72B007BDD33 /* USCameraController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USCameraController.m; sourceTree = "<group>"; };
+		0AE7FB76142D79B4008D4C3A /* USPhotoSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USPhotoSet.h; sourceTree = "<group>"; };
+		0AE7FB77142D79B4008D4C3A /* USPhotoSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USPhotoSet.m; sourceTree = "<group>"; };
+		0AE7FB7A142D7A38008D4C3A /* USPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USPhoto.h; sourceTree = "<group>"; };
+		0AE7FB7B142D7A38008D4C3A /* USPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USPhoto.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +137,7 @@
 				0A4090CE142D2D370089C16B /* Foundation.framework in Frameworks */,
 				0A5E831B142D32D000E418E9 /* MobileCoreServices.framework in Frameworks */,
 				0A5E8319142D32D000E418E9 /* SystemConfiguration.framework in Frameworks */,
+				0A5DF414142D9F4800FEDA90 /* QuartzCore.framework in Frameworks */,
 				0A4090CC142D2D370089C16B /* UIKit.framework in Frameworks */,
 				0A5E831E142D32F700E418E9 /* libz.dylib in Frameworks */,
 			);
@@ -165,6 +184,7 @@
 				0A4090CD142D2D370089C16B /* Foundation.framework */,
 				0A5E8313142D327C00E418E9 /* MobileCoreServices.framework */,
 				0A5E8317142D32B900E418E9 /* SystemConfiguration.framework */,
+				0A5DF411142D9F3900FEDA90 /* QuartzCore.framework */,
 				0A4090CB142D2D370089C16B /* UIKit.framework */,
 				0A5E831C142D32EC00E418E9 /* libz.dylib */,
 				0A4090F2142D2D380089C16B /* SenTestingKit.framework */,
@@ -183,7 +203,7 @@
 				0A4090E0142D2D380089C16B /* MemoriesController.h */,
 				0A4090E1142D2D380089C16B /* MemoriesController.m */,
 				0A4090E3142D2D380089C16B /* SearchController.h */,
-				0A4090E4142D2D380089C16B /* SecondViewController.m */,
+				0A4090E4142D2D380089C16B /* SearchController.m */,
 				0A5E82F2142D323A00E418E9 /* ASIHTTPRequest */,
 				0A79D43A142D30150037A1A9 /* Resources */,
 				0A4090D2142D2D370089C16B /* Supporting Files */,
@@ -253,6 +273,8 @@
 		0A6D37B8142D659C00165496 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				0A2DC12D142D896B007E5584 /* USPhotoScroll.h */,
+				0A2DC12E142D896B007E5584 /* USPhotoScroll.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -262,6 +284,8 @@
 			children = (
 				0A6D37C4142D69F100165496 /* USTabBarController.h */,
 				0A6D37C5142D69F100165496 /* USTabBarController.m */,
+				0A860264142DA72B007BDD33 /* USCameraController.h */,
+				0A860265142DA72B007BDD33 /* USCameraController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -269,6 +293,10 @@
 		0A6D37C3142D69BA00165496 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0AE7FB7A142D7A38008D4C3A /* USPhoto.h */,
+				0AE7FB7B142D7A38008D4C3A /* USPhoto.m */,
+				0AE7FB76142D79B4008D4C3A /* USPhotoSet.h */,
+				0AE7FB77142D79B4008D4C3A /* USPhotoSet.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -277,8 +305,8 @@
 			isa = PBXGroup;
 			children = (
 				0A4090DD142D2D370089C16B /* MainWindow.xib */,
-				0A4090E6142D2D380089C16B /* Memories.xib */,
-				0A4090E9142D2D380089C16B /* Search.xib */,
+				0A2DC130142D90C4007E5584 /* Memories.xib */,
+				0A2DC132142D90C4007E5584 /* Search.xib */,
 			);
 			name = xib;
 			sourceTree = "<group>";
@@ -286,6 +314,8 @@
 		0A6D37C8142D6A4400165496 /* png */ = {
 			isa = PBXGroup;
 			children = (
+				0A2DC120142D80A7007E5584 /* camera_button_take_active.png */,
+				0A2DC121142D80A7007E5584 /* camera_button_take_active@2x.png */,
 				0A30208A142D752900E0D769 /* camera_button_take.png */,
 				0A30208B142D752900E0D769 /* camera_button_take@2x.png */,
 			);
@@ -373,10 +403,12 @@
 			files = (
 				0A4090D6142D2D370089C16B /* InfoPlist.strings in Resources */,
 				0A4090DF142D2D380089C16B /* MainWindow.xib in Resources */,
-				0A4090E8142D2D380089C16B /* Memories.xib in Resources */,
-				0A4090EB142D2D380089C16B /* Search.xib in Resources */,
 				0A30208C142D752900E0D769 /* camera_button_take.png in Resources */,
 				0A30208D142D752900E0D769 /* camera_button_take@2x.png in Resources */,
+				0A2DC122142D80A7007E5584 /* camera_button_take_active.png in Resources */,
+				0A2DC123142D80A7007E5584 /* camera_button_take_active@2x.png in Resources */,
+				0A2DC134142D90C4007E5584 /* Memories.xib in Resources */,
+				0A2DC135142D90C4007E5584 /* Search.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -415,7 +447,7 @@
 				0A4090D8142D2D370089C16B /* main.m in Sources */,
 				0A4090DC142D2D370089C16B /* AppDelegate.m in Sources */,
 				0A4090E2142D2D380089C16B /* MemoriesController.m in Sources */,
-				0A4090E5142D2D380089C16B /* SecondViewController.m in Sources */,
+				0A4090E5142D2D380089C16B /* SearchController.m in Sources */,
 				0A5E830A142D324C00E418E9 /* ASIAuthenticationDialog.m in Sources */,
 				0A5E830B142D324C00E418E9 /* ASIDataCompressor.m in Sources */,
 				0A5E830C142D324C00E418E9 /* ASIDataDecompressor.m in Sources */,
@@ -426,6 +458,10 @@
 				0A5E8311142D324C00E418E9 /* ASINetworkQueue.m in Sources */,
 				0A5E8312142D324C00E418E9 /* Reachability.m in Sources */,
 				0A6D37C6142D69F100165496 /* USTabBarController.m in Sources */,
+				0AE7FB78142D79B4008D4C3A /* USPhotoSet.m in Sources */,
+				0AE7FB7C142D7A38008D4C3A /* USPhoto.m in Sources */,
+				0A2DC12F142D896B007E5584 /* USPhotoScroll.m in Sources */,
+				0A860266142DA72B007BDD33 /* USCameraController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -448,6 +484,22 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		0A2DC130142D90C4007E5584 /* Memories.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0A2DC131142D90C4007E5584 /* en */,
+			);
+			name = Memories.xib;
+			sourceTree = "<group>";
+		};
+		0A2DC132142D90C4007E5584 /* Search.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0A2DC133142D90C4007E5584 /* en */,
+			);
+			name = Search.xib;
+			sourceTree = "<group>";
+		};
 		0A4090D4142D2D370089C16B /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -462,22 +514,6 @@
 				0A4090DE142D2D380089C16B /* en */,
 			);
 			name = MainWindow.xib;
-			sourceTree = "<group>";
-		};
-		0A4090E6142D2D380089C16B /* Memories.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0A4090E7142D2D380089C16B /* en */,
-			);
-			name = Memories.xib;
-			sourceTree = "<group>";
-		};
-		0A4090E9142D2D380089C16B /* Search.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0A4090EA142D2D380089C16B /* en */,
-			);
-			name = Search.xib;
 			sourceTree = "<group>";
 		};
 		0A4090FC142D2D380089C16B /* InfoPlist.strings */ = {

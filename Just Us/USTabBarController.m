@@ -7,12 +7,13 @@
 //
 
 #import "USTabBarController.h"
+#import "USCameraController.h"
 
 @implementation USTabBarController
 
 - (id) initWithCoder:(NSCoder *)aDecoder {
     if ((self = [super initWithCoder:aDecoder])){
-        [self addCenterButtonWithImage:[UIImage imageNamed:@"camera_button_take.png"] highlightImage:[UIImage imageNamed:@"tabBar_cameraButton_ready_matte.png"]];
+        [self addCenterButtonWithImage:[UIImage imageNamed:@"camera_button_take.png"] highlightImage:[UIImage imageNamed:@"camera_button_take_active.png"]];
     }
     
     
@@ -22,6 +23,8 @@
 - (void) switchToCamera {
     self.selectedIndex = 1;
     [self.selectedViewController viewDidAppear:YES];
+    
+    //[self.selectedViewController presentModalViewController:mPicker animated:NO];
 }
 
 // Create a custom UIButton and add it to the center of our tab bar

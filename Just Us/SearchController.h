@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SearchController : UIViewController
+@interface SearchController : UIViewController{
+    
+}
+
+- (IBAction) pushSearchView:(id)sender;
 
 @end
