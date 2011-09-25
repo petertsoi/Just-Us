@@ -10,8 +10,9 @@
 
 @implementation USTabBarController
 
+#pragma mark Camera Button
 - (void) switchToCamera {
-    self.selectedIndex = 1;
+    self.selectedIndex = 1;     // Replace with present modal?
 }
 
 - (void) setupCameraButton {
@@ -40,6 +41,8 @@
     [button addTarget:self action:@selector(switchToCamera) forControlEvents:UIControlEventTouchUpInside];
 }
 
+#pragma mark -
+#pragma mark UIViewController Override
 - (void) viewDidLoad {
     [super viewDidLoad];
     [self setupCameraButton];

@@ -12,3 +12,5 @@
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
 #endif
+
+#define RELEASE_SAFELY(__POINTER) { [__POINTER release]; __POINTER = nil; }

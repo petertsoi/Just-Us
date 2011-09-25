@@ -1,13 +1,13 @@
 //
-//  JustTests.h
-//  JustTests
+//  USMemoriesController.h
+//  Just
 //
 //  Created by Peter Tsoi on 9/25/11.
 //  Copyright 2011 Pixar Animation Studios. All rights reserved.
 //
 
-#import <SenTestingKit/SenTestingKit.h>
+#import <UIKit/UIKit.h>
 
-@interface JustTests : SenTestCase
+@interface USMemoriesController : UIViewController
 
 @end
