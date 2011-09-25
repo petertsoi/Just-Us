@@ -10,14 +10,6 @@
 		0A56E06A142F0C7F001E9584 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A56E069142F0C7F001E9584 /* UIKit.framework */; };
 		0A56E06C142F0C7F001E9584 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A56E06B142F0C7F001E9584 /* Foundation.framework */; };
 		0A56E06E142F0C7F001E9584 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A56E06D142F0C7F001E9584 /* CoreGraphics.framework */; };
-		0A56E074142F0C7F001E9584 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0A56E072142F0C7F001E9584 /* InfoPlist.strings */; };
-		0A56E076142F0C7F001E9584 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A56E075142F0C7F001E9584 /* main.m */; };
-		0A56E07A142F0C7F001E9584 /* JustAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A56E079142F0C7F001E9584 /* JustAppDelegate.m */; };
-		0A56E07D142F0C80001E9584 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A56E07B142F0C80001E9584 /* MainWindow.xib */; };
-		0A56E080142F0C80001E9584 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A56E07F142F0C80001E9584 /* FirstViewController.m */; };
-		0A56E083142F0C80001E9584 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A56E082142F0C80001E9584 /* SecondViewController.m */; };
-		0A56E086142F0C80001E9584 /* FirstView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A56E084142F0C80001E9584 /* FirstView.xib */; };
-		0A56E089142F0C80001E9584 /* SecondView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A56E087142F0C80001E9584 /* SecondView.xib */; };
 		0A56E091142F0C80001E9584 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A56E090142F0C80001E9584 /* SenTestingKit.framework */; };
 		0A56E092142F0C80001E9584 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A56E069142F0C7F001E9584 /* UIKit.framework */; };
 		0A56E093142F0C80001E9584 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A56E06B142F0C7F001E9584 /* Foundation.framework */; };
@@ -25,6 +17,15 @@
 		0A56E09C142F0C80001E9584 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0A56E09A142F0C80001E9584 /* InfoPlist.strings */; };
 		0A56E09E142F0C80001E9584 /* JustTests.h in Resources */ = {isa = PBXBuildFile; fileRef = 0A56E09D142F0C80001E9584 /* JustTests.h */; };
 		0A56E0A0142F0C80001E9584 /* JustTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A56E09F142F0C80001E9584 /* JustTests.m */; };
+		0A56E0BA142F0E33001E9584 /* USAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A56E0B9142F0E33001E9584 /* USAppDelegate.m */; };
+		0A56E0BD142F0E40001E9584 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A56E0BB142F0E40001E9584 /* main.m */; };
+		0A56E0CF142F11F5001E9584 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A56E0CD142F11F5001E9584 /* MainWindow.xib */; };
+		0A56E0D2142F1202001E9584 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0A56E0D0142F1202001E9584 /* InfoPlist.strings */; };
+		0A56E0D5142F1216001E9584 /* USTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A56E0D4142F1216001E9584 /* USTabBarController.m */; };
+		0A56E0DC142F12A0001E9584 /* tabbar_camera_active.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A56E0D8142F12A0001E9584 /* tabbar_camera_active.png */; };
+		0A56E0DD142F12A0001E9584 /* tabbar_camera_active@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A56E0D9142F12A0001E9584 /* tabbar_camera_active@2x.png */; };
+		0A56E0DE142F12A0001E9584 /* tabbar_camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A56E0DA142F12A0001E9584 /* tabbar_camera.png */; };
+		0A56E0DF142F12A0001E9584 /* tabbar_camera@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A56E0DB142F12A0001E9584 /* tabbar_camera@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,25 +43,25 @@
 		0A56E069142F0C7F001E9584 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		0A56E06B142F0C7F001E9584 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		0A56E06D142F0C7F001E9584 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		0A56E071142F0C7F001E9584 /* Just-Info.plist */ = {isa = PBXFileReference; path = "Just-Info.plist"; sourceTree = "<group>"; };
-		0A56E073142F0C7F001E9584 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		0A56E075142F0C7F001E9584 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		0A56E077142F0C7F001E9584 /* Just-Prefix.pch */ = {isa = PBXFileReference; path = "Just-Prefix.pch"; sourceTree = "<group>"; };
-		0A56E078142F0C7F001E9584 /* JustAppDelegate.h */ = {isa = PBXFileReference; path = JustAppDelegate.h; sourceTree = "<group>"; };
-		0A56E079142F0C7F001E9584 /* JustAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JustAppDelegate.m; sourceTree = "<group>"; };
-		0A56E07C142F0C80001E9584 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
-		0A56E07E142F0C80001E9584 /* FirstViewController.h */ = {isa = PBXFileReference; path = FirstViewController.h; sourceTree = "<group>"; };
-		0A56E07F142F0C80001E9584 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
-		0A56E081142F0C80001E9584 /* SecondViewController.h */ = {isa = PBXFileReference; path = SecondViewController.h; sourceTree = "<group>"; };
-		0A56E082142F0C80001E9584 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
-		0A56E085142F0C80001E9584 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/FirstView.xib; sourceTree = "<group>"; };
-		0A56E088142F0C80001E9584 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SecondView.xib; sourceTree = "<group>"; };
+		0A56E071142F0C7F001E9584 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0A56E08F142F0C80001E9584 /* JustTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JustTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A56E090142F0C80001E9584 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		0A56E099142F0C80001E9584 /* JustTests-Info.plist */ = {isa = PBXFileReference; path = "JustTests-Info.plist"; sourceTree = "<group>"; };
+		0A56E099142F0C80001E9584 /* JustTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "JustTests-Info.plist"; sourceTree = "<group>"; };
 		0A56E09B142F0C80001E9584 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0A56E09D142F0C80001E9584 /* JustTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JustTests.h; sourceTree = "<group>"; };
 		0A56E09F142F0C80001E9584 /* JustTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JustTests.m; sourceTree = "<group>"; };
+		0A56E0B8142F0E33001E9584 /* USAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = USAppDelegate.h; path = Classes/Application/USAppDelegate.h; sourceTree = "<group>"; };
+		0A56E0B9142F0E33001E9584 /* USAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = USAppDelegate.m; path = Classes/Application/USAppDelegate.m; sourceTree = "<group>"; };
+		0A56E0BB142F0E40001E9584 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Classes/Application/main.m; sourceTree = "<group>"; };
+		0A56E0BC142F0E40001E9584 /* Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Prefix.pch; path = Classes/Application/Prefix.pch; sourceTree = "<group>"; };
+		0A56E0CE142F11F5001E9584 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = Resources/en.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		0A56E0D1142F1202001E9584 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Resources/en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		0A56E0D3142F1216001E9584 /* USTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = USTabBarController.h; path = Classes/Controller/USTabBarController.h; sourceTree = "<group>"; };
+		0A56E0D4142F1216001E9584 /* USTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = USTabBarController.m; path = Classes/Controller/USTabBarController.m; sourceTree = "<group>"; };
+		0A56E0D8142F12A0001E9584 /* tabbar_camera_active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tabbar_camera_active.png; path = Resources/png/TabBarIcons/tabbar_camera_active.png; sourceTree = "<group>"; };
+		0A56E0D9142F12A0001E9584 /* tabbar_camera_active@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tabbar_camera_active@2x.png"; path = "Resources/png/TabBarIcons/tabbar_camera_active@2x.png"; sourceTree = "<group>"; };
+		0A56E0DA142F12A0001E9584 /* tabbar_camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tabbar_camera.png; path = Resources/png/TabBarIcons/tabbar_camera.png; sourceTree = "<group>"; };
+		0A56E0DB142F12A0001E9584 /* tabbar_camera@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tabbar_camera@2x.png"; path = "Resources/png/TabBarIcons/tabbar_camera@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,15 +122,8 @@
 		0A56E06F142F0C7F001E9584 /* Just */ = {
 			isa = PBXGroup;
 			children = (
-				0A56E078142F0C7F001E9584 /* JustAppDelegate.h */,
-				0A56E079142F0C7F001E9584 /* JustAppDelegate.m */,
-				0A56E07B142F0C80001E9584 /* MainWindow.xib */,
-				0A56E07E142F0C80001E9584 /* FirstViewController.h */,
-				0A56E07F142F0C80001E9584 /* FirstViewController.m */,
-				0A56E081142F0C80001E9584 /* SecondViewController.h */,
-				0A56E082142F0C80001E9584 /* SecondViewController.m */,
-				0A56E084142F0C80001E9584 /* FirstView.xib */,
-				0A56E087142F0C80001E9584 /* SecondView.xib */,
+				0A56E0AE142F0DA6001E9584 /* Classes */,
+				0A56E0B1142F0DC8001E9584 /* Resources */,
 				0A56E070142F0C7F001E9584 /* Supporting Files */,
 			);
 			path = Just;
@@ -138,10 +132,10 @@
 		0A56E070142F0C7F001E9584 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				0A56E071142F0C7F001E9584 /* Just-Info.plist */,
-				0A56E072142F0C7F001E9584 /* InfoPlist.strings */,
-				0A56E075142F0C7F001E9584 /* main.m */,
-				0A56E077142F0C7F001E9584 /* Just-Prefix.pch */,
+				0A56E0BB142F0E40001E9584 /* main.m */,
+				0A56E0BC142F0E40001E9584 /* Prefix.pch */,
+				0A56E071142F0C7F001E9584 /* Info.plist */,
+				0A56E0D0142F1202001E9584 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -163,6 +157,69 @@
 				0A56E09A142F0C80001E9584 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0A56E0AE142F0DA6001E9584 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				0A56E0B0142F0DB2001E9584 /* Application */,
+				0A56E0C9142F10F8001E9584 /* Controller */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		0A56E0B0142F0DB2001E9584 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				0A56E0B8142F0E33001E9584 /* USAppDelegate.h */,
+				0A56E0B9142F0E33001E9584 /* USAppDelegate.m */,
+			);
+			name = Application;
+			sourceTree = "<group>";
+		};
+		0A56E0B1142F0DC8001E9584 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0A56E0D6142F1222001E9584 /* png */,
+				0A56E0B2142F0DD6001E9584 /* xib */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		0A56E0B2142F0DD6001E9584 /* xib */ = {
+			isa = PBXGroup;
+			children = (
+				0A56E0CD142F11F5001E9584 /* MainWindow.xib */,
+			);
+			name = xib;
+			sourceTree = "<group>";
+		};
+		0A56E0C9142F10F8001E9584 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0A56E0D3142F1216001E9584 /* USTabBarController.h */,
+				0A56E0D4142F1216001E9584 /* USTabBarController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		0A56E0D6142F1222001E9584 /* png */ = {
+			isa = PBXGroup;
+			children = (
+				0A56E0D7142F1229001E9584 /* TabBarIcons */,
+			);
+			name = png;
+			sourceTree = "<group>";
+		};
+		0A56E0D7142F1229001E9584 /* TabBarIcons */ = {
+			isa = PBXGroup;
+			children = (
+				0A56E0D8142F12A0001E9584 /* tabbar_camera_active.png */,
+				0A56E0D9142F12A0001E9584 /* tabbar_camera_active@2x.png */,
+				0A56E0DA142F12A0001E9584 /* tabbar_camera.png */,
+				0A56E0DB142F12A0001E9584 /* tabbar_camera@2x.png */,
+			);
+			name = TabBarIcons;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,10 +292,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A56E074142F0C7F001E9584 /* InfoPlist.strings in Resources */,
-				0A56E07D142F0C80001E9584 /* MainWindow.xib in Resources */,
-				0A56E086142F0C80001E9584 /* FirstView.xib in Resources */,
-				0A56E089142F0C80001E9584 /* SecondView.xib in Resources */,
+				0A56E0CF142F11F5001E9584 /* MainWindow.xib in Resources */,
+				0A56E0D2142F1202001E9584 /* InfoPlist.strings in Resources */,
+				0A56E0DC142F12A0001E9584 /* tabbar_camera_active.png in Resources */,
+				0A56E0DD142F12A0001E9584 /* tabbar_camera_active@2x.png in Resources */,
+				0A56E0DE142F12A0001E9584 /* tabbar_camera.png in Resources */,
+				0A56E0DF142F12A0001E9584 /* tabbar_camera@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,10 +333,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A56E076142F0C7F001E9584 /* main.m in Sources */,
-				0A56E07A142F0C7F001E9584 /* JustAppDelegate.m in Sources */,
-				0A56E080142F0C80001E9584 /* FirstViewController.m in Sources */,
-				0A56E083142F0C80001E9584 /* SecondViewController.m in Sources */,
+				0A56E0BA142F0E33001E9584 /* USAppDelegate.m in Sources */,
+				0A56E0BD142F0E40001E9584 /* main.m in Sources */,
+				0A56E0D5142F1216001E9584 /* USTabBarController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,42 +358,26 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		0A56E072142F0C7F001E9584 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0A56E073142F0C7F001E9584 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		0A56E07B142F0C80001E9584 /* MainWindow.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0A56E07C142F0C80001E9584 /* en */,
-			);
-			name = MainWindow.xib;
-			sourceTree = "<group>";
-		};
-		0A56E084142F0C80001E9584 /* FirstView.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0A56E085142F0C80001E9584 /* en */,
-			);
-			name = FirstView.xib;
-			sourceTree = "<group>";
-		};
-		0A56E087142F0C80001E9584 /* SecondView.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0A56E088142F0C80001E9584 /* en */,
-			);
-			name = SecondView.xib;
-			sourceTree = "<group>";
-		};
 		0A56E09A142F0C80001E9584 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				0A56E09B142F0C80001E9584 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		0A56E0CD142F11F5001E9584 /* MainWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0A56E0CE142F11F5001E9584 /* en */,
+			);
+			name = MainWindow.xib;
+			sourceTree = "<group>";
+		};
+		0A56E0D0142F1202001E9584 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0A56E0D1142F1202001E9584 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -390,8 +432,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Just/Just-Prefix.pch";
-				INFOPLIST_FILE = "Just/Just-Info.plist";
+				GCC_PREFIX_HEADER = Just/Classes/Application/Prefix.pch;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				INFOPLIST_FILE = Just/Info.plist;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -401,8 +444,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Just/Just-Prefix.pch";
-				INFOPLIST_FILE = "Just/Just-Info.plist";
+				GCC_PREFIX_HEADER = Just/Classes/Application/Prefix.pch;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				INFOPLIST_FILE = Just/Info.plist;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -417,7 +461,7 @@
 					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Just/Just-Prefix.pch";
+				GCC_PREFIX_HEADER = Just/Classes/Application/Prefix.pch;
 				INFOPLIST_FILE = "JustTests/JustTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
@@ -434,7 +478,7 @@
 					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Just/Just-Prefix.pch";
+				GCC_PREFIX_HEADER = Just/Classes/Application/Prefix.pch;
 				INFOPLIST_FILE = "JustTests/JustTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
@@ -461,6 +505,7 @@
 				0A56E0A5142F0C80001E9584 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0A56E0A6142F0C80001E9584 /* Build configuration list for PBXNativeTarget "JustTests" */ = {
 			isa = XCConfigurationList;
@@ -469,6 +514,7 @@
 				0A56E0A8142F0C80001E9584 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
