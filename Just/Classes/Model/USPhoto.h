@@ -11,7 +11,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import <UIKit/UIKit.h>
 
-@protocol USPhotoLoadingDelegate <NSObject>
+@protocol USNetworkPhotoDelegate <NSObject>
 @required
 - (void) photoLoaded;
 @end
@@ -23,13 +23,16 @@
 
 @interface USPhoto : NSObject {
     NSString * mResourceID;
-    BOOL mLocal;
-    BOOL mLoaded;
     NSURL * mRemoteURL;
     CGSize mImageSize;
     UIImage * mImage;
     
-    id <USPhotoLoadingDelegate> delegate;
+    // Flags
+    BOOL mLocal;
+    BOOL mLoaded;
+    BOOL mExistsOnServer;
+    
+    id <USNetworkPhotoDelegate> delegate;
 }
 
 - (id) initRemoteImageWithURL:(NSURL *) remoteURL;

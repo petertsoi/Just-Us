@@ -8,6 +8,11 @@
 
 #import "USCameraController.h"
 
+#import "USDetailEditorView.h"
+#import "USTabBarController.h"
+
+#import <AssetsLibrary/ALAssetsLibrary.h>
+
 @implementation USCameraController
 
 @synthesize controller = mController;
@@ -22,6 +27,12 @@
     return self;
 }
 
+- (void) awakeFromNib {
+    mPicker = [[UIImagePickerController alloc] init];
+    mPicker.delegate = self;
+    mPicker.sourceType = UIImagePickerControllerSourceTypeCamera ? [UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera] : UIImagePickerControllerSourceTypeSavedPhotosAlbum;
+}
+
 - (void)didReceiveMemoryWarning
 {
     // Releases the view if it doesn't have a superview.
@@ -30,31 +41,23 @@
     // Release any cached data, images, etc that aren't in use.
 }
 
+- (void) showImagePicker {
+    [self.controller presentModalViewController:mPicker animated:YES];
+}
+
 #pragma mark - View lifecycle
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
     
     NSArray * nibContents = [[NSBundle mainBundle] loadNibNamed:@"USDetailEditor" owner:self options:nil];
     NSEnumerator * nibEnumerator = [nibContents objectEnumerator];
-    UIView * detailEditorView = (UIView*)[nibEnumerator nextObject];
+    mDetailEditorView = (USDetailEditorView *)[nibEnumerator nextObject];
     
     UIColor *bg = [UIColor colorWithPatternImage:[UIImage imageNamed:@"detailEditor_background.png"]];
-    [detailEditorView setBackgroundColor:bg];
-    [mScrollContainer setContentSize:detailEditorView.frame.size];
-    [mScrollContainer addSubview:detailEditorView];
-    
-    mPicker = [[UIImagePickerController alloc] init];
-    mPicker.delegate = self;
-    
-    if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
-        mPicker.sourceType = UIImagePickerControllerSourceTypeCamera;
-    } else {
-        mPicker.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
-    }
-    
-    [self.controller presentModalViewController:mPicker animated:YES];
+    [mDetailEditorView setBackgroundColor:bg];
+    [mScrollContainer setContentSize:mDetailEditorView.frame.size];
+    [mScrollContainer addSubview:mDetailEditorView];
 }
 
 - (void)viewDidUnload
@@ -71,16 +74,28 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
-#pragma mark -
-#pragma mark UIImagePickerControllerDelegate Methods
+#pragma mark - UIImagePickerControllerDelegate Methods
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+    // Switch background
+    [self.controller setSelectedIndex:1];
+    
 	[picker dismissModalViewControllerAnimated:YES];
 	//imageView.image = [info objectForKey:@"UIImagePickerControllerOriginalImage"];
+    NSURL *referenceURL = [info objectForKey:UIImagePickerControllerReferenceURL];
+    ALAssetsLibrary *library = [[ALAssetsLibrary alloc] init];
+    [library assetForURL:referenceURL resultBlock:^(ALAsset *asset) {
+        // code to handle the asset here
+    } failureBlock:^(NSError *error) {
+        // error handling
+    }];
+    [library release];
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
+    [mController switchToPreviousState];
     [picker dismissModalViewControllerAnimated:YES];
+    
 }
 
 @end

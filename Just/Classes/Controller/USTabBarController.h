@@ -12,6 +12,9 @@
 
 @interface USTabBarController : UITabBarController {
     USCameraController *mCameraController;
+    unsigned int mLastState;
 }
+
+- (void) switchToPreviousState;
 
 @end

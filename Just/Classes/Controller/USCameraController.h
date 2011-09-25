@@ -8,14 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
-@class USTabBarController;
+@class USDetailEditorView, USTabBarController;
 
 @interface USCameraController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate> {
-    UIImagePickerController * mPicker;
-    USTabBarController * mController;
     IBOutlet UIScrollView * mScrollContainer;
+    
+    UIImagePickerController * mPicker;
+    USDetailEditorView * mDetailEditorView;
+    USTabBarController * mController;
 }
 
 @property (nonatomic, retain) USTabBarController * controller;
+
+- (void) showImagePicker;
 
 @end

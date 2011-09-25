@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A12893C142FE03700FCE4AC /* textFieldMed.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A12893A142FE03700FCE4AC /* textFieldMed.png */; };
+		0A12893D142FE03700FCE4AC /* textFieldMed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A12893B142FE03700FCE4AC /* textFieldMed@2x.png */; };
 		0A268F26142F98A0009B9780 /* USPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A268F25142F98A0009B9780 /* USPhoto.m */; };
 		0A268F3E142F98D3009B9780 /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A268F29142F98D3009B9780 /* ASIAuthenticationDialog.m */; };
 		0A268F3F142F98D3009B9780 /* ASIDataCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A268F2C142F98D3009B9780 /* ASIDataCompressor.m */; };
@@ -34,6 +36,8 @@
 		0A56E0DD142F12A0001E9584 /* tabbar_camera_active@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A56E0D9142F12A0001E9584 /* tabbar_camera_active@2x.png */; };
 		0A56E0DE142F12A0001E9584 /* tabbar_camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A56E0DA142F12A0001E9584 /* tabbar_camera.png */; };
 		0A56E0DF142F12A0001E9584 /* tabbar_camera@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A56E0DB142F12A0001E9584 /* tabbar_camera@2x.png */; };
+		0A5906A3142FD0A600017868 /* USDetailEditorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A5906A2142FD0A600017868 /* USDetailEditorView.m */; };
+		0A5906A7142FD28600017868 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A5906A5142FD27800017868 /* AssetsLibrary.framework */; };
 		0AAF6110142F20B5004E7BEF /* USMemoriesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AAF610E142F20B5004E7BEF /* USMemoriesController.m */; };
 		0AAF6115142F20F0004E7BEF /* USMemoriesController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AAF6113142F20F0004E7BEF /* USMemoriesController.xib */; };
 		0AB5067E142FAC3500651FE7 /* USCameraController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AB5067C142FAC3500651FE7 /* USCameraController.m */; };
@@ -42,9 +46,14 @@
 		0AB50695142FBE2100651FE7 /* detailEditor_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AB50693142FBE2100651FE7 /* detailEditor_background.png */; };
 		0AB50696142FBE2100651FE7 /* detailEditor_background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AB50694142FBE2100651FE7 /* detailEditor_background@2x.png */; };
 		0AB50699142FC19000651FE7 /* USDetailEditor.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AB50697142FC19000651FE7 /* USDetailEditor.xib */; };
+		0AB5069D142FCB1700651FE7 /* USTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AB5069C142FCB1700651FE7 /* USTextField.m */; };
+		0AB506A1142FCE4A00651FE7 /* textFieldBig.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AB5069F142FCE4A00651FE7 /* textFieldBig.png */; };
+		0AB506A2142FCE4A00651FE7 /* textFieldBig@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AB506A0142FCE4A00651FE7 /* textFieldBig@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0A12893A142FE03700FCE4AC /* textFieldMed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = textFieldMed.png; path = Resources/png/FormElements/textFieldMed.png; sourceTree = "<group>"; };
+		0A12893B142FE03700FCE4AC /* textFieldMed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "textFieldMed@2x.png"; path = "Resources/png/FormElements/textFieldMed@2x.png"; sourceTree = "<group>"; };
 		0A268F24142F98A0009B9780 /* USPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = USPhoto.h; path = Classes/Model/USPhoto.h; sourceTree = "<group>"; };
 		0A268F25142F98A0009B9780 /* USPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = USPhoto.m; path = Classes/Model/USPhoto.m; sourceTree = "<group>"; };
 		0A268F28142F98D3009B9780 /* ASIAuthenticationDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIAuthenticationDialog.h; sourceTree = "<group>"; };
@@ -91,6 +100,9 @@
 		0A56E0D9142F12A0001E9584 /* tabbar_camera_active@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tabbar_camera_active@2x.png"; path = "Resources/png/TabBarIcons/tabbar_camera_active@2x.png"; sourceTree = "<group>"; };
 		0A56E0DA142F12A0001E9584 /* tabbar_camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tabbar_camera.png; path = Resources/png/TabBarIcons/tabbar_camera.png; sourceTree = "<group>"; };
 		0A56E0DB142F12A0001E9584 /* tabbar_camera@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tabbar_camera@2x.png"; path = "Resources/png/TabBarIcons/tabbar_camera@2x.png"; sourceTree = "<group>"; };
+		0A5906A1142FD0A600017868 /* USDetailEditorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = USDetailEditorView.h; path = Classes/View/USDetailEditorView.h; sourceTree = "<group>"; };
+		0A5906A2142FD0A600017868 /* USDetailEditorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = USDetailEditorView.m; path = Classes/View/USDetailEditorView.m; sourceTree = "<group>"; };
+		0A5906A5142FD27800017868 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		0AAF610D142F20B5004E7BEF /* USMemoriesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = USMemoriesController.h; path = Classes/Controller/USMemoriesController.h; sourceTree = "<group>"; };
 		0AAF610E142F20B5004E7BEF /* USMemoriesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = USMemoriesController.m; path = Classes/Controller/USMemoriesController.m; sourceTree = "<group>"; };
 		0AAF6114142F20F0004E7BEF /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = Resources/en.lproj/USMemoriesController.xib; sourceTree = "<group>"; };
@@ -101,6 +113,10 @@
 		0AB50693142FBE2100651FE7 /* detailEditor_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = detailEditor_background.png; path = Resources/png/BackgroundImages/detailEditor_background.png; sourceTree = "<group>"; };
 		0AB50694142FBE2100651FE7 /* detailEditor_background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "detailEditor_background@2x.png"; path = "Resources/png/BackgroundImages/detailEditor_background@2x.png"; sourceTree = "<group>"; };
 		0AB50698142FC19000651FE7 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = Resources/en.lproj/USDetailEditor.xib; sourceTree = "<group>"; };
+		0AB5069B142FCB1700651FE7 /* USTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = USTextField.h; path = Classes/View/USTextField.h; sourceTree = "<group>"; };
+		0AB5069C142FCB1700651FE7 /* USTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = USTextField.m; path = Classes/View/USTextField.m; sourceTree = "<group>"; };
+		0AB5069F142FCE4A00651FE7 /* textFieldBig.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = textFieldBig.png; path = Resources/png/FormElements/textFieldBig.png; sourceTree = "<group>"; };
+		0AB506A0142FCE4A00651FE7 /* textFieldBig@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "textFieldBig@2x.png"; path = "Resources/png/FormElements/textFieldBig@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +124,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A5906A7142FD28600017868 /* AssetsLibrary.framework in Frameworks */,
 				0A268F52142F9AE2009B9780 /* QuartzCore.framework in Frameworks */,
 				0A268F49142F9946009B9780 /* CFNetwork.framework in Frameworks */,
 				0A56E06E142F0C7F001E9584 /* CoreGraphics.framework in Frameworks */,
@@ -181,6 +198,7 @@
 		0A56E068142F0C7F001E9584 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0A5906A5142FD27800017868 /* AssetsLibrary.framework */,
 				0A268F47142F9924009B9780 /* CFNetwork.framework */,
 				0A56E06D142F0C7F001E9584 /* CoreGraphics.framework */,
 				0A56E06B142F0C7F001E9584 /* Foundation.framework */,
@@ -220,6 +238,7 @@
 				0A56E0B0142F0DB2001E9584 /* Application */,
 				0A56E0C9142F10F8001E9584 /* Controller */,
 				0A268F22142F9876009B9780 /* Model */,
+				0AB5069A142FCAEC00651FE7 /* View */,
 				0A268F27142F98D3009B9780 /* ASIHTTPRequest */,
 			);
 			name = Classes;
@@ -271,6 +290,7 @@
 		0A56E0D6142F1222001E9584 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				0AB5069E142FCE1200651FE7 /* Form Elements */,
 				0AB50692142FBE1700651FE7 /* Backgrounds */,
 				0A56E0D7142F1229001E9584 /* Tab Bar Icons */,
 			);
@@ -295,6 +315,28 @@
 				0AB50694142FBE2100651FE7 /* detailEditor_background@2x.png */,
 			);
 			name = Backgrounds;
+			sourceTree = "<group>";
+		};
+		0AB5069A142FCAEC00651FE7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0A5906A1142FD0A600017868 /* USDetailEditorView.h */,
+				0A5906A2142FD0A600017868 /* USDetailEditorView.m */,
+				0AB5069B142FCB1700651FE7 /* USTextField.h */,
+				0AB5069C142FCB1700651FE7 /* USTextField.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		0AB5069E142FCE1200651FE7 /* Form Elements */ = {
+			isa = PBXGroup;
+			children = (
+				0AB5069F142FCE4A00651FE7 /* textFieldBig.png */,
+				0AB506A0142FCE4A00651FE7 /* textFieldBig@2x.png */,
+				0A12893A142FE03700FCE4AC /* textFieldMed.png */,
+				0A12893B142FE03700FCE4AC /* textFieldMed@2x.png */,
+			);
+			name = "Form Elements";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -359,6 +401,10 @@
 				0AB50695142FBE2100651FE7 /* detailEditor_background.png in Resources */,
 				0AB50696142FBE2100651FE7 /* detailEditor_background@2x.png in Resources */,
 				0AB50699142FC19000651FE7 /* USDetailEditor.xib in Resources */,
+				0AB506A1142FCE4A00651FE7 /* textFieldBig.png in Resources */,
+				0AB506A2142FCE4A00651FE7 /* textFieldBig@2x.png in Resources */,
+				0A12893C142FE03700FCE4AC /* textFieldMed.png in Resources */,
+				0A12893D142FE03700FCE4AC /* textFieldMed@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -384,6 +430,8 @@
 				0A268F45142F98D3009B9780 /* ASINetworkQueue.m in Sources */,
 				0A268F46142F98D3009B9780 /* Reachability.m in Sources */,
 				0AB5067E142FAC3500651FE7 /* USCameraController.m in Sources */,
+				0AB5069D142FCB1700651FE7 /* USTextField.m in Sources */,
+				0A5906A3142FD0A600017868 /* USDetailEditorView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

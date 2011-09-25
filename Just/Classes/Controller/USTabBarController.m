@@ -14,9 +14,14 @@
 #pragma mark Camera Button
 - (void) switchToCamera {
     
-    
+    mLastState = self.selectedIndex;
     //[self presentModalViewController:mCameraController animated:YES];
-    self.selectedIndex = 1;     // Replace with present modal?
+    //self.selectedIndex = 1;     // Replace with present modal?
+    [mCameraController showImagePicker];
+}
+
+- (void) switchToPreviousState {
+    self.selectedIndex = mLastState;
 }
 
 - (void) setupCameraButton {
