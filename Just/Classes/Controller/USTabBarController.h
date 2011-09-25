@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface USTabBarController : UITabBarController
+@class USCameraController;
+
+@interface USTabBarController : UITabBarController {
+    USCameraController *mCameraController;
+}
 
 @end

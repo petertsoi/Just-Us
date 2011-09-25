@@ -7,11 +7,15 @@
 //
 
 #import "USTabBarController.h"
+#import "USCameraController.h"
 
 @implementation USTabBarController
 
 #pragma mark Camera Button
 - (void) switchToCamera {
+    
+    
+    //[self presentModalViewController:mCameraController animated:YES];
     self.selectedIndex = 1;     // Replace with present modal?
 }
 
@@ -39,10 +43,12 @@
     [self.view addSubview:button];
     
     [button addTarget:self action:@selector(switchToCamera) forControlEvents:UIControlEventTouchUpInside];
+    
+    mCameraController = [self.viewControllers objectAtIndex:1];
+    [mCameraController setController:self];
 }
 
-#pragma mark -
-#pragma mark UIViewController Override
+#pragma mark - UIViewController Override
 - (void) viewDidLoad {
     [super viewDidLoad];
     [self setupCameraButton];

@@ -16,6 +16,11 @@
 - (void) photoLoaded;
 @end
 
+#define THUMBNAIL_SIZE_WIDTH 75.0
+#define THUMBNAIL_SIZE_HEIGHT 75.0
+#define MAX_PHOTO_SIZE_WIDTH 960.0
+#define MAX_PHOTO_SIZE_HEIGHT 960.0
+
 @interface USPhoto : NSObject {
     NSString * mResourceID;
     BOOL mLocal;

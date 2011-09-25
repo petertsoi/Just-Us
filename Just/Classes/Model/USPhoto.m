@@ -13,7 +13,8 @@
 #import "ASIHTTPRequest.h"
 
 @interface USPhoto () 
-- (UIImage*)p_imageByScalingImage:(UIImage *)image toSize:(CGSize)targetSize;
+- (UIImage *)p_imageByScalingImage:(UIImage *)image toSize:(CGSize)targetSize;
+- (UIImage *)p_cropToSquare:(UIImage *)image;
 @end
 
 static inline double radians (double degrees) {return degrees * M_PI/180;}
@@ -26,8 +27,7 @@ static inline double radians (double degrees) {return degrees * M_PI/180;}
 @synthesize loaded = mLoaded;
 @synthesize size = mImageSize;
 
-#pragma mark -
-#pragma mark Initializers
+#pragma mark - Initializers
 - (id)initRemoteImageWithURL:(NSURL *) remoteURL{
     if ((self = [super init])){
         mRemoteURL = remoteURL;
@@ -57,8 +57,7 @@ static inline double radians (double degrees) {return degrees * M_PI/180;}
     return self;
 }
 
-#pragma mark -
-#pragma mark Network Activity
+#pragma mark - Network Activity
 - (void) loadRemoteImage {
     if (!mLocal) {
         ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:mRemoteURL];
@@ -73,6 +72,7 @@ static inline double radians (double degrees) {return degrees * M_PI/180;}
     CFDataRef imgData = (CFDataRef)data;
 	CGDataProviderRef imgDataProvider = CGDataProviderCreateWithCFData (imgData);
 	CGImageRef image = CGImageCreateWithJPEGDataProvider(imgDataProvider, NULL, true, kCGRenderingIntentDefault);
+    CGDataProviderRelease(imgDataProvider);
     mImage = [UIImage imageWithCGImage:image];
     CGImageRelease(image);
     mImageSize = mImage.size;
@@ -88,37 +88,29 @@ static inline double radians (double degrees) {return degrees * M_PI/180;}
     NSLog(@"An error occured in USPhoto.m - requestFailed:");
 }
 
-#pragma mark -
-#pragma mark Layer Creation
+#pragma mark - Layer Creation
 
 - (CALayer *) thumbnailLayer {
-    CALayer * newLayer = [[CALayer alloc] init];
-    /*CGRect frame = CGRectMake(0, 0, 75, 75);
-    CGColorSpaceRef rgbColorspace = CGColorSpaceCreateDeviceRGB();
-    CGImageRef thumbRef = CGImageCreateWithImageInRect(mImage, frame);
-    
-    CGContextRef mainViewContentContext = CGBitmapContextCreate (NULL, frame.size.width, frame.size.height, 8, frame.size.height*4, rgbColorspace, kCGImageAlphaPremultipliedFirst);
-    
-    CGContextDrawImage(mainViewContentContext, frame, thumbRef);
-    
-    //newLayer.contents = (id)mImage;
-    //newLayer.frame = CGRectMake(0, 0, 75, 75);*/
+    CALayer * newLayer = [CALayer layer];
+    newLayer.frame = CGRectMake(0, 0, THUMBNAIL_SIZE_WIDTH, THUMBNAIL_SIZE_HEIGHT);
+    CGImageRef thumbnail = [[self p_imageByScalingImage:[self p_cropToSquare:mImage] toSize:newLayer.frame.size] CGImage];
+    newLayer.contents = (id)thumbnail;
     return newLayer;
 }
 
 - (CALayer *) layerWithImage {
-    CALayer * newLayer = [[CALayer alloc] init];
+    CALayer * newLayer = [CALayer layer];
     CGColorSpaceRef rgbColorspace = CGColorSpaceCreateDeviceRGB();
     CGFloat values[4] = {1.0, 0.0, 0.0, 1.0}; 
     CGColorRef red = CGColorCreate(rgbColorspace, values); 
+    CGColorSpaceRelease(rgbColorspace);
     newLayer.backgroundColor = red;
-    
+    CGColorRelease(red);
     return newLayer;
 }
 
-#pragma mark -
-#pragma mark Private
-- (UIImage*)p_imageByScalingImage:(UIImage *)image toSize:(CGSize)targetSize{
+#pragma mark - Private
+- (UIImage *)p_imageByScalingImage:(UIImage *)image toSize:(CGSize)targetSize{
     UIImage* sourceImage = image; 
     CGFloat targetWidth = targetSize.width;
     CGFloat targetHeight = targetSize.height;
@@ -166,8 +158,12 @@ static inline double radians (double degrees) {return degrees * M_PI/180;}
     return newImage; 
 }
 
-#pragma mark -
-#pragma mark Memory Management
+- (UIImage *)p_cropToSquare:(UIImage *)image{
+    CGFloat maxDimention = MAX(MAX(image.size.width, image.size.width), MAX_PHOTO_SIZE_HEIGHT);
+    return [self p_imageByScalingImage:image toSize:CGSizeMake(maxDimention, maxDimention)];
+}
+
+#pragma mark - Memory Management
 - (void) dealloc {
     RELEASE_SAFELY(delegate);
     RELEASE_SAFELY(mImage);
