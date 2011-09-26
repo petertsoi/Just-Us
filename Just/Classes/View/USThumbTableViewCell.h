@@ -15,4 +15,7 @@
     NSMutableArray * mThumbViews;
 }
 
+- (void) assignPhoto:(USPhoto *) newPhoto toThumbViewAtIndex:(unsigned int)thumbView;
+- (void) assignPhotosToRow:(NSArray *) photoRow;
+
 @end

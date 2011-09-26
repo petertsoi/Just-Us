@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface USMemoriesController : UIViewController
+@class USMemoryChooserController;
+
+@interface USMemoriesController : UIViewController {
+    IBOutlet USMemoryChooserController * mChooserController;
+    IBOutlet UIView * mView;
+}
 
 @end

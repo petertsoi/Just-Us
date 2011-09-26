@@ -20,6 +20,7 @@
 @end
 
 static inline double radians (double degrees) {return degrees * M_PI/180;}
+static const CGFloat kDefaultThumbSize = 75.0f;
 
 @implementation USPhoto
 
@@ -38,9 +39,10 @@ static inline double radians (double degrees) {return degrees * M_PI/180;}
         }
     }
     //return [self p_cropToSquare:mImage];
-    return [self p_imageByScalingImage:mImage toSize:CGSizeMake(75, 75) cropToSquare:YES];
+    //return [self thumbnail];
+    //return [self p_imageByScalingImage:mImage toSize:CGSizeMake(75, 75) cropToSquare:YES];
     
-    //return mImage;
+    return mImage;
 }
 
 #pragma mark - Initializers
@@ -126,6 +128,14 @@ static inline double radians (double degrees) {return degrees * M_PI/180;}
         }];
         [library release];
     }
+}
+
+- (UIImage *) thumbnail {
+    if (!mThumb) {
+        mThumb = [self p_imageByScalingImage:self.image toSize:CGSizeMake(kDefaultThumbSize, kDefaultThumbSize) cropToSquare:YES];
+    }
+    //[mThumb retain];
+    return mThumb;
 }
 
 #pragma mark - Network Activity
@@ -232,6 +242,9 @@ static inline double radians (double degrees) {return degrees * M_PI/180;}
     }
     
     CGContextDrawImage(bitmap, CGRectMake(0, 0, targetWidth, targetHeight), imageRef);
+    if (square) {
+        CGImageRelease(imageRef);
+    }
     CGImageRef ref = CGBitmapContextCreateImage(bitmap);
     UIImage* newImage = [UIImage imageWithCGImage:ref];
     

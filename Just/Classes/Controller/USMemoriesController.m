@@ -7,6 +7,8 @@
 //
 
 #import "USMemoriesController.h"
+#import "USMemoryChooserController.h"
+#import "USThumbTableViewCell.h"
 
 @implementation USMemoriesController
 
@@ -34,7 +36,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    NSArray * nibContents = [[NSBundle mainBundle] loadNibNamed:@"USMemoryChooser" owner:self options:nil];
+    mChooserController = [[USMemoryChooserController alloc] initWithStyle:UITableViewStylePlain];
+    
+    NSArray * nibContents = [[NSBundle mainBundle] loadNibNamed:@"USMemoryChooser" owner:mChooserController options:nil];
     NSEnumerator * nibEnumerator = [nibContents objectEnumerator];
     UIView * test = (UIView *)[nibEnumerator nextObject];
     

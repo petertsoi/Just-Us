@@ -28,8 +28,9 @@
 #pragma mark - USPhotoLoadingDelegate Methods
 - (void) photoLoaded {
     [mImageView setImage:mPhoto.image];
-    [mImageView setFrame:CGRectMake(mImageView.frame.origin.x, mImageView.frame.origin.y, 
-                                    mPhoto.image.size.width, mPhoto.image.size.height)];
+    /*[mImageView setFrame:CGRectMake(mImageView.frame.origin.x, mImageView.frame.origin.y, 
+                                    mPhoto.image.size.width, mPhoto.image.size.height)];*/
+    //[mImageView setImage:[mPhoto thumbnail]];
     [mPhoto retain];
 }
 

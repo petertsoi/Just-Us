@@ -52,6 +52,8 @@
 		0AB81B55143010DA0009089C /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AB81B53143010A60009089C /* CoreLocation.framework */; };
 		0AE3B65D14303C140000A5F7 /* USMemoryChooser.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AE3B65B14303C140000A5F7 /* USMemoryChooser.xib */; };
 		0AEADAC61430411500E0265A /* USThumbTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AEADAC51430411500E0265A /* USThumbTableViewCell.m */; };
+		0AEADACA143057B000E0265A /* USThumbView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AEADAC9143057B000E0265A /* USThumbView.m */; };
+		0AEADAD114305FC700E0265A /* USMemoryChooserController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AEADAD014305FC700E0265A /* USMemoryChooserController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -124,6 +126,10 @@
 		0AE3B65C14303C140000A5F7 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = Resources/en.lproj/USMemoryChooser.xib; sourceTree = "<group>"; };
 		0AEADAC41430411500E0265A /* USThumbTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = USThumbTableViewCell.h; path = Classes/View/USThumbTableViewCell.h; sourceTree = "<group>"; };
 		0AEADAC51430411500E0265A /* USThumbTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = USThumbTableViewCell.m; path = Classes/View/USThumbTableViewCell.m; sourceTree = "<group>"; };
+		0AEADAC8143057B000E0265A /* USThumbView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = USThumbView.h; path = Classes/View/USThumbView.h; sourceTree = "<group>"; };
+		0AEADAC9143057B000E0265A /* USThumbView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = USThumbView.m; path = Classes/View/USThumbView.m; sourceTree = "<group>"; };
+		0AEADACF14305FC700E0265A /* USMemoryChooserController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = USMemoryChooserController.h; path = Classes/Controller/USMemoryChooserController.h; sourceTree = "<group>"; };
+		0AEADAD014305FC700E0265A /* USMemoryChooserController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = USMemoryChooserController.m; path = Classes/Controller/USMemoryChooserController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -293,6 +299,8 @@
 				0AAF610E142F20B5004E7BEF /* USMemoriesController.m */,
 				0A56E0D3142F1216001E9584 /* USTabBarController.h */,
 				0A56E0D4142F1216001E9584 /* USTabBarController.m */,
+				0AEADACF14305FC700E0265A /* USMemoryChooserController.h */,
+				0AEADAD014305FC700E0265A /* USMemoryChooserController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -336,6 +344,8 @@
 				0AB5069C142FCB1700651FE7 /* USTextField.m */,
 				0AEADAC41430411500E0265A /* USThumbTableViewCell.h */,
 				0AEADAC51430411500E0265A /* USThumbTableViewCell.m */,
+				0AEADAC8143057B000E0265A /* USThumbView.h */,
+				0AEADAC9143057B000E0265A /* USThumbView.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -446,6 +456,8 @@
 				0AB5069D142FCB1700651FE7 /* USTextField.m in Sources */,
 				0A5906A3142FD0A600017868 /* USDetailEditorView.m in Sources */,
 				0AEADAC61430411500E0265A /* USThumbTableViewCell.m in Sources */,
+				0AEADACA143057B000E0265A /* USThumbView.m in Sources */,
+				0AEADAD114305FC700E0265A /* USMemoryChooserController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

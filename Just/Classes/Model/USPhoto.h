@@ -24,6 +24,7 @@
 
 @interface USPhoto : NSObject {
     UIImage * mImage;
+    UIImage * mThumb;
     
     // Metadata
     NSString * mResourceID;
@@ -57,6 +58,7 @@
 
 - (CALayer *) layerWithImage;
 - (CALayer *) thumbnailLayer;
+- (UIImage *) thumbnail;
 
 - (void) load;
 - (void) save;

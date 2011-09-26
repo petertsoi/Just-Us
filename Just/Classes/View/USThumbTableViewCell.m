@@ -7,19 +7,51 @@
 //
 
 #import "USThumbTableViewCell.h"
+#import "USPhoto.h"
+#import "USThumbView.h"
 
 static const CGFloat kSpacing = 4.0f;
-static const CGFloat kDefaultThumbSize = 75.0f;
 
 @implementation USThumbTableViewCell
 
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
-{
+- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        // Initialization code
+        mThumbViews = [[NSMutableArray alloc] init];
+        self.accessoryType = UITableViewCellAccessoryNone;
+        self.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     return self;
+}
+
+- (void) assignPhoto:(USPhoto *) newPhoto toThumbViewAtIndex:(unsigned int)thumbView {
+    USThumbView * selectedThumbView = [mThumbViews objectAtIndex:thumbView];
+    if (newPhoto) {
+        [selectedThumbView setPhoto:newPhoto];
+        selectedThumbView.hidden = NO;
+    } else {
+        [selectedThumbView setPhoto:nil];
+        selectedThumbView.hidden = YES;
+    }
+    
+}
+
+- (void) assignPhotosToRow:(NSArray *) photoRow {
+    unsigned int countUp = 0;
+    for (USPhoto * newPhoto in photoRow) {
+        [self assignPhoto:newPhoto toThumbViewAtIndex:countUp];
+        ++countUp;
+    }
+}
+
+- (void)layoutThumbViews {
+    CGRect thumbFrame = CGRectMake(kSpacing, 0,
+                                   THUMBNAIL_SIZE_WIDTH, THUMBNAIL_SIZE_HEIGHT);
+    
+    for (USThumbView* thumbView in mThumbViews) {
+        thumbView.frame = thumbFrame;
+        thumbFrame.origin.x += kSpacing + THUMBNAIL_SIZE_HEIGHT;
+    }
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
@@ -35,6 +67,14 @@ static const CGFloat kDefaultThumbSize = 75.0f;
     //self.detailTextLabel.text = nil;
     [super prepareForReuse];
 }
+
+#pragma mark - UIView Methods
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    [self layoutThumbViews];
+}
+
+#pragma mark - Memory Management
 
 - (void) dealloc {
     RELEASE_SAFELY(mPhoto);
