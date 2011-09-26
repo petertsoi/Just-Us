@@ -50,6 +50,8 @@
 		0AB506A1142FCE4A00651FE7 /* textFieldBig.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AB5069F142FCE4A00651FE7 /* textFieldBig.png */; };
 		0AB506A2142FCE4A00651FE7 /* textFieldBig@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AB506A0142FCE4A00651FE7 /* textFieldBig@2x.png */; };
 		0AB81B55143010DA0009089C /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AB81B53143010A60009089C /* CoreLocation.framework */; };
+		0AE3B65D14303C140000A5F7 /* USMemoryChooser.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AE3B65B14303C140000A5F7 /* USMemoryChooser.xib */; };
+		0AEADAC61430411500E0265A /* USThumbTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AEADAC51430411500E0265A /* USThumbTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -119,6 +121,9 @@
 		0AB5069F142FCE4A00651FE7 /* textFieldBig.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = textFieldBig.png; path = Resources/png/FormElements/textFieldBig.png; sourceTree = "<group>"; };
 		0AB506A0142FCE4A00651FE7 /* textFieldBig@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "textFieldBig@2x.png"; path = "Resources/png/FormElements/textFieldBig@2x.png"; sourceTree = "<group>"; };
 		0AB81B53143010A60009089C /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		0AE3B65C14303C140000A5F7 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = Resources/en.lproj/USMemoryChooser.xib; sourceTree = "<group>"; };
+		0AEADAC41430411500E0265A /* USThumbTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = USThumbTableViewCell.h; path = Classes/View/USThumbTableViewCell.h; sourceTree = "<group>"; };
+		0AEADAC51430411500E0265A /* USThumbTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = USThumbTableViewCell.m; path = Classes/View/USThumbTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -273,6 +278,7 @@
 				0AB50680142FAC6700651FE7 /* USCameraController.xib */,
 				0AB50697142FC19000651FE7 /* USDetailEditor.xib */,
 				0AAF6113142F20F0004E7BEF /* USMemoriesController.xib */,
+				0AE3B65B14303C140000A5F7 /* USMemoryChooser.xib */,
 				0AB5068B142FB46F00651FE7 /* USSearchResultTableViewCell.xib */,
 			);
 			name = XIB;
@@ -328,6 +334,8 @@
 				0A5906A2142FD0A600017868 /* USDetailEditorView.m */,
 				0AB5069B142FCB1700651FE7 /* USTextField.h */,
 				0AB5069C142FCB1700651FE7 /* USTextField.m */,
+				0AEADAC41430411500E0265A /* USThumbTableViewCell.h */,
+				0AEADAC51430411500E0265A /* USThumbTableViewCell.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -409,6 +417,7 @@
 				0AB506A2142FCE4A00651FE7 /* textFieldBig@2x.png in Resources */,
 				0A12893C142FE03700FCE4AC /* textFieldMed.png in Resources */,
 				0A12893D142FE03700FCE4AC /* textFieldMed@2x.png in Resources */,
+				0AE3B65D14303C140000A5F7 /* USMemoryChooser.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -436,6 +445,7 @@
 				0AB5067E142FAC3500651FE7 /* USCameraController.m in Sources */,
 				0AB5069D142FCB1700651FE7 /* USTextField.m in Sources */,
 				0A5906A3142FD0A600017868 /* USDetailEditorView.m in Sources */,
+				0AEADAC61430411500E0265A /* USThumbTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -488,6 +498,14 @@
 				0AB50698142FC19000651FE7 /* en */,
 			);
 			name = USDetailEditor.xib;
+			sourceTree = "<group>";
+		};
+		0AE3B65B14303C140000A5F7 /* USMemoryChooser.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0AE3B65C14303C140000A5F7 /* en */,
+			);
+			name = USMemoryChooser.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

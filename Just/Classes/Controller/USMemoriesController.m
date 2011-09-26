@@ -14,7 +14,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        // Custom initialization NSArray * photoArray = [[NSArray alloc] initWithArray:[[[NSFileManager defaultManager] contentsOfDirectoryAtPath:documentsPath error:NULL] sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)]];
     }
     return self;
 }
@@ -33,6 +33,12 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    NSArray * nibContents = [[NSBundle mainBundle] loadNibNamed:@"USMemoryChooser" owner:self options:nil];
+    NSEnumerator * nibEnumerator = [nibContents objectEnumerator];
+    UIView * test = (UIView *)[nibEnumerator nextObject];
+    
+    self.view = test;
 }
 
 - (void)viewDidUnload

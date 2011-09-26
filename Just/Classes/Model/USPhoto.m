@@ -14,7 +14,7 @@
 #import "ASIHTTPRequest.h"
 
 @interface USPhoto () 
-- (UIImage *)p_imageByScalingImage:(UIImage *)image toSize:(CGSize)targetSize;
+- (UIImage *)p_imageByScalingImage:(UIImage *)image toSize:(CGSize)targetSize cropToSquare:(BOOL) square;
 - (UIImage *)p_cropToSquare:(UIImage *)image;
 - (void) p_loadReferencedImage;
 @end
@@ -24,20 +24,24 @@ static inline double radians (double degrees) {return degrees * M_PI/180;}
 @implementation USPhoto
 
 @synthesize delegate;
-@synthesize image = mImage;
+//@synthesize image = mImage;
+@synthesize resourceID = mResourceID;
 @synthesize timestamp = mTimestamp;
 @synthesize local = mLocal;
 @synthesize loaded = mLoaded;
 @synthesize size = mImageSize;
 
-/*- (UIImage *) image{
+- (UIImage *) image{
     if (!mLoaded) {
         if (mLocal) {
             [self p_loadReferencedImage];
         }
     }
-    return mImage;
-}*/
+    //return [self p_cropToSquare:mImage];
+    return [self p_imageByScalingImage:mImage toSize:CGSizeMake(75, 75) cropToSquare:YES];
+    
+    //return mImage;
+}
 
 #pragma mark - Initializers
 - (id)initRemoteImageWithURL:(NSURL *) remoteURL{
@@ -88,11 +92,12 @@ static inline double radians (double degrees) {return degrees * M_PI/180;}
 
 - (void) save {
     NSData *imageData = [NSData dataWithData:UIImageJPEGRepresentation(mImage, 1.0)];
-    NSString * homeDirectoryPath = NSHomeDirectory();
-    NSString * photosPath = [homeDirectoryPath stringByAppendingPathComponent:@"Pictures"];
+    NSString * photosPath = [NSHomeDirectory() stringByAppendingPathComponent:@"Pictures"];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"yyyy-MM-dd-HH-mm-SS"];
-    NSString * imagePath = [photosPath stringByAppendingPathComponent:[NSString stringWithFormat:@"Uploading-%@.jpg",[dateFormatter stringFromDate:[NSDate date]]]];
+    NSString * name = [NSString stringWithFormat:@"Uploading-%@.jpg",[dateFormatter stringFromDate:[NSDate date]]];
+    mResourceID = name;
+    NSString * imagePath = [photosPath stringByAppendingPathComponent:name];
     //[dateFormatter setDateFormat:@"dd/MM/yyyy HH:mm a"];
     RELEASE_SAFELY(dateFormatter);
     //NSLog(@"Saving image to %@", imagePath);
@@ -159,7 +164,7 @@ static inline double radians (double degrees) {return degrees * M_PI/180;}
 - (CALayer *) thumbnailLayer {
     CALayer * newLayer = [CALayer layer];
     newLayer.frame = CGRectMake(0, 0, THUMBNAIL_SIZE_WIDTH, THUMBNAIL_SIZE_HEIGHT);
-    CGImageRef thumbnail = [[self p_imageByScalingImage:[self p_cropToSquare:mImage] toSize:newLayer.frame.size] CGImage];
+    CGImageRef thumbnail = [[self p_imageByScalingImage:[self p_cropToSquare:mImage] toSize:newLayer.frame.size cropToSquare:YES] CGImage];
     newLayer.contents = (id)thumbnail;
     return newLayer;
 }
@@ -176,12 +181,24 @@ static inline double radians (double degrees) {return degrees * M_PI/180;}
 }
 
 #pragma mark - Private
-- (UIImage *)p_imageByScalingImage:(UIImage *)image toSize:(CGSize)targetSize{
+- (UIImage *)p_imageByScalingImage:(UIImage *)image toSize:(CGSize)targetSize cropToSquare:(BOOL) square{
     UIImage* sourceImage = image; 
     CGFloat targetWidth = targetSize.width;
     CGFloat targetHeight = targetSize.height;
     
     CGImageRef imageRef = [sourceImage CGImage];
+    if (square) {
+        CGFloat minDimention = MIN(image.size.width, image.size.width);
+        CGFloat x, y;
+        if (image.size.width < image.size.height) {
+            x = 0.0f;
+            y = (image.size.height - image.size.width) / 2;
+        } else {
+            x = (image.size.width - image.size.height) / 2;
+            y = 0.0f;
+        }
+        imageRef = CGImageCreateWithImageInRect(imageRef, CGRectMake(x, y, minDimention , minDimention));
+    }
     CGBitmapInfo bitmapInfo = CGImageGetBitmapInfo(imageRef);
     CGColorSpaceRef colorSpaceInfo = CGImageGetColorSpace(imageRef);
     
@@ -225,8 +242,8 @@ static inline double radians (double degrees) {return degrees * M_PI/180;}
 }
 
 - (UIImage *)p_cropToSquare:(UIImage *)image{
-    CGFloat maxDimention = MAX(MAX(image.size.width, image.size.width), MAX_PHOTO_SIZE_HEIGHT);
-    return [self p_imageByScalingImage:image toSize:CGSizeMake(maxDimention, maxDimention)];
+    CGFloat minDimention = MIN(image.size.width, image.size.width);
+    return [self p_imageByScalingImage:image toSize:CGSizeMake(minDimention, minDimention) cropToSquare:NO];
 }
 
 #pragma mark - Memory Management

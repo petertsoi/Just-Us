@@ -43,6 +43,7 @@
 
 @property (readonly, retain) UIImage * image;
 @property (readonly, retain) NSDate * timestamp;
+@property (readonly, retain) NSString * resourceID;
 @property (retain) id delegate;
 @property BOOL loaded;
 @property BOOL local;
