@@ -49,6 +49,7 @@
 		0AB5069D142FCB1700651FE7 /* USTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AB5069C142FCB1700651FE7 /* USTextField.m */; };
 		0AB506A1142FCE4A00651FE7 /* textFieldBig.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AB5069F142FCE4A00651FE7 /* textFieldBig.png */; };
 		0AB506A2142FCE4A00651FE7 /* textFieldBig@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AB506A0142FCE4A00651FE7 /* textFieldBig@2x.png */; };
+		0AB81B55143010DA0009089C /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AB81B53143010A60009089C /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -117,6 +118,7 @@
 		0AB5069C142FCB1700651FE7 /* USTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = USTextField.m; path = Classes/View/USTextField.m; sourceTree = "<group>"; };
 		0AB5069F142FCE4A00651FE7 /* textFieldBig.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = textFieldBig.png; path = Resources/png/FormElements/textFieldBig.png; sourceTree = "<group>"; };
 		0AB506A0142FCE4A00651FE7 /* textFieldBig@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "textFieldBig@2x.png"; path = "Resources/png/FormElements/textFieldBig@2x.png"; sourceTree = "<group>"; };
+		0AB81B53143010A60009089C /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +130,7 @@
 				0A268F52142F9AE2009B9780 /* QuartzCore.framework in Frameworks */,
 				0A268F49142F9946009B9780 /* CFNetwork.framework in Frameworks */,
 				0A56E06E142F0C7F001E9584 /* CoreGraphics.framework in Frameworks */,
+				0AB81B55143010DA0009089C /* CoreLocation.framework in Frameworks */,
 				0A56E06C142F0C7F001E9584 /* Foundation.framework in Frameworks */,
 				0A268F4E142F99DF009B9780 /* MobileCoreServices.framework in Frameworks */,
 				0A268F50142F99E7009B9780 /* SystemConfiguration.framework in Frameworks */,
@@ -201,6 +204,7 @@
 				0A5906A5142FD27800017868 /* AssetsLibrary.framework */,
 				0A268F47142F9924009B9780 /* CFNetwork.framework */,
 				0A56E06D142F0C7F001E9584 /* CoreGraphics.framework */,
+				0AB81B53143010A60009089C /* CoreLocation.framework */,
 				0A56E06B142F0C7F001E9584 /* Foundation.framework */,
 				0A268F4C142F99B8009B9780 /* MobileCoreServices.framework */,
 				0A56E069142F0C7F001E9584 /* UIKit.framework */,
@@ -539,7 +543,9 @@
 				GCC_PREFIX_HEADER = Just/Classes/Application/Prefix.pch;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = Just/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -551,7 +557,9 @@
 				GCC_PREFIX_HEADER = Just/Classes/Application/Prefix.pch;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = Just/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

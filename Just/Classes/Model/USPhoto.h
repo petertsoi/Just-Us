@@ -8,10 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreGraphics/CoreGraphics.h>
+#import <CoreLocation/CoreLocation.h>
 #import <QuartzCore/QuartzCore.h>
 #import <UIKit/UIKit.h>
 
-@protocol USNetworkPhotoDelegate <NSObject>
+@protocol USPhotoLoaderDelegate <NSObject>
 @required
 - (void) photoLoaded;
 @end
@@ -22,31 +23,41 @@
 #define MAX_PHOTO_SIZE_HEIGHT 960.0
 
 @interface USPhoto : NSObject {
+    UIImage * mImage;
+    
+    // Metadata
     NSString * mResourceID;
     NSURL * mRemoteURL;
+    NSURL * mReferenceURL;
     CGSize mImageSize;
-    UIImage * mImage;
+    CLLocationCoordinate2D mLocation;
+    NSDate * mTimestamp;
     
     // Flags
     BOOL mLocal;
     BOOL mLoaded;
     BOOL mExistsOnServer;
     
-    id <USNetworkPhotoDelegate> delegate;
+    id <USPhotoLoaderDelegate> delegate;
 }
+
+@property (readonly, retain) UIImage * image;
+@property (readonly, retain) NSDate * timestamp;
+@property (retain) id delegate;
+@property BOOL loaded;
+@property BOOL local;
+@property CGSize size;
 
 - (id) initRemoteImageWithURL:(NSURL *) remoteURL;
 - (id) initLocalImageWithImage:(UIImage *) image;
+- (id) initLocalImageWithReferenceURL:(NSURL *) referenceURL;
 
 - (void) loadRemoteImage;
 
 - (CALayer *) layerWithImage;
 - (CALayer *) thumbnailLayer;
 
-@property (retain) UIImage * image;
-@property (retain) id delegate;
-@property BOOL loaded;
-@property BOOL local;
-@property CGSize size;
+- (void) load;
+- (void) save;
 
 @end

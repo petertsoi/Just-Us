@@ -10,8 +10,7 @@
 
 #import "USDetailEditorView.h"
 #import "USTabBarController.h"
-
-#import <AssetsLibrary/ALAssetsLibrary.h>
+#import "USPhoto.h"
 
 @implementation USCameraController
 
@@ -27,22 +26,11 @@
     return self;
 }
 
-- (void) awakeFromNib {
-    mPicker = [[UIImagePickerController alloc] init];
-    mPicker.delegate = self;
-    mPicker.sourceType = UIImagePickerControllerSourceTypeCamera ? [UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera] : UIImagePickerControllerSourceTypeSavedPhotosAlbum;
-}
-
-- (void)didReceiveMemoryWarning
-{
-    // Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
-    
-    // Release any cached data, images, etc that aren't in use.
-}
-
-- (void) showImagePicker {
-    [self.controller presentModalViewController:mPicker animated:YES];
+#pragma mark - Event Handlers
+- (IBAction)takeDone:(id)sender {
+    // For now, save the image and switch views
+    [mDetailEditorView savePhoto];
+    self.controller.selectedIndex = 0;
 }
 
 #pragma mark - View lifecycle
@@ -58,9 +46,11 @@
     [mDetailEditorView setBackgroundColor:bg];
     [mScrollContainer setContentSize:mDetailEditorView.frame.size];
     [mScrollContainer addSubview:mDetailEditorView];
+    
+    [mDetailEditorView retain];
 }
 
-- (void)viewDidUnload
+- (void)viewDidUnoad
 {
     [super viewDidUnload];
     // Release any retained subviews of the main view.
@@ -74,22 +64,36 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+#pragma mark - UIImagePickerController Creation
+- (void) createImagePicker {
+    if (!mPicker){
+        mPicker = [[UIImagePickerController alloc] init];
+        mPicker.delegate = self;
+        mPicker.sourceType = UIImagePickerControllerSourceTypeCamera ? [UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera] : UIImagePickerControllerSourceTypeSavedPhotosAlbum;
+    }
+}
+
+- (void) showImagePicker {
+    [self createImagePicker];
+    [self.controller presentModalViewController:mPicker animated:YES];
+}
+
+- (void) awakeFromNib {
+    [self createImagePicker];
+}
+
 #pragma mark - UIImagePickerControllerDelegate Methods
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
     // Switch background
-    [self.controller setSelectedIndex:1];
+    self.controller.selectedIndex = 1;
     
+    //[mDetailEditorView setImageWithReferenceURL:[info objectForKey:UIImagePickerControllerReferenceURL]];
+    USPhoto * chosenPhoto = [[USPhoto alloc] initLocalImageWithReferenceURL:[info objectForKey:UIImagePickerControllerReferenceURL]];
+    [mDetailEditorView setPhoto:chosenPhoto];
+    [chosenPhoto release];
 	[picker dismissModalViewControllerAnimated:YES];
 	//imageView.image = [info objectForKey:@"UIImagePickerControllerOriginalImage"];
-    NSURL *referenceURL = [info objectForKey:UIImagePickerControllerReferenceURL];
-    ALAssetsLibrary *library = [[ALAssetsLibrary alloc] init];
-    [library assetForURL:referenceURL resultBlock:^(ALAsset *asset) {
-        // code to handle the asset here
-    } failureBlock:^(NSError *error) {
-        // error handling
-    }];
-    [library release];
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
@@ -97,5 +101,24 @@
     [picker dismissModalViewControllerAnimated:YES];
     
 }
+
+#pragma mark - Memory Management
+
+- (void)didReceiveMemoryWarning
+{
+    // Releases the view if it doesn't have a superview.
+    [super didReceiveMemoryWarning];
+    
+    // Release any cached data, images, etc that aren't in use.
+    if (mPicker) {
+        RELEASE_SAFELY(mPicker);
+    }
+}
+
+- (void) dealloc {
+    RELEASE_SAFELY(mPicker);
+    [super dealloc];
+}
+
 
 @end

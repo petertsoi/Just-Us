@@ -10,9 +10,10 @@
 
 @class USCameraController;
 
-@interface USTabBarController : UITabBarController {
+@interface USTabBarController : UITabBarController <UITabBarControllerDelegate> {
     USCameraController *mCameraController;
     unsigned int mLastState;
+    UIButton* mCameraButton;
 }
 
 - (void) switchToPreviousState;

@@ -8,6 +8,7 @@
 
 #import "USPhoto.h"
 #import <UIKit/UIImage.h>
+#import <AssetsLibrary/AssetsLibrary.h>
 #import <math.h>
 
 #import "ASIHTTPRequest.h"
@@ -15,6 +16,7 @@
 @interface USPhoto () 
 - (UIImage *)p_imageByScalingImage:(UIImage *)image toSize:(CGSize)targetSize;
 - (UIImage *)p_cropToSquare:(UIImage *)image;
+- (void) p_loadReferencedImage;
 @end
 
 static inline double radians (double degrees) {return degrees * M_PI/180;}
@@ -23,9 +25,19 @@ static inline double radians (double degrees) {return degrees * M_PI/180;}
 
 @synthesize delegate;
 @synthesize image = mImage;
+@synthesize timestamp = mTimestamp;
 @synthesize local = mLocal;
 @synthesize loaded = mLoaded;
 @synthesize size = mImageSize;
+
+/*- (UIImage *) image{
+    if (!mLoaded) {
+        if (mLocal) {
+            [self p_loadReferencedImage];
+        }
+    }
+    return mImage;
+}*/
 
 #pragma mark - Initializers
 - (id)initRemoteImageWithURL:(NSURL *) remoteURL{
@@ -55,6 +67,60 @@ static inline double radians (double degrees) {return degrees * M_PI/180;}
         mLoaded = YES;
     }
     return self;
+}
+
+- (id) initLocalImageWithReferenceURL:(NSURL *) referenceURL{
+    if ((self = [super init])){
+        mReferenceURL = referenceURL;
+        //mImageSize = mImage.size;
+        
+        mLocal = YES;
+        mLoaded = NO;
+    }
+    return self;
+}
+
+- (void) load {
+    if (!mLoaded) 
+        if (mLocal)
+            [self p_loadReferencedImage];
+}
+
+- (void) save {
+    NSData *imageData = [NSData dataWithData:UIImageJPEGRepresentation(mImage, 1.0)];
+    NSString * homeDirectoryPath = NSHomeDirectory();
+    NSString * photosPath = [homeDirectoryPath stringByAppendingPathComponent:@"Pictures"];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd-HH-mm-SS"];
+    NSString * imagePath = [photosPath stringByAppendingPathComponent:[NSString stringWithFormat:@"Uploading-%@.jpg",[dateFormatter stringFromDate:[NSDate date]]]];
+    //[dateFormatter setDateFormat:@"dd/MM/yyyy HH:mm a"];
+    RELEASE_SAFELY(dateFormatter);
+    //NSLog(@"Saving image to %@", imagePath);
+	[imageData writeToFile:imagePath atomically:YES];
+}
+
+
+#pragma mark - Disk Activity
+- (void) p_loadReferencedImage {
+    if (!mLoaded) {
+        ALAssetsLibrary *library = [[ALAssetsLibrary alloc] init];
+        [library assetForURL:mReferenceURL resultBlock:^(ALAsset *asset) {
+            CGImageRef fullScreenImage = [[asset defaultRepresentation] fullScreenImage];
+            mLocation = ((CLLocation *)[asset valueForProperty:@"ALAssetPropertyLocation"]).coordinate;
+            mTimestamp = [asset valueForProperty:@"ALAssetPropertyDate"];
+            [mTimestamp retain];
+            if (!mTimestamp) 
+                mTimestamp = [NSDate date];
+            mImage = [[UIImage alloc] initWithCGImage:fullScreenImage
+                                         scale:1.0f
+                                   orientation:[[asset valueForProperty:@"ALAssetPropertyOrientation"] intValue]];
+            mLoaded = YES;
+            [[self delegate] photoLoaded];
+        } failureBlock:^(NSError *error) {
+            // Log error
+        }];
+        [library release];
+    }
 }
 
 #pragma mark - Network Activity

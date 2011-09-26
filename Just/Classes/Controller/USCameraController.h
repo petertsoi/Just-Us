@@ -12,6 +12,7 @@
 
 @interface USCameraController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate> {
     IBOutlet UIScrollView * mScrollContainer;
+    IBOutlet UIBarButtonItem * mDoneButton;
     
     UIImagePickerController * mPicker;
     USDetailEditorView * mDetailEditorView;
@@ -21,5 +22,6 @@
 @property (nonatomic, retain) USTabBarController * controller;
 
 - (void) showImagePicker;
+- (IBAction)takeDone:(id)sender;
 
 @end

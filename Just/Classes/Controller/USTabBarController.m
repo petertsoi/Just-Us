@@ -15,6 +15,9 @@
 - (void) switchToCamera {
     
     mLastState = self.selectedIndex;
+    UIImage * cameraButtonActiveImage = [UIImage imageNamed:@"tabbar_camera_active.png"];
+    [mCameraButton setBackgroundImage:cameraButtonActiveImage forState:UIControlStateNormal];
+    
     //[self presentModalViewController:mCameraController animated:YES];
     //self.selectedIndex = 1;     // Replace with present modal?
     [mCameraController showImagePicker];
@@ -22,40 +25,49 @@
 
 - (void) switchToPreviousState {
     self.selectedIndex = mLastState;
+    UIImage * cameraButtonImage = [UIImage imageNamed:@"tabbar_camera.png"];
+    [mCameraButton setBackgroundImage:cameraButtonImage forState:UIControlStateNormal];
 }
 
 - (void) setupCameraButton {
-    UIButton* button = [UIButton buttonWithType:UIButtonTypeCustom];
-    button.autoresizingMask = UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleTopMargin;
+    mCameraButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    mCameraButton.autoresizingMask = UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleTopMargin;
     
     UIImage * cameraButtonImage = [UIImage imageNamed:@"tabbar_camera.png"];
     UIImage * cameraButtonActiveImage = [UIImage imageNamed:@"tabbar_camera_active.png"];
     
-    button.frame = CGRectMake(0.0, 0.0, cameraButtonImage.size.width, cameraButtonImage.size.height);
-    [button setBackgroundImage:cameraButtonImage forState:UIControlStateNormal];
-    [button setBackgroundImage:cameraButtonActiveImage forState:UIControlStateHighlighted];
+    mCameraButton.frame = CGRectMake(0.0, 0.0, cameraButtonImage.size.width, cameraButtonImage.size.height);
+    [mCameraButton setBackgroundImage:cameraButtonImage forState:UIControlStateNormal];
+    [mCameraButton setBackgroundImage:cameraButtonActiveImage forState:UIControlStateHighlighted];
     
     CGFloat heightDifference = cameraButtonImage.size.height - self.tabBar.frame.size.height;
     if (heightDifference < 0)
-        button.center = self.tabBar.center;
+        mCameraButton.center = self.tabBar.center;
     else
     {
         CGPoint center = self.tabBar.center;
         center.y = center.y - heightDifference/2.0;
-        button.center = center;
+        mCameraButton.center = center;
     }
     
-    [self.view addSubview:button];
+    [self.view addSubview:mCameraButton];
     
-    [button addTarget:self action:@selector(switchToCamera) forControlEvents:UIControlEventTouchUpInside];
+    [mCameraButton addTarget:self action:@selector(switchToCamera) forControlEvents:UIControlEventTouchUpInside];
     
     mCameraController = [self.viewControllers objectAtIndex:1];
     [mCameraController setController:self];
 }
 
+#pragma mark - UITabBarControllerDelegate Methods
+- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController{
+    UIImage * cameraButtonImage = [UIImage imageNamed:@"tabbar_camera.png"];
+    [mCameraButton setBackgroundImage:cameraButtonImage forState:UIControlStateNormal];
+}
+
 #pragma mark - UIViewController Override
 - (void) viewDidLoad {
     [super viewDidLoad];
+    self.delegate = self;
     [self setupCameraButton];
 }
 

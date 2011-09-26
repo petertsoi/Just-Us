@@ -13,7 +13,7 @@
 - (void) drawRect:(CGRect)rect {
     [super drawRect:rect];
     
-    UIView *paddingView = [[[UIView alloc] initWithFrame:CGRectMake(0, 0, 5, 0)] autorelease];
+    UIView *paddingView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 5, 0)];
     paddingView.hidden = YES;
     self.leftView = paddingView;
     [paddingView release];

@@ -7,26 +7,33 @@
 //
 
 #import "USDetailEditorView.h"
+#import "USPhoto.h"
+
+#import <AssetsLibrary/ALAssetsLibrary.h>
 
 @implementation USDetailEditorView
 
-- (id)initWithFrame:(CGRect)frame
-{
-    self = [super initWithFrame:frame];
-    if (self) {
-        // Initialization code
-    }
-    return self;
+@synthesize photo;
+
+- (void) setPhoto:(USPhoto *) chosenPhoto {
+    mPhoto = chosenPhoto;
+    mPhoto.delegate = self;
+    [mPhoto load];
 }
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
-    // Drawing code
+- (void) savePhoto {
+    [mPhoto save];
 }
-*/
+
+#pragma mark - USPhotoLoadingDelegate Methods
+- (void) photoLoaded {
+    [mImageView setImage:mPhoto.image];
+    [mPhoto retain];
+}
+
+- (void) dealloc {
+    RELEASE_SAFELY(mPhoto);
+}
 
 
 #pragma mark - UITextFieldDelegate Methods

@@ -7,7 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "USPhoto.h"
 
-@interface USDetailEditorView : UIView <UITextFieldDelegate>
+@interface USDetailEditorView : UIView <UITextFieldDelegate, USPhotoLoaderDelegate> {
+    IBOutlet UITextField * mTitleField;
+    IBOutlet UITextField * mLocationField;
+    IBOutlet UITextField * mTimeField;
+    IBOutlet UIImageView * mImageView;
+    
+    USPhoto * mPhoto;
+}
+
+@property (readonly, retain) USPhoto * photo;
+
+- (void) setPhoto:(USPhoto *)photo;
+- (void) savePhoto;
 
 @end
