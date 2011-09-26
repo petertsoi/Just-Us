@@ -11,17 +11,21 @@
 
 @implementation USThumbView
 
+@synthesize photo = mPhoto;
+
 - (void) setPhoto:(USPhoto *) newPhoto {
-    if (newPhoto == nil) {
+    mPhoto = [newPhoto retain];
+    if (mPhoto == nil) {
         RELEASE_SAFELY(mPhoto);
     } else {
-        mPhoto = newPhoto;
+        [self setBackgroundColor:[UIColor colorWithPatternImage:[mPhoto thumbnail]]];
+        //[self setBackgroundColor:[UIColor blueColor]];
     }
 }
-
+/*
 - (void) drawRect:(CGRect)rect {
-    [super drawRect:rect];
-    [self setBackgroundColor:[UIColor colorWithPatternImage:[mPhoto thumbnail]]];
-}
+    UIImage * bg = [mPhoto thumbnail];
+    [self setBackgroundColor:[UIColor colorWithPatternImage:bg]];
+}*/
 
 @end

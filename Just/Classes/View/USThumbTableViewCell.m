@@ -14,23 +14,47 @@ static const CGFloat kSpacing = 4.0f;
 
 @implementation USThumbTableViewCell
 
+@synthesize thumbViews = mThumbViews;
+
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        mThumbViews = [[NSMutableArray alloc] init];
+        self.thumbViews = [[NSMutableArray alloc] init];
         self.accessoryType = UITableViewCellAccessoryNone;
         self.selectionStyle = UITableViewCellSelectionStyleNone;
+        
     }
     return self;
 }
 
+- (void) setColumnCount:(unsigned int) columns {
+    mColumns = columns;
+    for (unsigned int currentCol = 0; currentCol < columns; ++currentCol) {
+        if (!self.thumbViews) {
+            mThumbViews = [[NSMutableArray alloc] init];
+        }
+        USThumbView * currentView;
+        if ([self.thumbViews count] <= currentCol) {
+            currentView = [[USThumbView alloc] init];
+            [ self.thumbViews addObject:currentView];
+        } else {
+            currentView = [self.thumbViews objectAtIndex:currentCol];
+        }
+        [currentView setFrame:CGRectMake(kSpacing + currentCol * (kSpacing + THUMBNAIL_SIZE_WIDTH), kSpacing, 
+                                         THUMBNAIL_SIZE_WIDTH, THUMBNAIL_SIZE_HEIGHT)];
+        [self addSubview:currentView];
+    }
+    
+}
+
 - (void) assignPhoto:(USPhoto *) newPhoto toThumbViewAtIndex:(unsigned int)thumbView {
+    
     USThumbView * selectedThumbView = [mThumbViews objectAtIndex:thumbView];
-    if (newPhoto) {
-        [selectedThumbView setPhoto:newPhoto];
+    
+    [selectedThumbView setPhoto:newPhoto];
+    if (newPhoto != nil) {
         selectedThumbView.hidden = NO;
     } else {
-        [selectedThumbView setPhoto:nil];
         selectedThumbView.hidden = YES;
     }
     
@@ -41,16 +65,6 @@ static const CGFloat kSpacing = 4.0f;
     for (USPhoto * newPhoto in photoRow) {
         [self assignPhoto:newPhoto toThumbViewAtIndex:countUp];
         ++countUp;
-    }
-}
-
-- (void)layoutThumbViews {
-    CGRect thumbFrame = CGRectMake(kSpacing, 0,
-                                   THUMBNAIL_SIZE_WIDTH, THUMBNAIL_SIZE_HEIGHT);
-    
-    for (USThumbView* thumbView in mThumbViews) {
-        thumbView.frame = thumbFrame;
-        thumbFrame.origin.x += kSpacing + THUMBNAIL_SIZE_HEIGHT;
     }
 }
 
@@ -65,14 +79,10 @@ static const CGFloat kSpacing = 4.0f;
     //self.object = nil;
     //self.textLabel.text = nil;
     //self.detailTextLabel.text = nil;
+    self.thumbViews = nil;
     [super prepareForReuse];
 }
 
-#pragma mark - UIView Methods
-- (void)layoutSubviews {
-    [super layoutSubviews];
-    [self layoutThumbViews];
-}
 
 #pragma mark - Memory Management
 

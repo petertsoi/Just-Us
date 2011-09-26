@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface USMemoryChooserController : UITableViewController {
-    IBOutlet UITableView * tableView;
 }
 
 @end

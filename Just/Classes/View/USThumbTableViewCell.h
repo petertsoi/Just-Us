@@ -13,9 +13,15 @@
 @interface USThumbTableViewCell : UITableViewCell {
     USPhoto * mPhoto;
     NSMutableArray * mThumbViews;
+    
+    unsigned int mColumns;
 }
+
+@property (nonatomic, retain) NSMutableArray * thumbViews;
 
 - (void) assignPhoto:(USPhoto *) newPhoto toThumbViewAtIndex:(unsigned int)thumbView;
 - (void) assignPhotosToRow:(NSArray *) photoRow;
+
+- (void) setColumnCount:(unsigned int) columns;
 
 @end

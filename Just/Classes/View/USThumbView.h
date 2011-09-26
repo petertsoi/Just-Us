@@ -14,6 +14,8 @@
     USPhoto * mPhoto;
 }
 
+@property (readonly, retain) USPhoto * photo;
+
 - (void) setPhoto:(USPhoto *) newPhoto;
 
 @end

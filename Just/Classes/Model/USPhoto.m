@@ -66,7 +66,7 @@ static const CGFloat kDefaultThumbSize = 75.0f;
 
 - (id) initLocalImageWithImage:(UIImage *) image {
     if ((self = [super init])){
-        mImage = image;
+        mImage = [image retain];
         mImageSize = mImage.size;
         
         mLocal = YES;
@@ -94,7 +94,15 @@ static const CGFloat kDefaultThumbSize = 75.0f;
 
 - (void) save {
     NSData *imageData = [NSData dataWithData:UIImageJPEGRepresentation(mImage, 1.0)];
-    NSString * photosPath = [NSHomeDirectory() stringByAppendingPathComponent:@"Pictures"];
+    NSString * photosPath = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:@"Pictures"];
+    BOOL dir;
+    if (![[NSFileManager defaultManager] fileExistsAtPath:photosPath isDirectory:&dir]) {
+        [[NSFileManager defaultManager] createDirectoryAtPath:photosPath
+                                  withIntermediateDirectories:YES 
+                                                   attributes:nil
+                                                        error:NULL];
+        NSLog(@"Created photos directory");
+    }
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"yyyy-MM-dd-HH-mm-SS"];
     NSString * name = [NSString stringWithFormat:@"Uploading-%@.jpg",[dateFormatter stringFromDate:[NSDate date]]];
@@ -102,7 +110,7 @@ static const CGFloat kDefaultThumbSize = 75.0f;
     NSString * imagePath = [photosPath stringByAppendingPathComponent:name];
     //[dateFormatter setDateFormat:@"dd/MM/yyyy HH:mm a"];
     RELEASE_SAFELY(dateFormatter);
-    //NSLog(@"Saving image to %@", imagePath);
+    NSLog(@"Saving image to %@", imagePath);
 	[imageData writeToFile:imagePath atomically:YES];
 }
 
@@ -131,9 +139,9 @@ static const CGFloat kDefaultThumbSize = 75.0f;
 }
 
 - (UIImage *) thumbnail {
-    if (!mThumb) {
+    //if (!mThumb) {
         mThumb = [self p_imageByScalingImage:self.image toSize:CGSizeMake(kDefaultThumbSize, kDefaultThumbSize) cropToSquare:YES];
-    }
+    //}
     //[mThumb retain];
     return mThumb;
 }
