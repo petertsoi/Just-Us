@@ -13,7 +13,7 @@
 @implementation USMemoryChooserController
 
 - (void) loadDataSource {
-    mPhotoPath = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:@"Pictures"];
+    mPhotoPath = [[[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:@"Pictures"] retain];
     if (mPhotoArray) {
         RELEASE_SAFELY(mPhotoArray);
     }
@@ -44,18 +44,17 @@
     USThumbTableViewCell *cell = (USThumbTableViewCell *)[aTableView dequeueReusableCellWithIdentifier:CellIdentifier];
 	
     if (cell == nil){
-        cell = [[USThumbTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault 
-                                            reuseIdentifier:CellIdentifier];
+        cell = [[[USThumbTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault 
+                                            reuseIdentifier:CellIdentifier] autorelease];
     }
     
     
     [cell setColumnCount:4];
-    NSLog(@"%i photos in array", [mPhotoArray count]);
     for (unsigned int i = 0; indexPath.row*4 + i < [mPhotoArray count] && i <  4; i++) {
         NSString * photoPath = [mPhotoPath stringByAppendingPathComponent:[mPhotoArray objectAtIndex:indexPath.row*4 + i]];
         USPhoto * test = [[USPhoto alloc] initLocalImageWithImage:[UIImage imageWithContentsOfFile:photoPath]];
         [cell assignPhoto:test toThumbViewAtIndex:i];
-
+        [test release];
     }
     
     

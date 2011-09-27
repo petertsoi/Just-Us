@@ -19,7 +19,7 @@ static const CGFloat kSpacing = 4.0f;
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        self.thumbViews = [[NSMutableArray alloc] init];
+        mThumbViews = [[NSMutableArray alloc] init];
         self.accessoryType = UITableViewCellAccessoryNone;
         self.selectionStyle = UITableViewCellSelectionStyleNone;
         
@@ -30,15 +30,13 @@ static const CGFloat kSpacing = 4.0f;
 - (void) setColumnCount:(unsigned int) columns {
     mColumns = columns;
     for (unsigned int currentCol = 0; currentCol < columns; ++currentCol) {
-        if (!self.thumbViews) {
-            mThumbViews = [[NSMutableArray alloc] init];
-        }
         USThumbView * currentView;
-        if ([self.thumbViews count] <= currentCol) {
+        if ([mThumbViews count] <= currentCol) {
             currentView = [[USThumbView alloc] init];
-            [ self.thumbViews addObject:currentView];
+            [mThumbViews addObject:currentView];
+            [currentView release];
         } else {
-            currentView = [self.thumbViews objectAtIndex:currentCol];
+            currentView = [mThumbViews objectAtIndex:currentCol];
         }
         [currentView setFrame:CGRectMake(kSpacing + currentCol * (kSpacing + THUMBNAIL_SIZE_WIDTH), kSpacing, 
                                          THUMBNAIL_SIZE_WIDTH, THUMBNAIL_SIZE_HEIGHT)];
@@ -79,6 +77,9 @@ static const CGFloat kSpacing = 4.0f;
     //self.object = nil;
     //self.textLabel.text = nil;
     //self.detailTextLabel.text = nil;
+    for (USThumbView * thumbView in mThumbViews) {
+        RELEASE_SAFELY(thumbView);
+    }
     self.thumbViews = nil;
     [super prepareForReuse];
 }
@@ -88,6 +89,7 @@ static const CGFloat kSpacing = 4.0f;
 
 - (void) dealloc {
     RELEASE_SAFELY(mPhoto);
+    RELEASE_SAFELY(mThumbViews);
     [super dealloc];
 }
 
