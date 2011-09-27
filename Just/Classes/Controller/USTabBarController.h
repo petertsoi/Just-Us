@@ -8,14 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
-@class USCameraController;
+@class USMemoriesController, USCameraController;
 
 @interface USTabBarController : UITabBarController <UITabBarControllerDelegate> {
+    USMemoriesController * mMemoriesController;
     USCameraController *mCameraController;
     unsigned int mLastState;
     UIButton* mCameraButton;
 }
 
 - (void) switchToPreviousState;
+- (void) newPhotoAdded;
 
 @end

@@ -9,6 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface USMemoryChooserController : UITableViewController {
+    NSString * mPhotoPath;
+    NSArray * mPhotoArray;
 }
+
+- (void) loadDataSource;
 
 @end

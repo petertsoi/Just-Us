@@ -30,6 +30,7 @@
 - (IBAction)takeDone:(id)sender {
     // For now, save the image and switch views
     [mDetailEditorView savePhoto];
+    [self.controller newPhotoAdded];
     self.controller.selectedIndex = 0;
 }
 

@@ -12,11 +12,20 @@
 
 @implementation USMemoryChooserController
 
+- (void) loadDataSource {
+    mPhotoPath = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:@"Pictures"];
+    if (mPhotoArray) {
+        RELEASE_SAFELY(mPhotoArray);
+    }
+    mPhotoArray = [[NSArray alloc] initWithArray:[[[NSFileManager defaultManager] contentsOfDirectoryAtPath:mPhotoPath error:NULL] sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)]];
+}
+
 - (void) viewDidAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     self.tableView.frame = CGRectMake(self.tableView.frame.origin.x, self.tableView.frame.origin.y, 
                                  self.tableView.frame.size.width, 200);
     self.tableView.rowHeight = 79.0f;
+    [self loadDataSource];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -26,7 +35,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 1;
+    return ceil((double)[mPhotoArray count] / 4.0);
 }
 - (UITableViewCell *)tableView:(UITableView *)aTableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -39,13 +48,11 @@
                                             reuseIdentifier:CellIdentifier];
     }
     
-    [cell.textLabel setText:[NSString stringWithFormat:@"%i", indexPath.row]];
     
-    NSString * photosPath = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:@"Pictures"];
-    NSArray * photoArray = [[NSArray alloc] initWithArray:[[[NSFileManager defaultManager] contentsOfDirectoryAtPath:photosPath error:NULL] sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)]];
     [cell setColumnCount:4];
-    for (unsigned int i = 0; i < [photoArray count]; i++) {
-        NSString * photoPath = [NSString stringWithFormat:@"%@/%@", photosPath, [photoArray objectAtIndex:i]];
+    NSLog(@"%i photos in array", [mPhotoArray count]);
+    for (unsigned int i = 0; indexPath.row*4 + i < [mPhotoArray count] && i <  4; i++) {
+        NSString * photoPath = [mPhotoPath stringByAppendingPathComponent:[mPhotoArray objectAtIndex:indexPath.row*4 + i]];
         USPhoto * test = [[USPhoto alloc] initLocalImageWithImage:[UIImage imageWithContentsOfFile:photoPath]];
         [cell assignPhoto:test toThumbViewAtIndex:i];
 

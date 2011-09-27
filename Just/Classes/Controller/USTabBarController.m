@@ -7,9 +7,15 @@
 //
 
 #import "USTabBarController.h"
+#import "USMemoriesController.h"
+#import "USMemoryChooserController.h"
 #import "USCameraController.h"
 
 @implementation USTabBarController
+
+- (void) newPhotoAdded {
+    //[mMemoriesController.chooserController loadDataSource];
+}
 
 #pragma mark Camera Button
 - (void) switchToCamera {
@@ -69,6 +75,7 @@
     [super viewDidLoad];
     self.delegate = self;
     [self setupCameraButton];
+    mMemoriesController = [self.viewControllers objectAtIndex:0];
 }
 
 @end

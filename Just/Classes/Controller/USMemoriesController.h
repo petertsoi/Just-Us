@@ -11,8 +11,10 @@
 @class USMemoryChooserController;
 
 @interface USMemoriesController : UIViewController {
-    IBOutlet USMemoryChooserController * mChooserController;
+    USMemoryChooserController * mChooserController;
     IBOutlet UIView * mView;
 }
+
+@property (nonatomic, retain) USMemoryChooserController * chooserController;
 
 @end
