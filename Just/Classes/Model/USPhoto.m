@@ -67,6 +67,9 @@ static const CGFloat kDefaultThumbSize = 75.0f;
 - (id) initLocalImageWithImage:(UIImage *) image {
     if ((self = [super init])){
         mImage = [image retain];
+        UIImage * resizedImage = [self imageResizedToMaxSize:CGSizeMake(MAX_PHOTO_SIZE_WIDTH, MAX_PHOTO_SIZE_HEIGHT)];
+        [image release];
+        mImage = [resizedImage retain];
         mImageSize = mImage.size;
         
         mLocal = YES;
@@ -87,9 +90,12 @@ static const CGFloat kDefaultThumbSize = 75.0f;
 }
 
 - (void) load {
-    if (!mLoaded) 
+    if (!mLoaded) {
         if (mLocal)
             [self p_loadReferencedImage];
+    } else {
+        [self.delegate photoLoaded];
+    }
 }
 
 - (void) save {
@@ -112,6 +118,7 @@ static const CGFloat kDefaultThumbSize = 75.0f;
     RELEASE_SAFELY(dateFormatter);
     NSLog(@"Saving image to %@", imagePath);
 	[imageData writeToFile:imagePath atomically:YES];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"SavedImage" object:self];
 }
 
 
@@ -144,6 +151,13 @@ static const CGFloat kDefaultThumbSize = 75.0f;
     //}
     //[mThumb retain];
     return mThumb;
+}
+
+- (UIImage *) imageResizedToMaxSize:(CGSize) maxSize {
+    float aspectRatio = mImage.size.width/mImage.size.height;
+    CGSize rescaleSize = maxSize.width < maxSize.height ? CGSizeMake(maxSize.width, maxSize.width / aspectRatio) : CGSizeMake(maxSize.height * aspectRatio, maxSize.width );
+    //NSLog(@"Max:\t%f, %f\n Act:\t%f, %f", maxSize.width, maxSize.height, rescaleSize.width, rescaleSize.height);
+    return [self p_imageByScalingImage:self.image toSize:rescaleSize cropToSquare:NO];
 }
 
 #pragma mark - Network Activity

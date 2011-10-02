@@ -27,15 +27,11 @@
 
 #pragma mark - USPhotoLoadingDelegate Methods
 - (void) photoLoaded {
-    UIImage * previewImage = mPhoto.image;
-    [mImageView setImage:previewImage];
+    UIImage * previewImage = [mPhoto imageResizedToMaxSize:CGSizeMake(mImageView.frame.size.width, mImageView.frame.size.height)];
     
-    float aspectRatio = previewImage.size.width/previewImage.size.height;
+    [mImageView setImage:previewImage];
     mImageView.frame = CGRectMake(mImageView.frame.origin.x, mImageView.frame.origin.y, 
-                                  mImageView.frame.size.width, mImageView.frame.size.width / aspectRatio);
-    /*[mImageView setFrame:CGRectMake(mImageView.frame.origin.x, mImageView.frame.origin.y, 
-                                    mPhoto.image.size.width, mPhoto.image.size.height)];*/
-    //[mImageView setImage:[mPhoto thumbnail]];
+                                  previewImage.size.width, previewImage.size.height);
     [mPhoto retain];
 }
 

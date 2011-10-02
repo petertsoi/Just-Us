@@ -144,7 +144,6 @@
 						<string key="NSFrame">{{19, 164}, {282, 366}}</string>
 						<reference key="NSSuperview" ref="372674245"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:541</string>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -198,7 +197,7 @@
 						<reference key="source" ref="372674245"/>
 						<reference key="destination" ref="14551919"/>
 					</object>
-					<int key="connectionID">15</int>
+					<int key="connectionID">20</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
@@ -206,7 +205,7 @@
 						<reference key="source" ref="372674245"/>
 						<reference key="destination" ref="953120529"/>
 					</object>
-					<int key="connectionID">16</int>
+					<int key="connectionID">21</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
@@ -214,7 +213,7 @@
 						<reference key="source" ref="372674245"/>
 						<reference key="destination" ref="643499800"/>
 					</object>
-					<int key="connectionID">17</int>
+					<int key="connectionID">22</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
@@ -222,7 +221,7 @@
 						<reference key="source" ref="372674245"/>
 						<reference key="destination" ref="216436882"/>
 					</object>
-					<int key="connectionID">18</int>
+					<int key="connectionID">23</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -324,7 +323,7 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">19</int>
+			<int key="maxID">24</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">

@@ -71,6 +71,7 @@
         mPicker = [[UIImagePickerController alloc] init];
         mPicker.delegate = self;
         mPicker.sourceType = UIImagePickerControllerSourceTypeCamera ? [UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera] : UIImagePickerControllerSourceTypeSavedPhotosAlbum;
+        //mPicker.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
     }
 }
 
@@ -90,7 +91,17 @@
     self.controller.selectedIndex = 1;
     
     //[mDetailEditorView setImageWithReferenceURL:[info objectForKey:UIImagePickerControllerReferenceURL]];
-    USPhoto * chosenPhoto = [[USPhoto alloc] initLocalImageWithReferenceURL:[info objectForKey:UIImagePickerControllerReferenceURL]];
+    NSURL *reference = [info objectForKey:UIImagePickerControllerReferenceURL];
+    UIImage * image = [info objectForKey:UIImagePickerControllerOriginalImage];
+    USPhoto * chosenPhoto;
+    if (reference) {
+        NSLog(@"Reference URL: %@", reference);
+        chosenPhoto = [[USPhoto alloc] initLocalImageWithReferenceURL:[info objectForKey:UIImagePickerControllerReferenceURL]];
+    } else {
+        chosenPhoto = [[USPhoto alloc] initLocalImageWithImage:image];
+    }
+    
+    
     [mDetailEditorView setPhoto:chosenPhoto];
     [chosenPhoto release];
 	[picker dismissModalViewControllerAnimated:YES];

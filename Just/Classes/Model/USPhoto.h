@@ -59,6 +59,7 @@
 - (CALayer *) layerWithImage;
 - (CALayer *) thumbnailLayer;
 - (UIImage *) thumbnail;
+- (UIImage *) imageResizedToMaxSize:(CGSize) maxSize;
 
 - (void) load;
 - (void) save;
