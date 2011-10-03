@@ -77,9 +77,9 @@ static const CGFloat kSpacing = 4.0f;
     //self.object = nil;
     //self.textLabel.text = nil;
     //self.detailTextLabel.text = nil;
-    for (USThumbView * thumbView in mThumbViews) {
+    /*for (USThumbView * thumbView in mThumbViews) {
         RELEASE_SAFELY(thumbView);
-    }
+    }*/
     self.thumbViews = nil;
     [super prepareForReuse];
 }

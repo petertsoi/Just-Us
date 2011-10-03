@@ -13,26 +13,30 @@
 @implementation USMemoryChooserController
 
 - (void) loadDataSource {
+    NSLog(@"Reloading data source");
     mPhotoPath = [[[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:@"Pictures"] retain];
     if (mPhotoArray) {
         RELEASE_SAFELY(mPhotoArray);
     }
     mPhotoArray = [[NSArray alloc] initWithArray:[[[NSFileManager defaultManager] contentsOfDirectoryAtPath:mPhotoPath error:NULL] sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)]];
-        [self.tableView reloadData];
+    NSLog(@"Reloading table");
+    [self.tableView reloadData];
     
 }
 
-- (void) viewDidAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    self.tableView.frame = CGRectMake(self.tableView.frame.origin.x, self.tableView.frame.origin.y, 
-                                 self.tableView.frame.size.width, 200);
-    self.tableView.rowHeight = 79.0f;
-    [self loadDataSource];
-    
+- (void) viewDidLoad {
+     self.tableView.rowHeight = 79.0f;
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(loadDataSource) 
                                                  name:@"SavedPhoto"
                                                object:nil];
+    [self loadDataSource];
+}
+
+- (void) viewDidAppear:(BOOL)animated {
+    //[super viewWillAppear:animated];
+    self.tableView.frame = CGRectMake(self.tableView.frame.origin.x, self.tableView.frame.origin.y, 
+                                 self.tableView.frame.size.width, 200);
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -46,6 +50,7 @@
 }
 - (UITableViewCell *)tableView:(UITableView *)aTableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    NSLog(@"Creating row: %i", indexPath.row);
     static NSString *CellIdentifier = @"ThumbnailCell";
     
     USThumbTableViewCell *cell = (USThumbTableViewCell *)[aTableView dequeueReusableCellWithIdentifier:CellIdentifier];
@@ -58,10 +63,12 @@
     
     [cell setColumnCount:4];
     for (unsigned int i = 0; indexPath.row*4 + i < [mPhotoArray count] && i <  4; i++) {
+        NSLog(@"Creating new cell at spot %i", i);
         NSString * photoPath = [mPhotoPath stringByAppendingPathComponent:[mPhotoArray objectAtIndex:indexPath.row*4 + i]];
+        NSLog(@"Loading photo into spot %i", i);
         USPhoto * test = [[USPhoto alloc] initLocalImageWithImage:[UIImage imageWithContentsOfFile:photoPath]];
         [cell assignPhoto:test toThumbViewAtIndex:i];
-        [test release];
+        NSLog(@"Created cell");
     }
     
     

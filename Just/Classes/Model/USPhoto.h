@@ -52,6 +52,7 @@
 
 - (id) initRemoteImageWithURL:(NSURL *) remoteURL;
 - (id) initLocalImageWithImage:(UIImage *) image;
+- (id) initLocalImageWithImageFromCamera:(UIImage *) image;
 - (id) initLocalImageWithReferenceURL:(NSURL *) referenceURL;
 
 - (void) loadRemoteImage;

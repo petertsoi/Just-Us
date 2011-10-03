@@ -98,7 +98,7 @@
         NSLog(@"Reference URL: %@", reference);
         chosenPhoto = [[USPhoto alloc] initLocalImageWithReferenceURL:[info objectForKey:UIImagePickerControllerReferenceURL]];
     } else {
-        chosenPhoto = [[USPhoto alloc] initLocalImageWithImage:image];
+        chosenPhoto = [[USPhoto alloc] initLocalImageWithImageFromCamera:image];
     }
     
     

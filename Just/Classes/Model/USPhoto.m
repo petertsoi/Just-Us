@@ -67,9 +67,21 @@ static const CGFloat kDefaultThumbSize = 75.0f;
 - (id) initLocalImageWithImage:(UIImage *) image {
     if ((self = [super init])){
         mImage = [image retain];
+        mImageSize = mImage.size;
+        
+        mLocal = YES;
+        mLoaded = YES;
+    }
+    return self;
+}
+
+- (id) initLocalImageWithImageFromCamera:(UIImage *) image {
+    if ((self = [super init])){
+        mImage = [image retain];
         UIImage * resizedImage = [self imageResizedToMaxSize:CGSizeMake(MAX_PHOTO_SIZE_WIDTH, MAX_PHOTO_SIZE_HEIGHT)];
-        [image release];
+        
         mImage = [resizedImage retain];
+        [image release];
         mImageSize = mImage.size;
         
         mLocal = YES;
