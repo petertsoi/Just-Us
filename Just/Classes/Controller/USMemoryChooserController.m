@@ -12,14 +12,14 @@
 
 @implementation USMemoryChooserController
 
+@synthesize tableView = mTableView;
+
 - (void) loadDataSource {
-    NSLog(@"Reloading data source");
     mPhotoPath = [[[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:@"Pictures"] retain];
     if (mPhotoArray) {
         RELEASE_SAFELY(mPhotoArray);
     }
     mPhotoArray = [[NSArray alloc] initWithArray:[[[NSFileManager defaultManager] contentsOfDirectoryAtPath:mPhotoPath error:NULL] sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)]];
-    NSLog(@"Reloading table");
     [self.tableView reloadData];
     
 }
@@ -33,12 +33,6 @@
     [self loadDataSource];
 }
 
-- (void) viewDidAppear:(BOOL)animated {
-    //[super viewWillAppear:animated];
-    self.tableView.frame = CGRectMake(self.tableView.frame.origin.x, self.tableView.frame.origin.y, 
-                                 self.tableView.frame.size.width, 200);
-}
-
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return 1;
@@ -50,7 +44,6 @@
 }
 - (UITableViewCell *)tableView:(UITableView *)aTableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"Creating row: %i", indexPath.row);
     static NSString *CellIdentifier = @"ThumbnailCell";
     
     USThumbTableViewCell *cell = (USThumbTableViewCell *)[aTableView dequeueReusableCellWithIdentifier:CellIdentifier];
@@ -63,12 +56,9 @@
     
     [cell setColumnCount:4];
     for (unsigned int i = 0; indexPath.row*4 + i < [mPhotoArray count] && i <  4; i++) {
-        NSLog(@"Creating new cell at spot %i", i);
         NSString * photoPath = [mPhotoPath stringByAppendingPathComponent:[mPhotoArray objectAtIndex:indexPath.row*4 + i]];
-        NSLog(@"Loading photo into spot %i", i);
         USPhoto * test = [[USPhoto alloc] initLocalImageWithImage:[UIImage imageWithContentsOfFile:photoPath]];
         [cell assignPhoto:test toThumbViewAtIndex:i];
-        NSLog(@"Created cell");
     }
     
     

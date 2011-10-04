@@ -130,7 +130,7 @@ static const CGFloat kDefaultThumbSize = 75.0f;
     RELEASE_SAFELY(dateFormatter);
     NSLog(@"Saving image to %@", imagePath);
 	[imageData writeToFile:imagePath atomically:YES];
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"SavedImage" object:self];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"SavedPhoto" object:self];
 }
 
 

@@ -8,10 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface USMemoryChooserController : UITableViewController {
+@interface USMemoryChooserController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
     NSString * mPhotoPath;
     NSArray * mPhotoArray;
+    IBOutlet UITableView *mTableView;
 }
+
+@property (nonatomic, retain) IBOutlet UITableView *tableView;
 
 - (void) loadDataSource;
 
