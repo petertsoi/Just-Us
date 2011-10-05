@@ -8,13 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
-@class USPhoto;
+@class USPhotoChooserView, USPhoto;
 
 @interface USThumbView : UIButton {
     USPhoto * mPhoto;
+    USPhotoChooserView * mTarget;
 }
 
 @property (readonly, retain) USPhoto * photo;
+
+- (id) initWithController:(USPhotoChooserView *)target;
 
 - (void) setPhoto:(USPhoto *) newPhoto;
 

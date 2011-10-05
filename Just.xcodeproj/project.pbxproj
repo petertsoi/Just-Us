@@ -50,6 +50,13 @@
 		0AB506A1142FCE4A00651FE7 /* textFieldBig.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AB5069F142FCE4A00651FE7 /* textFieldBig.png */; };
 		0AB506A2142FCE4A00651FE7 /* textFieldBig@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AB506A0142FCE4A00651FE7 /* textFieldBig@2x.png */; };
 		0AB81B55143010DA0009089C /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AB81B53143010A60009089C /* CoreLocation.framework */; };
+		0AC8E77E143BCB5500D56F34 /* USPhotoChooserView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC8E77D143BCB5500D56F34 /* USPhotoChooserView.m */; };
+		0AC8E785143BCE8A00D56F34 /* overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AC8E783143BCE8A00D56F34 /* overlay.png */; };
+		0AC8E786143BCE8A00D56F34 /* overlay@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AC8E784143BCE8A00D56F34 /* overlay@2x.png */; };
+		0AC8E789143BCFD300D56F34 /* chooserBG.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AC8E787143BCFD300D56F34 /* chooserBG.png */; };
+		0AC8E78A143BCFD300D56F34 /* chooserBG@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AC8E788143BCFD300D56F34 /* chooserBG@2x.png */; };
+		0AC8E78D143BD0FF00D56F34 /* chooserDoneButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AC8E78B143BD0FF00D56F34 /* chooserDoneButton.png */; };
+		0AC8E78E143BD0FF00D56F34 /* chooserDoneButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AC8E78C143BD0FF00D56F34 /* chooserDoneButton@2x.png */; };
 		0AE3B65D14303C140000A5F7 /* USMemoryChooser.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AE3B65B14303C140000A5F7 /* USMemoryChooser.xib */; };
 		0AEADAC61430411500E0265A /* USThumbTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AEADAC51430411500E0265A /* USThumbTableViewCell.m */; };
 		0AEADACA143057B000E0265A /* USThumbView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AEADAC9143057B000E0265A /* USThumbView.m */; };
@@ -123,6 +130,14 @@
 		0AB5069F142FCE4A00651FE7 /* textFieldBig.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = textFieldBig.png; path = Resources/png/FormElements/textFieldBig.png; sourceTree = "<group>"; };
 		0AB506A0142FCE4A00651FE7 /* textFieldBig@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "textFieldBig@2x.png"; path = "Resources/png/FormElements/textFieldBig@2x.png"; sourceTree = "<group>"; };
 		0AB81B53143010A60009089C /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		0AC8E77C143BCB5500D56F34 /* USPhotoChooserView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = USPhotoChooserView.h; path = Classes/View/USPhotoChooserView.h; sourceTree = "<group>"; };
+		0AC8E77D143BCB5500D56F34 /* USPhotoChooserView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = USPhotoChooserView.m; path = Classes/View/USPhotoChooserView.m; sourceTree = "<group>"; };
+		0AC8E783143BCE8A00D56F34 /* overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = overlay.png; path = Resources/png/BackgroundImages/overlay.png; sourceTree = "<group>"; };
+		0AC8E784143BCE8A00D56F34 /* overlay@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "overlay@2x.png"; path = "Resources/png/BackgroundImages/overlay@2x.png"; sourceTree = "<group>"; };
+		0AC8E787143BCFD300D56F34 /* chooserBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = chooserBG.png; path = Resources/png/BackgroundImages/chooserBG.png; sourceTree = "<group>"; };
+		0AC8E788143BCFD300D56F34 /* chooserBG@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "chooserBG@2x.png"; path = "Resources/png/BackgroundImages/chooserBG@2x.png"; sourceTree = "<group>"; };
+		0AC8E78B143BD0FF00D56F34 /* chooserDoneButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = chooserDoneButton.png; path = Resources/png/FormElements/chooserDoneButton.png; sourceTree = "<group>"; };
+		0AC8E78C143BD0FF00D56F34 /* chooserDoneButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "chooserDoneButton@2x.png"; path = "Resources/png/FormElements/chooserDoneButton@2x.png"; sourceTree = "<group>"; };
 		0AE3B65C14303C140000A5F7 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = Resources/en.lproj/USMemoryChooser.xib; sourceTree = "<group>"; };
 		0AEADAC41430411500E0265A /* USThumbTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = USThumbTableViewCell.h; path = Classes/View/USThumbTableViewCell.h; sourceTree = "<group>"; };
 		0AEADAC51430411500E0265A /* USThumbTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = USThumbTableViewCell.m; path = Classes/View/USThumbTableViewCell.m; sourceTree = "<group>"; };
@@ -329,8 +344,12 @@
 		0AB50692142FBE1700651FE7 /* Backgrounds */ = {
 			isa = PBXGroup;
 			children = (
+				0AC8E787143BCFD300D56F34 /* chooserBG.png */,
+				0AC8E788143BCFD300D56F34 /* chooserBG@2x.png */,
 				0AB50693142FBE2100651FE7 /* detailEditor_background.png */,
 				0AB50694142FBE2100651FE7 /* detailEditor_background@2x.png */,
+				0AC8E783143BCE8A00D56F34 /* overlay.png */,
+				0AC8E784143BCE8A00D56F34 /* overlay@2x.png */,
 			);
 			name = Backgrounds;
 			sourceTree = "<group>";
@@ -340,6 +359,8 @@
 			children = (
 				0A5906A1142FD0A600017868 /* USDetailEditorView.h */,
 				0A5906A2142FD0A600017868 /* USDetailEditorView.m */,
+				0AC8E77C143BCB5500D56F34 /* USPhotoChooserView.h */,
+				0AC8E77D143BCB5500D56F34 /* USPhotoChooserView.m */,
 				0AB5069B142FCB1700651FE7 /* USTextField.h */,
 				0AB5069C142FCB1700651FE7 /* USTextField.m */,
 				0AEADAC41430411500E0265A /* USThumbTableViewCell.h */,
@@ -353,6 +374,8 @@
 		0AB5069E142FCE1200651FE7 /* Form Elements */ = {
 			isa = PBXGroup;
 			children = (
+				0AC8E78B143BD0FF00D56F34 /* chooserDoneButton.png */,
+				0AC8E78C143BD0FF00D56F34 /* chooserDoneButton@2x.png */,
 				0AB5069F142FCE4A00651FE7 /* textFieldBig.png */,
 				0AB506A0142FCE4A00651FE7 /* textFieldBig@2x.png */,
 				0A12893A142FE03700FCE4AC /* textFieldMed.png */,
@@ -428,6 +451,12 @@
 				0A12893C142FE03700FCE4AC /* textFieldMed.png in Resources */,
 				0A12893D142FE03700FCE4AC /* textFieldMed@2x.png in Resources */,
 				0AE3B65D14303C140000A5F7 /* USMemoryChooser.xib in Resources */,
+				0AC8E785143BCE8A00D56F34 /* overlay.png in Resources */,
+				0AC8E786143BCE8A00D56F34 /* overlay@2x.png in Resources */,
+				0AC8E789143BCFD300D56F34 /* chooserBG.png in Resources */,
+				0AC8E78A143BCFD300D56F34 /* chooserBG@2x.png in Resources */,
+				0AC8E78D143BD0FF00D56F34 /* chooserDoneButton.png in Resources */,
+				0AC8E78E143BD0FF00D56F34 /* chooserDoneButton@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -458,6 +487,7 @@
 				0AEADAC61430411500E0265A /* USThumbTableViewCell.m in Sources */,
 				0AEADACA143057B000E0265A /* USThumbView.m in Sources */,
 				0AEADAD114305FC700E0265A /* USMemoryChooserController.m in Sources */,
+				0AC8E77E143BCB5500D56F34 /* USPhotoChooserView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

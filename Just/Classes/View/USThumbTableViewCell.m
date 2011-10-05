@@ -7,6 +7,7 @@
 //
 
 #import "USThumbTableViewCell.h"
+#import "USPhotoChooserView.h"
 #import "USPhoto.h"
 #import "USThumbView.h"
 
@@ -16,10 +17,11 @@ static const CGFloat kSpacing = 4.0f;
 
 @synthesize thumbViews = mThumbViews;
 
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
+- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier target:(USPhotoChooserView *)target {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         mThumbViews = [[NSMutableArray alloc] init];
+        mTargetChooserView = target;
         self.accessoryType = UITableViewCellAccessoryNone;
         self.selectionStyle = UITableViewCellSelectionStyleNone;
         
@@ -32,7 +34,7 @@ static const CGFloat kSpacing = 4.0f;
     for (unsigned int currentCol = 0; currentCol < columns; ++currentCol) {
         USThumbView * currentView;
         if ([mThumbViews count] <= currentCol) {
-            currentView = [[USThumbView alloc] init];
+            currentView = [[USThumbView alloc] initWithController:mTargetChooserView];
             [mThumbViews addObject:currentView];
             [currentView release];
         } else {

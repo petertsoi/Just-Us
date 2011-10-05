@@ -20,12 +20,12 @@
         RELEASE_SAFELY(mPhotoArray);
     }
     mPhotoArray = [[NSArray alloc] initWithArray:[[[NSFileManager defaultManager] contentsOfDirectoryAtPath:mPhotoPath error:NULL] sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)]];
-    [self.tableView reloadData];
+    [mTableView reloadData];
     
 }
 
 - (void) viewDidLoad {
-     self.tableView.rowHeight = 79.0f;
+     mTableView.rowHeight = 79.0f;
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(loadDataSource) 
                                                  name:@"SavedPhoto"
@@ -50,7 +50,7 @@
 	
     if (cell == nil){
         cell = [[[USThumbTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault 
-                                            reuseIdentifier:CellIdentifier] autorelease];
+                                            reuseIdentifier:CellIdentifier target:mPhotoChooserView] autorelease];
     }
     
     

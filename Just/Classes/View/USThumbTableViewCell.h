@@ -8,16 +8,19 @@
 
 #import <UIKit/UIKit.h>
 
-@class USPhoto;
+@class USPhotoChooserView, USPhoto;
 
 @interface USThumbTableViewCell : UITableViewCell {
     USPhoto * mPhoto;
+    USPhotoChooserView * mTargetChooserView;
     NSMutableArray * mThumbViews;
     
     unsigned int mColumns;
 }
 
 @property (nonatomic, retain) NSMutableArray * thumbViews;
+
+- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier target:(USPhotoChooserView *)target;
 
 - (void) assignPhoto:(USPhoto *) newPhoto toThumbViewAtIndex:(unsigned int)thumbView;
 - (void) assignPhotosToRow:(NSArray *) photoRow;
