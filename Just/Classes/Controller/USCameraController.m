@@ -95,7 +95,6 @@
     UIImage * image = [info objectForKey:UIImagePickerControllerOriginalImage];
     USPhoto * chosenPhoto;
     if (reference) {
-        NSLog(@"Reference URL: %@", reference);
         chosenPhoto = [[USPhoto alloc] initLocalImageWithReferenceURL:[info objectForKey:UIImagePickerControllerReferenceURL]];
     } else {
         chosenPhoto = [[USPhoto alloc] initLocalImageWithImageFromCamera:image];

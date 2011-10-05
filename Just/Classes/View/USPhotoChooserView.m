@@ -8,10 +8,14 @@
 
 #import "USPhotoChooserView.h"
 
+#import "USMemoriesController.h"
+
 #import "USPhoto.h"
 #import "USThumbView.h"
 
 @implementation USPhotoChooserView
+
+@synthesize selectedPhotos = mSelectedPhotos;
 
 - (void) fadeOverlay {
     [UIView beginAnimations:nil context:NULL];
@@ -31,16 +35,22 @@
         UIImageView * thumbHolder = [[UIImageView alloc] initWithFrame:CGRectMake(4 + 79*i, 15, 75, 75)];
         [mThumbHolders addObject:thumbHolder];
         [self addSubview:thumbHolder];
+        [thumbHolder release];
     }
     
     mDoneButton = [[UIButton alloc] initWithFrame:CGRectMake(244, 11, 76, 88)];
     [mDoneButton setImage:[UIImage imageNamed:@"chooserDoneButton.png"] forState:UIControlStateNormal];
+    [mDoneButton addTarget:mController action:@selector(sendDone:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:mDoneButton];
     
     mOverlayButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 8, 320, 90)];
     [mOverlayButton setImage:[UIImage imageNamed:@"overlay.png"] forState:UIControlStateNormal];
     [mOverlayButton addTarget:self action:@selector(fadeOverlay) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:mOverlayButton];
+}
+
+- (void) setController:(USMemoriesController *) control {
+    mController = control;
 }
 
 - (void) addPhoto:(USThumbView *)sender {

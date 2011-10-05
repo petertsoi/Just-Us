@@ -8,10 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@class USMemoryChooserController;
+@class USMemoriesController;
 
 @interface USPhotoChooserView : UIView {
-    USMemoryChooserController * mController;
+    USMemoriesController * mController;
     UIButton * mOverlayButton;
     UIButton * mDoneButton;
     
@@ -20,5 +20,9 @@
     
     BOOL mOverlayVisible;
 }
+
+@property (nonatomic, retain) NSMutableArray * selectedPhotos;
+
+- (void) setController:(USMemoriesController *) control;
 
 @end

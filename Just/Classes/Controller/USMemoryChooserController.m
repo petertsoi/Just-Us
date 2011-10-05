@@ -7,6 +7,9 @@
 //
 
 #import "USMemoryChooserController.h"
+
+#import "USPhotoChooserView.h"
+#import "USMemoriesController.h"
 #import "USThumbTableViewCell.h"
 #import "USPhoto.h"
 
@@ -25,12 +28,19 @@
 }
 
 - (void) viewDidLoad {
+    self.title = @"Memories";
+    self.navigationController.navigationBar.barStyle = UIBarStyleBlackOpaque;
      mTableView.rowHeight = 79.0f;
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(loadDataSource) 
                                                  name:@"SavedPhoto"
                                                object:nil];
     [self loadDataSource];
+}
+
+- (void) setController:(USMemoriesController *)control {
+    mControl = control;
+    [mPhotoChooserView setController:control];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -59,6 +69,7 @@
         NSString * photoPath = [mPhotoPath stringByAppendingPathComponent:[mPhotoArray objectAtIndex:indexPath.row*4 + i]];
         USPhoto * test = [[USPhoto alloc] initLocalImageWithImage:[UIImage imageWithContentsOfFile:photoPath]];
         [cell assignPhoto:test toThumbViewAtIndex:i];
+        [test release];
     }
     
     

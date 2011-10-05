@@ -8,11 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@class USPhotoChooserView;
+@class USMemoriesController, USPhotoChooserView;
 
 @interface USMemoryChooserController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
     NSString * mPhotoPath;
     NSArray * mPhotoArray;
+    
+    USMemoriesController *mControl;
     
     IBOutlet UITableView *mTableView;
     IBOutlet USPhotoChooserView *mPhotoChooserView;
@@ -21,5 +23,6 @@
 @property (nonatomic, retain) IBOutlet UITableView *tableView;
 
 - (void) loadDataSource;
+- (void) setController:(USMemoriesController *)control;
 
 @end

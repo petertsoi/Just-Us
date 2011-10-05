@@ -10,7 +10,7 @@
 
 @class USMemoryChooserController;
 
-@interface USMemoriesController : UIViewController {
+@interface USMemoriesController : UINavigationController {
     USMemoryChooserController * mChooserController;
     IBOutlet UIView * mView;
 }

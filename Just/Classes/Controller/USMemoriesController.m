@@ -8,6 +8,10 @@
 
 #import "USMemoriesController.h"
 #import "USMemoryChooserController.h"
+
+#import "USPhotoChooserView.h"
+#import "USPhotoStripController.h"
+
 #import "USThumbTableViewCell.h"
 
 @implementation USMemoriesController
@@ -15,7 +19,6 @@
 @synthesize chooserController = mChooserController;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
@@ -32,6 +35,13 @@
     // Release any cached data, images, etc that aren't in use.
 }
 
+- (void) sendDone:(UIButton *)sender {
+    USPhotoChooserView * chooser = (USPhotoChooserView *)[sender superview];
+    USPhotoStripController * mStripController = [[USPhotoStripController alloc] initWithNibName:@"USPhotoStripController" bundle:[NSBundle mainBundle] selectedPhotos:chooser.selectedPhotos];
+    [self pushViewController:mStripController animated:YES];
+    [mStripController release];
+}
+
 #pragma mark - View lifecycle
 
 - (void)viewDidLoad
@@ -39,13 +49,11 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    mChooserController = [[USMemoryChooserController alloc] initWithStyle:UITableViewStylePlain];
+    mChooserController = [[USMemoryChooserController alloc] initWithNibName:@"USMemoryChooser" bundle:[NSBundle mainBundle]];
+    [mChooserController setController:self];
     
-    NSArray * nibContents = [[NSBundle mainBundle] loadNibNamed:@"USMemoryChooser" owner:mChooserController options:nil];
-    NSEnumerator * nibEnumerator = [nibContents objectEnumerator];
-    UIView * test = (UIView *)[nibEnumerator nextObject];
-    
-    self.view = test;
+    [self setViewControllers:[NSArray arrayWithObject:mChooserController]];
+    //self.view = test;
 }
 
 - (void)viewDidUnload

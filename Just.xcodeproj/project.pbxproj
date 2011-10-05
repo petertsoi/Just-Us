@@ -38,8 +38,18 @@
 		0A56E0DF142F12A0001E9584 /* tabbar_camera@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A56E0DB142F12A0001E9584 /* tabbar_camera@2x.png */; };
 		0A5906A3142FD0A600017868 /* USDetailEditorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A5906A2142FD0A600017868 /* USDetailEditorView.m */; };
 		0A5906A7142FD28600017868 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A5906A5142FD27800017868 /* AssetsLibrary.framework */; };
+		0A77067D143C39FC000E5C97 /* stripBotCap.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A77067B143C39FC000E5C97 /* stripBotCap.png */; };
+		0A77067E143C39FC000E5C97 /* stripBotCap@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A77067C143C39FC000E5C97 /* stripBotCap@2x.png */; };
+		0AAE171B143C018C007BAC4D /* USPhotoStripController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AAE1719143C018B007BAC4D /* USPhotoStripController.m */; };
+		0AAE171C143C018C007BAC4D /* USPhotoStripController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AAE171A143C018B007BAC4D /* USPhotoStripController.xib */; };
 		0AAF6110142F20B5004E7BEF /* USMemoriesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AAF610E142F20B5004E7BEF /* USMemoriesController.m */; };
 		0AAF6115142F20F0004E7BEF /* USMemoriesController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AAF6113142F20F0004E7BEF /* USMemoriesController.xib */; };
+		0AB48B06143C05C300CFF59F /* strip_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AB48B02143C05C300CFF59F /* strip_background.png */; };
+		0AB48B07143C05C300CFF59F /* strip_background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AB48B03143C05C300CFF59F /* strip_background@2x.png */; };
+		0AB48B22143C12E600CFF59F /* stripTopCap.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AB48B20143C12E600CFF59F /* stripTopCap.png */; };
+		0AB48B23143C12E600CFF59F /* stripTopCap@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AB48B21143C12E600CFF59F /* stripTopCap@2x.png */; };
+		0AB48B26143C14DD00CFF59F /* stripBG.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AB48B24143C14DD00CFF59F /* stripBG.png */; };
+		0AB48B27143C14DD00CFF59F /* stripBG@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AB48B25143C14DD00CFF59F /* stripBG@2x.png */; };
 		0AB5067E142FAC3500651FE7 /* USCameraController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AB5067C142FAC3500651FE7 /* USCameraController.m */; };
 		0AB50682142FAC6700651FE7 /* USCameraController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AB50680142FAC6700651FE7 /* USCameraController.xib */; };
 		0AB5068D142FB46F00651FE7 /* USSearchResultTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AB5068B142FB46F00651FE7 /* USSearchResultTableViewCell.xib */; };
@@ -115,9 +125,20 @@
 		0A5906A1142FD0A600017868 /* USDetailEditorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = USDetailEditorView.h; path = Classes/View/USDetailEditorView.h; sourceTree = "<group>"; };
 		0A5906A2142FD0A600017868 /* USDetailEditorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = USDetailEditorView.m; path = Classes/View/USDetailEditorView.m; sourceTree = "<group>"; };
 		0A5906A5142FD27800017868 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		0A77067B143C39FC000E5C97 /* stripBotCap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = stripBotCap.png; path = Resources/png/BackgroundImages/stripBotCap.png; sourceTree = "<group>"; };
+		0A77067C143C39FC000E5C97 /* stripBotCap@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "stripBotCap@2x.png"; path = "Resources/png/BackgroundImages/stripBotCap@2x.png"; sourceTree = "<group>"; };
+		0AAE1718143C018B007BAC4D /* USPhotoStripController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = USPhotoStripController.h; path = Classes/Controller/USPhotoStripController.h; sourceTree = "<group>"; };
+		0AAE1719143C018B007BAC4D /* USPhotoStripController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = USPhotoStripController.m; path = Classes/Controller/USPhotoStripController.m; sourceTree = "<group>"; };
+		0AAE171A143C018B007BAC4D /* USPhotoStripController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = USPhotoStripController.xib; path = Classes/Controller/USPhotoStripController.xib; sourceTree = "<group>"; };
 		0AAF610D142F20B5004E7BEF /* USMemoriesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = USMemoriesController.h; path = Classes/Controller/USMemoriesController.h; sourceTree = "<group>"; };
 		0AAF610E142F20B5004E7BEF /* USMemoriesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = USMemoriesController.m; path = Classes/Controller/USMemoriesController.m; sourceTree = "<group>"; };
 		0AAF6114142F20F0004E7BEF /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = Resources/en.lproj/USMemoriesController.xib; sourceTree = "<group>"; };
+		0AB48B02143C05C300CFF59F /* strip_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = strip_background.png; path = Resources/png/BackgroundImages/strip_background.png; sourceTree = "<group>"; };
+		0AB48B03143C05C300CFF59F /* strip_background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "strip_background@2x.png"; path = "Resources/png/BackgroundImages/strip_background@2x.png"; sourceTree = "<group>"; };
+		0AB48B20143C12E600CFF59F /* stripTopCap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = stripTopCap.png; path = Resources/png/BackgroundImages/stripTopCap.png; sourceTree = "<group>"; };
+		0AB48B21143C12E600CFF59F /* stripTopCap@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "stripTopCap@2x.png"; path = "Resources/png/BackgroundImages/stripTopCap@2x.png"; sourceTree = "<group>"; };
+		0AB48B24143C14DD00CFF59F /* stripBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = stripBG.png; path = Resources/png/BackgroundImages/stripBG.png; sourceTree = "<group>"; };
+		0AB48B25143C14DD00CFF59F /* stripBG@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "stripBG@2x.png"; path = "Resources/png/BackgroundImages/stripBG@2x.png"; sourceTree = "<group>"; };
 		0AB5067B142FAC3500651FE7 /* USCameraController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = USCameraController.h; path = Classes/Controller/USCameraController.h; sourceTree = "<group>"; };
 		0AB5067C142FAC3500651FE7 /* USCameraController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = USCameraController.m; path = Classes/Controller/USCameraController.m; sourceTree = "<group>"; };
 		0AB50681142FAC6700651FE7 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = Resources/en.lproj/USCameraController.xib; sourceTree = "<group>"; };
@@ -300,6 +321,7 @@
 				0AB50697142FC19000651FE7 /* USDetailEditor.xib */,
 				0AAF6113142F20F0004E7BEF /* USMemoriesController.xib */,
 				0AE3B65B14303C140000A5F7 /* USMemoryChooser.xib */,
+				0AAE171A143C018B007BAC4D /* USPhotoStripController.xib */,
 				0AB5068B142FB46F00651FE7 /* USSearchResultTableViewCell.xib */,
 			);
 			name = XIB;
@@ -310,12 +332,14 @@
 			children = (
 				0AB5067B142FAC3500651FE7 /* USCameraController.h */,
 				0AB5067C142FAC3500651FE7 /* USCameraController.m */,
-				0AAF610D142F20B5004E7BEF /* USMemoriesController.h */,
-				0AAF610E142F20B5004E7BEF /* USMemoriesController.m */,
-				0A56E0D3142F1216001E9584 /* USTabBarController.h */,
-				0A56E0D4142F1216001E9584 /* USTabBarController.m */,
 				0AEADACF14305FC700E0265A /* USMemoryChooserController.h */,
 				0AEADAD014305FC700E0265A /* USMemoryChooserController.m */,
+				0AAF610D142F20B5004E7BEF /* USMemoriesController.h */,
+				0AAF610E142F20B5004E7BEF /* USMemoriesController.m */,
+				0AAE1718143C018B007BAC4D /* USPhotoStripController.h */,
+				0AAE1719143C018B007BAC4D /* USPhotoStripController.m */,
+				0A56E0D3142F1216001E9584 /* USTabBarController.h */,
+				0A56E0D4142F1216001E9584 /* USTabBarController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -350,6 +374,14 @@
 				0AB50694142FBE2100651FE7 /* detailEditor_background@2x.png */,
 				0AC8E783143BCE8A00D56F34 /* overlay.png */,
 				0AC8E784143BCE8A00D56F34 /* overlay@2x.png */,
+				0AB48B02143C05C300CFF59F /* strip_background.png */,
+				0AB48B03143C05C300CFF59F /* strip_background@2x.png */,
+				0AB48B24143C14DD00CFF59F /* stripBG.png */,
+				0AB48B25143C14DD00CFF59F /* stripBG@2x.png */,
+				0A77067B143C39FC000E5C97 /* stripBotCap.png */,
+				0A77067C143C39FC000E5C97 /* stripBotCap@2x.png */,
+				0AB48B20143C12E600CFF59F /* stripTopCap.png */,
+				0AB48B21143C12E600CFF59F /* stripTopCap@2x.png */,
 			);
 			name = Backgrounds;
 			sourceTree = "<group>";
@@ -457,6 +489,15 @@
 				0AC8E78A143BCFD300D56F34 /* chooserBG@2x.png in Resources */,
 				0AC8E78D143BD0FF00D56F34 /* chooserDoneButton.png in Resources */,
 				0AC8E78E143BD0FF00D56F34 /* chooserDoneButton@2x.png in Resources */,
+				0AAE171C143C018C007BAC4D /* USPhotoStripController.xib in Resources */,
+				0AB48B06143C05C300CFF59F /* strip_background.png in Resources */,
+				0AB48B07143C05C300CFF59F /* strip_background@2x.png in Resources */,
+				0AB48B22143C12E600CFF59F /* stripTopCap.png in Resources */,
+				0AB48B23143C12E600CFF59F /* stripTopCap@2x.png in Resources */,
+				0AB48B26143C14DD00CFF59F /* stripBG.png in Resources */,
+				0AB48B27143C14DD00CFF59F /* stripBG@2x.png in Resources */,
+				0A77067D143C39FC000E5C97 /* stripBotCap.png in Resources */,
+				0A77067E143C39FC000E5C97 /* stripBotCap@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -488,6 +529,7 @@
 				0AEADACA143057B000E0265A /* USThumbView.m in Sources */,
 				0AEADAD114305FC700E0265A /* USMemoryChooserController.m in Sources */,
 				0AC8E77E143BCB5500D56F34 /* USPhotoChooserView.m in Sources */,
+				0AAE171B143C018C007BAC4D /* USPhotoStripController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -603,7 +645,7 @@
 				GCC_PREFIX_HEADER = Just/Classes/Application/Prefix.pch;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = Just/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 3.1.3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				WRAPPER_EXTENSION = app;
@@ -617,7 +659,7 @@
 				GCC_PREFIX_HEADER = Just/Classes/Application/Prefix.pch;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = Just/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 3.1.3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				WRAPPER_EXTENSION = app;
