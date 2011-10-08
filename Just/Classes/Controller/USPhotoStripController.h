@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+#define kUSPHOTOSTRIP_WIDTH 185
+
 @interface USPhotoStripController : UIViewController <UITextFieldDelegate> {
     NSArray * mPhotos;
     NSMutableArray * mPhotoHolders;
@@ -15,7 +17,16 @@
     UIScrollView * mScroller;
     
     UITextField * mTitleField;
+    
+    UIButton * mPublicButton;
+    UIButton * mFacebookButton;
+    
+    float mPhotoStripHeight;
+    BOOL mIsPublic;
+    BOOL mIsFacebook;
 }
+
+- (void) togglePublic;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil selectedPhotos:(NSArray *)photos;
 

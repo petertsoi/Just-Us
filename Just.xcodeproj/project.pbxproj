@@ -80,6 +80,16 @@
 		0AE9CCC61440BBBC00798CB1 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AE9CCBF1440BBBC00798CB1 /* SBJsonParser.m */; };
 		0AE9CCC71440BBBC00798CB1 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AE9CCC11440BBBC00798CB1 /* SBJsonWriter.m */; };
 		0AE9CCD21440C0CE00798CB1 /* Zapfino.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0AE9CCD01440C0CE00798CB1 /* Zapfino.ttf */; };
+		0AE9CCD71440CE1B00798CB1 /* fb_off.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AE9CCD31440CE1B00798CB1 /* fb_off.png */; };
+		0AE9CCD81440CE1B00798CB1 /* fb_off@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AE9CCD41440CE1B00798CB1 /* fb_off@2x.png */; };
+		0AE9CCD91440CE1B00798CB1 /* fb_on.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AE9CCD51440CE1B00798CB1 /* fb_on.png */; };
+		0AE9CCDA1440CE1B00798CB1 /* fb_on@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AE9CCD61440CE1B00798CB1 /* fb_on@2x.png */; };
+		0AE9CCDD1440D01E00798CB1 /* save.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AE9CCDB1440D01D00798CB1 /* save.png */; };
+		0AE9CCDE1440D01E00798CB1 /* save@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AE9CCDC1440D01E00798CB1 /* save@2x.png */; };
+		0AE9CCE31440D14400798CB1 /* public_off.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AE9CCDF1440D14300798CB1 /* public_off.png */; };
+		0AE9CCE41440D14400798CB1 /* public_off@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AE9CCE01440D14400798CB1 /* public_off@2x.png */; };
+		0AE9CCE51440D14400798CB1 /* public.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AE9CCE11440D14400798CB1 /* public.png */; };
+		0AE9CCE61440D14400798CB1 /* public@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AE9CCE21440D14400798CB1 /* public@2x.png */; };
 		0AEADAC61430411500E0265A /* USThumbTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AEADAC51430411500E0265A /* USThumbTableViewCell.m */; };
 		0AEADACA143057B000E0265A /* USThumbView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AEADAC9143057B000E0265A /* USThumbView.m */; };
 		0AEADAD114305FC700E0265A /* USMemoryChooserController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AEADAD014305FC700E0265A /* USMemoryChooserController.m */; };
@@ -196,6 +206,16 @@
 		0AE9CCC01440BBBC00798CB1 /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBJsonWriter.h; path = Classes/FBConnect/JSON/SBJsonWriter.h; sourceTree = "<group>"; };
 		0AE9CCC11440BBBC00798CB1 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBJsonWriter.m; path = Classes/FBConnect/JSON/SBJsonWriter.m; sourceTree = "<group>"; };
 		0AE9CCD11440C0CE00798CB1 /* en */ = {isa = PBXFileReference; lastKnownFileType = file; name = en; path = Resources/en.lproj/Zapfino.ttf; sourceTree = "<group>"; };
+		0AE9CCD31440CE1B00798CB1 /* fb_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fb_off.png; path = Resources/png/FormElements/fb_off.png; sourceTree = "<group>"; };
+		0AE9CCD41440CE1B00798CB1 /* fb_off@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "fb_off@2x.png"; path = "Resources/png/FormElements/fb_off@2x.png"; sourceTree = "<group>"; };
+		0AE9CCD51440CE1B00798CB1 /* fb_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fb_on.png; path = Resources/png/FormElements/fb_on.png; sourceTree = "<group>"; };
+		0AE9CCD61440CE1B00798CB1 /* fb_on@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "fb_on@2x.png"; path = "Resources/png/FormElements/fb_on@2x.png"; sourceTree = "<group>"; };
+		0AE9CCDB1440D01D00798CB1 /* save.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = save.png; path = Resources/png/FormElements/save.png; sourceTree = "<group>"; };
+		0AE9CCDC1440D01E00798CB1 /* save@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "save@2x.png"; path = "Resources/png/FormElements/save@2x.png"; sourceTree = "<group>"; };
+		0AE9CCDF1440D14300798CB1 /* public_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = public_off.png; path = Resources/png/FormElements/public_off.png; sourceTree = "<group>"; };
+		0AE9CCE01440D14400798CB1 /* public_off@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "public_off@2x.png"; path = "Resources/png/FormElements/public_off@2x.png"; sourceTree = "<group>"; };
+		0AE9CCE11440D14400798CB1 /* public.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = public.png; path = Resources/png/FormElements/public.png; sourceTree = "<group>"; };
+		0AE9CCE21440D14400798CB1 /* public@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "public@2x.png"; path = "Resources/png/FormElements/public@2x.png"; sourceTree = "<group>"; };
 		0AEADAC41430411500E0265A /* USThumbTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = USThumbTableViewCell.h; path = Classes/View/USThumbTableViewCell.h; sourceTree = "<group>"; };
 		0AEADAC51430411500E0265A /* USThumbTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = USThumbTableViewCell.m; path = Classes/View/USThumbTableViewCell.m; sourceTree = "<group>"; };
 		0AEADAC8143057B000E0265A /* USThumbView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = USThumbView.h; path = Classes/View/USThumbView.h; sourceTree = "<group>"; };
@@ -464,6 +484,16 @@
 			children = (
 				0AC8E78B143BD0FF00D56F34 /* chooserDoneButton.png */,
 				0AC8E78C143BD0FF00D56F34 /* chooserDoneButton@2x.png */,
+				0AE9CCD31440CE1B00798CB1 /* fb_off.png */,
+				0AE9CCD41440CE1B00798CB1 /* fb_off@2x.png */,
+				0AE9CCD51440CE1B00798CB1 /* fb_on.png */,
+				0AE9CCD61440CE1B00798CB1 /* fb_on@2x.png */,
+				0AE9CCDF1440D14300798CB1 /* public_off.png */,
+				0AE9CCE01440D14400798CB1 /* public_off@2x.png */,
+				0AE9CCE11440D14400798CB1 /* public.png */,
+				0AE9CCE21440D14400798CB1 /* public@2x.png */,
+				0AE9CCDB1440D01D00798CB1 /* save.png */,
+				0AE9CCDC1440D01E00798CB1 /* save@2x.png */,
 				0AB5069F142FCE4A00651FE7 /* textFieldBig.png */,
 				0AB506A0142FCE4A00651FE7 /* textFieldBig@2x.png */,
 				0A12893A142FE03700FCE4AC /* textFieldMed.png */,
@@ -577,6 +607,16 @@
 				0A77067E143C39FC000E5C97 /* stripBotCap@2x.png in Resources */,
 				0AE9CCB31440BBAB00798CB1 /* FBDialog.bundle in Resources */,
 				0AE9CCD21440C0CE00798CB1 /* Zapfino.ttf in Resources */,
+				0AE9CCD71440CE1B00798CB1 /* fb_off.png in Resources */,
+				0AE9CCD81440CE1B00798CB1 /* fb_off@2x.png in Resources */,
+				0AE9CCD91440CE1B00798CB1 /* fb_on.png in Resources */,
+				0AE9CCDA1440CE1B00798CB1 /* fb_on@2x.png in Resources */,
+				0AE9CCDD1440D01E00798CB1 /* save.png in Resources */,
+				0AE9CCDE1440D01E00798CB1 /* save@2x.png in Resources */,
+				0AE9CCE31440D14400798CB1 /* public_off.png in Resources */,
+				0AE9CCE41440D14400798CB1 /* public_off@2x.png in Resources */,
+				0AE9CCE51440D14400798CB1 /* public.png in Resources */,
+				0AE9CCE61440D14400798CB1 /* public@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
