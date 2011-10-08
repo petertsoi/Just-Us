@@ -8,11 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface USPhotoStripController : UIViewController {
+@interface USPhotoStripController : UIViewController <UITextFieldDelegate> {
     NSArray * mPhotos;
     NSMutableArray * mPhotoHolders;
     
     UIScrollView * mScroller;
+    
+    UITextField * mTitleField;
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil selectedPhotos:(NSArray *)photos;

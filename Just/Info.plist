@@ -32,5 +32,9 @@
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Zapfino.ttf</string>
+	</array>
 </dict>
 </plist>

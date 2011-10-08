@@ -13,11 +13,21 @@
 @implementation USPhotoStripController
 
 - (void) populateImages {
-    CGFloat currentY = 60.0f;
+    CGFloat currentY = 40.0f;
     UIImageView * topCap = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"stripTopCap.png"]];
-    [topCap setFrame:CGRectMake(10, 10, 185, 50)];
+    [topCap setFrame:CGRectMake(10, 10, 185, 30)];
     [self.view addSubview:topCap];
     [topCap release];
+    
+    mTitleField = [[UITextField alloc] initWithFrame:topCap.frame];
+    [mTitleField setBorderStyle:UITextBorderStyleNone];
+    [mTitleField setTextAlignment:UITextAlignmentCenter];
+    [mTitleField setFont:[UIFont fontWithName:@"Zapfino" size:12]];
+    [mTitleField setTextColor:[UIColor colorWithRed:0.31 green:0.29 blue:0.25 alpha:1.0]];
+    [mTitleField setPlaceholder:@"Title"];
+    [mTitleField setDelegate:self];
+    [self.view addSubview:mTitleField];
+    
     UIImageView * repeatingBar = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"stripBG.png"]];
     [repeatingBar setFrame:CGRectMake(10, currentY, 185, 1)];
     [self.view addSubview:repeatingBar];
@@ -26,7 +36,7 @@
         UIImageView * newFrame = [[UIImageView alloc] initWithImage:newImage];
         [newFrame setFrame:CGRectMake(20.0f, currentY, newImage.size.width, newImage.size.height)];
         [self.view addSubview:newFrame];
-        currentY += newImage.size.height + 10.0f;
+        currentY += newImage.size.height + 8.0f;
         [newFrame release];
     }
     [repeatingBar setFrame:CGRectMake(repeatingBar.frame.origin.x, repeatingBar.frame.origin.y, 
@@ -37,6 +47,19 @@
                                 185, 30)];
     [self.view addSubview:botCap];
     [botCap release];
+    
+    UILabel * dateLabel = [[UILabel alloc] initWithFrame:CGRectMake(botCap.frame.origin.x + 8, botCap.frame.origin.y-5, 
+                                                                    botCap.frame.size.width - 16, botCap.frame.size.height)];
+    [dateLabel setFont:[UIFont fontWithName:@"Zapfino" size:7]];
+    [dateLabel setTextColor:[UIColor colorWithRed:0.31 green:0.29 blue:0.25 alpha:1.0]];
+    [dateLabel setTextAlignment:UITextAlignmentRight];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"M/d/yyyy"];
+    [dateLabel setText:[NSString stringWithFormat:@"%@ ",[dateFormatter stringFromDate:[NSDate date]]]];
+    [dateFormatter release];
+    [dateLabel setBackgroundColor:[UIColor clearColor]];
+    [self.view addSubview:dateLabel];
+    [dateLabel release];
     [mScroller setContentSize:CGSizeMake(320, currentY + 40)];
 }
 
@@ -68,8 +91,14 @@
 - (void) dealloc {
     [mScroller release];
     [mPhotoHolders release];
+    [mTitleField release];
     
     [super dealloc];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    return YES;
 }
 
 #pragma mark - View lifecycle
