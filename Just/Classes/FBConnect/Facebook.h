@@ -26,15 +26,15 @@
  * pop-ups promoting for credentials, permissions, stream posts, etc.)
  */
 @interface Facebook : NSObject<FBLoginDialogDelegate>{
-  NSString* _accessToken;
-  NSDate* _expirationDate;
-  id<FBSessionDelegate> _sessionDelegate;
-  FBRequest* _request;
-  FBDialog* _loginDialog;
-  FBDialog* _fbDialog;
-  NSString* _appId;
-  NSString* _urlSchemeSuffix;
-  NSArray* _permissions;
+    NSString* _accessToken;
+    NSDate* _expirationDate;
+    id<FBSessionDelegate> _sessionDelegate;
+    FBRequest* _request;
+    FBDialog* _loginDialog;
+    FBDialog* _fbDialog;
+    NSString* _appId;
+    NSString* _urlSchemeSuffix;
+    NSArray* _permissions;
 }
 
 @property(nonatomic, copy) NSString* accessToken;
