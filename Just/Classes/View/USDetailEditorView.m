@@ -30,8 +30,17 @@
     UIImage * previewImage = [mPhoto imageResizedToMaxSize:CGSizeMake(mImageView.frame.size.width, mImageView.frame.size.height)];
     
     [mImageView setImage:previewImage];
+    CGFloat width, height;
+    if (IS_RETINA) {
+        width = previewImage.size.width / 2;
+        height = previewImage.size.height / 2;
+    } else {
+        width = previewImage.size.width;
+        height = previewImage.size.height;
+    }
+    
     mImageView.frame = CGRectMake(mImageView.frame.origin.x, mImageView.frame.origin.y, 
-                                  previewImage.size.width, previewImage.size.height);
+                                  width, height);
     [mPhoto retain];
 }
 

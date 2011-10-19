@@ -22,6 +22,8 @@
 #define MAX_PHOTO_SIZE_WIDTH 960.0
 #define MAX_PHOTO_SIZE_HEIGHT 960.0
 
+#define IS_RETINA [[UIScreen mainScreen] respondsToSelector:@selector(scale)] && [[UIScreen mainScreen] scale] == 2
+
 @interface USPhoto : NSObject {
     UIImage * mImage;
     UIImage * mThumb;

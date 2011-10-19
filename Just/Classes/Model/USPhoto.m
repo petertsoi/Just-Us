@@ -160,6 +160,7 @@ static const CGFloat kDefaultThumbSize = 75.0f;
 - (UIImage *) thumbnail {
     //if (!mThumb) {
         mThumb = [self p_imageByScalingImage:self.image toSize:CGSizeMake(kDefaultThumbSize, kDefaultThumbSize) cropToSquare:YES];
+    NSLog(@"Created thumbnail");
     //}
     //[mThumb retain];
     return mThumb;
@@ -229,7 +230,7 @@ static const CGFloat kDefaultThumbSize = 75.0f;
     UIImage* sourceImage = image; 
     CGFloat targetWidth;
     CGFloat targetHeight;
-    if ([[UIScreen mainScreen] respondsToSelector:@selector(scale)] && [[UIScreen mainScreen] scale] == 2){
+    if (IS_RETINA){
         targetWidth = targetSize.width * 2;
         targetHeight = targetSize.height * 2;
     } else {

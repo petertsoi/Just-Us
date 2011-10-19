@@ -36,13 +36,13 @@ static const CGFloat kSpacing = 4.0f;
         if ([mThumbViews count] <= currentCol) {
             currentView = [[USThumbView alloc] initWithController:mTargetChooserView];
             [mThumbViews addObject:currentView];
-            [currentView release];
         } else {
             currentView = [mThumbViews objectAtIndex:currentCol];
         }
         [currentView setFrame:CGRectMake(kSpacing + currentCol * (kSpacing + THUMBNAIL_SIZE_WIDTH), kSpacing, 
                                          THUMBNAIL_SIZE_WIDTH, THUMBNAIL_SIZE_HEIGHT)];
         [self addSubview:currentView];
+        [currentView release];
     }
     
 }
@@ -54,8 +54,10 @@ static const CGFloat kSpacing = 4.0f;
     [selectedThumbView setPhoto:newPhoto];
     if (newPhoto != nil) {
         selectedThumbView.hidden = NO;
+        NSLog(@"Showing thumb %u", thumbView);
     } else {
         selectedThumbView.hidden = YES;
+        NSLog(@"Hiding thumb %u", thumbView);
     }
     
 }

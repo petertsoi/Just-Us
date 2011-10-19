@@ -27,7 +27,9 @@
     mPhoto = [newPhoto retain];
     if (mPhoto == nil) {
         RELEASE_SAFELY(mPhoto);
+        NSLog(@"Assigned photo is null");
     } else {
+        NSLog(@"Set photo");
         [self setImage:[mPhoto thumbnail] forState:UIControlStateNormal];
         [self addTarget:mTarget action:@selector(addPhoto:) forControlEvents:UIControlEventTouchUpInside];
         //[self setBackgroundColor:[UIColor blueColor]];
