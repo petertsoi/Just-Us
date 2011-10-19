@@ -227,8 +227,15 @@ static const CGFloat kDefaultThumbSize = 75.0f;
 #pragma mark - Private
 - (UIImage *)p_imageByScalingImage:(UIImage *)image toSize:(CGSize)targetSize cropToSquare:(BOOL) square{
     UIImage* sourceImage = image; 
-    CGFloat targetWidth = targetSize.width;
-    CGFloat targetHeight = targetSize.height;
+    CGFloat targetWidth;
+    CGFloat targetHeight;
+    if ([[UIScreen mainScreen] respondsToSelector:@selector(scale)] && [[UIScreen mainScreen] scale] == 2){
+        targetWidth = targetSize.width * 2;
+        targetHeight = targetSize.height * 2;
+    } else {
+        targetWidth = targetSize.width;
+        targetHeight = targetSize.height;
+    }
     
     CGImageRef imageRef = [sourceImage CGImage];
     if (square) {
