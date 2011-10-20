@@ -27,6 +27,8 @@
 
 #pragma mark - USPhotoLoadingDelegate Methods
 - (void) photoLoaded {
+    
+    NSLog(@"USPhotoLoading Delegate; W: %f, H: %f", mPhoto.image.size.width, mPhoto.image.size.height);
     UIImage * previewImage = [mPhoto imageResizedToMaxSize:CGSizeMake(mImageView.frame.size.width, mImageView.frame.size.height)];
     
     [mImageView setImage:previewImage];

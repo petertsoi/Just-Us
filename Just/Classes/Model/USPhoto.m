@@ -66,7 +66,7 @@ static const CGFloat kDefaultThumbSize = 75.0f;
 
 - (id) initLocalImageWithImage:(UIImage *) image {
     if ((self = [super init])){
-        mImage = [image retain];
+        mImage = [[UIImage imageWithCGImage:[image CGImage]] retain];
         mImageSize = mImage.size;
         
         mLocal = YES;
@@ -78,6 +78,7 @@ static const CGFloat kDefaultThumbSize = 75.0f;
 - (id) initLocalImageWithImageFromCamera:(UIImage *) image {
     if ((self = [super init])){
         mImage = [image retain];
+        NSLog(@"Width: %f, Height: %f", mImage.size.width, mImage.size.height);
         UIImage * resizedImage = [self imageResizedToMaxSize:CGSizeMake(MAX_PHOTO_SIZE_WIDTH, MAX_PHOTO_SIZE_HEIGHT)];
         
         mImage = [resizedImage retain];
@@ -113,7 +114,14 @@ static const CGFloat kDefaultThumbSize = 75.0f;
 - (void) save {
     NSData *imageData = [NSData dataWithData:UIImageJPEGRepresentation(mImage, 1.0)];
     NSString * photosPath = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:@"Pictures"];
+    NSString * photoStripPath = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:@"PhotoStrips"];
     BOOL dir;
+    if (![[NSFileManager defaultManager] fileExistsAtPath:photosPath isDirectory:&dir]) {
+        [[NSFileManager defaultManager] createDirectoryAtPath:photoStripPath
+                                  withIntermediateDirectories:YES 
+                                                   attributes:nil
+                                                        error:NULL];
+    }
     if (![[NSFileManager defaultManager] fileExistsAtPath:photosPath isDirectory:&dir]) {
         [[NSFileManager defaultManager] createDirectoryAtPath:photosPath
                                   withIntermediateDirectories:YES 

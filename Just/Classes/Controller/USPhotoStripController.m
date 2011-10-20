@@ -8,6 +8,8 @@
 
 #import "USPhotoStripController.h"
 
+#import "Facebook.h"
+#import "USAppDelegate.h"
 #import "USPhoto.h"
 
 @implementation USPhotoStripController
@@ -26,6 +28,7 @@
     [mFacebookButton release];
     
     UIButton * saveButton = [[UIButton alloc] initWithFrame:CGRectMake(200, 60, 110, 40)];
+    [saveButton addTarget:self action:@selector(createPhotoStrip) forControlEvents:UIControlEventTouchUpInside];
     [saveButton setImage:[UIImage imageNamed:@"save.png"] forState:UIControlStateNormal];
     [self.view addSubview:saveButton];
     [saveButton release];
@@ -90,7 +93,6 @@
     [self.view addSubview:mPublicButton];
     
     [mPublicButton release];
-    //[self createPhotoStrip];
 }
 
 - (void) toggleFacebook {
@@ -139,7 +141,28 @@
     CGColorSpaceRef colorSpaceInfo = CGImageGetColorSpace(sampleImage);
     CGContextRef bitmap = CGBitmapContextCreate(NULL, kUSPHOTOSTRIP_WIDTH, mPhotoStripHeight, CGImageGetBitsPerComponent(sampleImage), CGImageGetBytesPerRow(sampleImage), colorSpaceInfo, bitmapInfo);
     
-    CGContextDrawImage(bitmap, CGRectMake(0, 0, kUSPHOTOSTRIP_WIDTH, 30), [[UIImage imageNamed:@"stripTopCap.png"] CGImage]);
+    // White BG
+    float white[] = {1.0, 1.0, 1.0, 1.0};
+    CGContextSetFillColor(bitmap, white);
+    CGContextFillRect(bitmap, CGRectMake(0, 0, kUSPHOTOSTRIP_WIDTH, mPhotoStripHeight));
+    
+    // Image BG
+    CGContextDrawImage(bitmap, CGRectMake(0, mPhotoStripHeight-30, kUSPHOTOSTRIP_WIDTH, 30), [[UIImage imageNamed:@"stripTopCap.png"] CGImage]);
+    CGContextDrawImage(bitmap, CGRectMake(0, 30, kUSPHOTOSTRIP_WIDTH, mPhotoStripHeight-60), [[UIImage imageNamed:@"stripBG.png"] CGImage]);
+    CGContextDrawImage(bitmap, CGRectMake(0, 0, kUSPHOTOSTRIP_WIDTH, 30), [[UIImage imageNamed:@"stripBotCap.png"] CGImage]);
+    
+    float currentY = mPhotoStripHeight-40;
+    for (USPhoto * curPhoto in mPhotos) {
+        UIImage * newImage = [curPhoto imageResizedToMaxSize:CGSizeMake(kUSPHOTOSTRIP_WIDTH-20, 553)];
+        if (IS_RETINA) {
+            CGContextDrawImage(bitmap, CGRectMake(10, currentY - newImage.size.height/2, newImage.size.width/2, newImage.size.height/2), [newImage CGImage]);
+            currentY -= newImage.size.height/2 + 10;
+        } else {
+            CGContextDrawImage(bitmap, CGRectMake(10, currentY - newImage.size.height, newImage.size.width, newImage.size.height), [newImage CGImage]);
+            currentY -= newImage.size.height + 10;
+        }
+    }
+    //CGContextDrawImage(bitmap, CGRectMake(<#CGFloat x#>, <#CGFloat y#>, <#CGFloat width#>, <#CGFloat height#>), <#CGImageRef image#>);
     
     
     /*CGContextSelectFont (bitmap, "Zapfino", 48, kCGEncodingMacRoman);
@@ -154,9 +177,27 @@
     
     CGContextRelease(bitmap);
     CGImageRelease(ref);
+    NSString * photoStripPath = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:@"PhotoStrips"];
+    NSData *imageData = [NSData dataWithData:UIImageJPEGRepresentation([UIImage imageWithCGImage:[newImage CGImage]], 1.0)];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd-HH-mm-SS"];
+    NSString * name = [NSString stringWithFormat:@"photoStripUploading-%@.jpg",[dateFormatter stringFromDate:[NSDate date]]];
+    [imageData writeToFile:[photoStripPath stringByAppendingPathComponent:name] atomically:YES];
+    USAppDelegate *appDelegate = (USAppDelegate *)[[UIApplication sharedApplication] delegate];
     
+    NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:[UIImage imageWithCGImage:[newImage CGImage]], @"picture",mTitleField.text,@"caption",nil];
+    
+    [appDelegate.facebook requestWithGraphPath:@"me/photos"andParams:params andHttpMethod:@"POST" andDelegate:self];
+
     //UIImageWriteToSavedPhotosAlbum(newImage, self, @selector(finishedSaving), nil);
     return newImage;
+}
+
+- (void)request:(FBRequest *)request didReceiveResponse:(NSURLResponse *)response {
+    NSLog(@"Started to get data");
+}
+- (void)request:(FBRequest *)request didFailWithError:(NSError *)error {
+    NSLog(@"Upload error");
 }
 
 #pragma mark - Memory Management

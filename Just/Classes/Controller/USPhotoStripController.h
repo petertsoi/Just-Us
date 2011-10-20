@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Facebook.h"
 
 #define kUSPHOTOSTRIP_WIDTH 185
 
-@interface USPhotoStripController : UIViewController <UITextFieldDelegate> {
+@interface USPhotoStripController : UIViewController <UITextFieldDelegate, FBRequestDelegate> {
     NSArray * mPhotos;
     NSMutableArray * mPhotoHolders;
     

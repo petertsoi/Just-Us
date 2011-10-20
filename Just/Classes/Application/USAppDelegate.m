@@ -30,7 +30,9 @@
     }
     
     if (![facebook isSessionValid]) {
-        [facebook authorize:nil];
+        NSArray * permissions = [NSArray arrayWithObjects:@"user_relationships", @"user_work_history", @"user_checkins", /*@"publish_checkins",*/ @"user_birthday", @"publish_stream", nil ];
+        [facebook authorize:permissions];
+        [permissions release];
     }
     return YES;
 }
@@ -76,6 +78,8 @@
 
 #pragma mark - Facebook Login Delegate
 - (void)fbDidLogin {
+    
+    
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setObject:[facebook accessToken] forKey:@"FBAccessTokenKey"];
     [defaults setObject:[facebook expirationDate] forKey:@"FBExpirationDateKey"];
@@ -84,6 +88,7 @@
     NSLog(@"FB Token: %@", [defaults valueForKey:@"FBAccessTokenKey"]);
 }
 
+// Pre 4.2 support
 - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
     return [facebook handleOpenURL:url]; 
 }
