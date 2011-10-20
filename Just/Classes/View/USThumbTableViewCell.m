@@ -30,6 +30,9 @@ static const CGFloat kSpacing = 4.0f;
 }
 
 - (void) setColumnCount:(unsigned int) columns {
+    if (!mThumbViews) {
+        mThumbViews = [[NSMutableArray alloc] init];
+    }
     mColumns = columns;
     for (unsigned int currentCol = 0; currentCol < columns; ++currentCol) {
         USThumbView * currentView;
@@ -50,14 +53,11 @@ static const CGFloat kSpacing = 4.0f;
 - (void) assignPhoto:(USPhoto *) newPhoto toThumbViewAtIndex:(unsigned int)thumbView {
     
     USThumbView * selectedThumbView = [mThumbViews objectAtIndex:thumbView];
-    
     [selectedThumbView setPhoto:newPhoto];
     if (newPhoto != nil) {
         selectedThumbView.hidden = NO;
-        NSLog(@"Showing thumb %u", thumbView);
     } else {
         selectedThumbView.hidden = YES;
-        NSLog(@"Hiding thumb %u", thumbView);
     }
     
 }

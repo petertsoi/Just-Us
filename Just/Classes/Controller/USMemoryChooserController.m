@@ -69,9 +69,6 @@
     for (unsigned int i = 0; indexPath.row*4 + i < [mPhotoArray count] && i <  4; i++) {
         NSString * photoPath = [mPhotoPath stringByAppendingPathComponent:[mPhotoArray objectAtIndex:indexPath.row*4 + i]];
         USPhoto * test = [[USPhoto alloc] initLocalImageWithImage:[UIImage imageWithContentsOfFile:photoPath]];
-        if (!test.image) {
-            NSLog(@"Image for thumb %u is null", i);
-        }
         [cell assignPhoto:test toThumbViewAtIndex:i];
         [test release];
     }

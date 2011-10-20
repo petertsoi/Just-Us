@@ -119,7 +119,6 @@ static const CGFloat kDefaultThumbSize = 75.0f;
                                   withIntermediateDirectories:YES 
                                                    attributes:nil
                                                         error:NULL];
-        NSLog(@"Created photos directory");
     }
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"yyyy-MM-dd-HH-mm-SS"];

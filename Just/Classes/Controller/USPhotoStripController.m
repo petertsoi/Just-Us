@@ -45,9 +45,14 @@
     for (USPhoto * curPhoto in mPhotos) {
         UIImage * newImage = [curPhoto imageResizedToMaxSize:CGSizeMake(kUSPHOTOSTRIP_WIDTH-20, 553)];
         UIImageView * newFrame = [[UIImageView alloc] initWithImage:newImage];
-        [newFrame setFrame:CGRectMake(22.0f, currentY, newImage.size.width, newImage.size.height)];
+        if (IS_RETINA) {
+            [newFrame setFrame:CGRectMake(22.0f, currentY, newImage.size.width/2, newImage.size.height/2)];
+        } else {
+            [newFrame setFrame:CGRectMake(22.0f, currentY, newImage.size.width, newImage.size.height)];
+        }
+        
         [self.view addSubview:newFrame];
-        currentY += newImage.size.height + 8.0f;
+        currentY += newFrame.frame.size.height + 8.0f;
         [newFrame release];
     }
     [repeatingBar setFrame:CGRectMake(repeatingBar.frame.origin.x, repeatingBar.frame.origin.y, 
